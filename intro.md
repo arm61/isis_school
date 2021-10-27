@@ -3,7 +3,7 @@
 The aim of this course, and the companion lecture, are to give an introduction to the following subjects: 
 - the Fourier transform and how a Born approximation approach my be used to analyse neutron reflectometry data; 
 - the logic of model-dependent analysis; 
-- neutron reflectometry *slab* models and their traditional parameterisation; 
+- neutron reflectometry "slab models" and their traditional parameterisation; 
 - reparameterisation of these models to include chemical and physical insight; and 
 - the process and problems associated with fitting in a model-dependent analysis procedure. 
 
