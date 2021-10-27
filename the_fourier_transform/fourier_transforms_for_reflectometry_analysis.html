@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fourier Transforms for Reflectometry Analysis &#8212; Introduction to Neutron Reflectometry Fitting</title>
+    <title>Fourier transforms for reflectometry analysis &#8212; Introduction to neutron reflectometry fitting</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,7 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="An Introduction to Fourier Transforms" href="an_introduction_to_fourier_transforms.html" />
+    <link rel="prev" title="An introduction to Fourier transforms" href="an_introduction_to_fourier_transforms.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -79,7 +79,7 @@
       <img src="../_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Introduction to Neutron Reflectometry Fitting</h1>
+      <h1 class="site-logo" id="site-title">Introduction to neutron reflectometry fitting</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -90,7 +90,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to your Jupyter Book
+   Introduction to neutron reflectometry fitting
   </a>
  </li>
 </ul>
@@ -102,12 +102,12 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="an_introduction_to_fourier_transforms.html">
-   An Introduction to Fourier Transforms
+   An introduction to Fourier transforms
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Fourier Transforms for Reflectometry Analysis
+   Fourier transforms for reflectometry analysis
   </a>
  </li>
 </ul>
@@ -214,21 +214,24 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Fourier Transforms for Reflectometry Analysis
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specular-reflectometry">
+   Specular reflectometry
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#specular-reflectometry">
-     Specular Reflectometry
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-example-of-a-single-interface">
    The example of a single interface
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-oxide-layer">
+   An oxide layer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-the-born-approximation">
+   Using the Born approximation
   </a>
  </li>
 </ul>
@@ -243,27 +246,31 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="fourier-transforms-for-reflectometry-analysis">
-<h1>Fourier Transforms for Reflectometry Analysis<a class="headerlink" href="#fourier-transforms-for-reflectometry-analysis" title="Permalink to this headline">¶</a></h1>
+<h1>Fourier transforms for reflectometry analysis<a class="headerlink" href="#fourier-transforms-for-reflectometry-analysis" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="specular-reflectometry">
-<h2>Specular Reflectometry<a class="headerlink" href="#specular-reflectometry" title="Permalink to this headline">¶</a></h2>
+<h2>Specular reflectometry<a class="headerlink" href="#specular-reflectometry" title="Permalink to this headline">¶</a></h2>
 <p>In specular neutron reflectometry, we understand that <span class="math notranslate nohighlight">\(q_x = 0\)</span> and <span class="math notranslate nohighlight">\(q_y = 0\)</span>, which is to say that the neutrons are scattered <strong>only</strong> in the surface normal (perpendicular to the plane of the surface), denoted <span class="math notranslate nohighlight">\(z\)</span>.
-A result of this, is that by applying the <span class="xref myst">Born approximation</span>, the measured reflectometry can be found from the Fourier transform of the <strong>first derivative</strong> of the scattering length density profile with respect to <span class="math notranslate nohighlight">\(z\)</span> <span id="id1">[<a class="reference internal" href="../intro.html#id2">Siv11</a>]</span>.</p>
+A result of this, is that by applying the <a class="reference external" href="https://en.wikipedia.org/wiki/Born_approximation">Born approximation</a>, the measured reflectometry can be found from the Fourier transform of the <strong>first derivative</strong> of the scattering length density profile with respect to <span class="math notranslate nohighlight">\(z\)</span> <span id="id1">[<a class="reference internal" href="../intro.html#id2">Siv11</a>]</span>.
+The sensitivity to the first derivative indicates the importance of the charge of the scattering length density profile.</p>
+<div class="figure align-center" id="fourier-relationship">
+<a class="reference internal image-reference" href="../_images/fourier.png"><img alt="../_images/fourier.png" src="../_images/fourier.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">The relationship between the scattering length density and the reflectometry profiles, interacting by a Fourier transform.</span><a class="headerlink" href="#fourier-relationship" title="Permalink to this image">¶</a></p>
+</div>
 <p>This means that the reflectometry profile, <span class="math notranslate nohighlight">\(R(q)\)</span>, can be found under the Born approximation as follows,</p>
 <div class="math notranslate nohighlight">
 \[
-R(q) = \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \frac{\mathrm{d}\beta}{\mathrm{d}z} \mathrm{exp}(\mathbf{i}zq) \;\mathrm{d}z \bigg| ^2,
+R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \frac{\mathrm{d}\beta}{\mathrm{d}z} \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2,
 \]</div>
 <p>where, <span class="math notranslate nohighlight">\(\beta(z)\)</span> is the scattering length density profile as a function of <span class="math notranslate nohighlight">\(z\)</span>.</p>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="the-example-of-a-single-interface">
-<h1>The example of a single interface<a class="headerlink" href="#the-example-of-a-single-interface" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-example-of-a-single-interface">
+<h2>The example of a single interface<a class="headerlink" href="#the-example-of-a-single-interface" title="Permalink to this headline">¶</a></h2>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>This example has been borrowed from the <strong>fantastic</strong> book by Dr Devinder Sivia, “Elementary Scattering Theory: For X-ray and Neutron Users” <span id="id2">[<a class="reference internal" href="../intro.html#id2">Siv11</a>]</span>.</p>
 </div>
 <p>In order to show the Fourier transform in action, we will first consider the simple example of the interface bewteen air and a flat piece of silicon.
-Let’s first visualise the scattering length density profile of this interface.</p>
+Let’s first visualise the scattering length density, <span class="math notranslate nohighlight">\(\beta\)</span>, profile of this interface.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -284,7 +291,8 @@ Let’s first visualise the scattering length density profile of this interface.
 </div>
 </div>
 <p>The functional description of this interface is a <a class="reference external" href="https://en.wikipedia.org/wiki/Heaviside_step_function">Heaviside function</a>.
-The first derivative of this is a scaled-<a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_delta_function">delta function</a>, where the scaling is the change observed in the Heaviside function.</p>
+The first derivative of this is a scaled-<a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_delta_function">delta function</a>, where the scaling is the change observed in the Heaviside function.
+This first derivative is shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">rho</span><span class="p">))</span>
@@ -303,7 +311,136 @@ The first derivative of this is a scaled-<a class="reference external" href="htt
 \[
 \mathrm{SLD'}(z) = \beta_{\mathrm{Si}} \delta(z),
 \]</div>
-<p>where, <span class="math notranslate nohighlight">\(\beta_{\mathrm{Si}}\)</span> is the scattering length density of Silicon (<span class="math notranslate nohighlight">\(2.871\times 10^{-6}\)</span> Å<sup>-2</sup>)</p>
+<p>where, <span class="math notranslate nohighlight">\(\beta_{\mathrm{Si}}\)</span> is the scattering length density of silicon (<span class="math notranslate nohighlight">\(2.871\times 10^{-6}\)</span> Å<sup>-2</sup>).
+We can then rewrite the equaion above as,</p>
+<div class="math notranslate nohighlight">
+\[
+R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \beta_{\mathrm{Si}}\delta(z) \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 = \frac{16\pi^2}{q^4} \bigg| \;\beta_{\mathrm{Si}} \mathrm{exp}(0) \;\bigg| ^2 = \frac{16\pi^2\beta_{\mathrm{Si}}^2}{q^4}.
+\]</div>
+<p>We can plot this as a function of <span class="math notranslate nohighlight">\(q\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="mf">2.871e-6</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">q</span> <span class="o">**</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;q (Å$^{-1}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;R(q)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fourier_transforms_for_reflectometry_analysis_5_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_5_0.png" />
+</div>
+</div>
+<p>The blue line in the figure above shows the reflectometry profile found using the Born approximation for a single silicon-air interface.
+After another example, we will investigate the meaning of the black horizontal line.</p>
+</div>
+<div class="section" id="an-oxide-layer">
+<h2>An oxide layer<a class="headerlink" href="#an-oxide-layer" title="Permalink to this headline">¶</a></h2>
+<p>Let’s look again at a smooth sample of silicon, however this time, a 20 Å layer of silicon dioxide has formed on top of it.
+The scattering lenght density profile for this system is shown below, where <span class="math notranslate nohighlight">\(\beta_{\mathrm{Si}} = 2.871\times 10^{-6}\)</span> Å<sup>-2</sup> and <span class="math notranslate nohighlight">\(\beta_{\mathrm{SiO_2}} = 4.186\times 10^{-6}\)</span> Å<sup>-2</sup>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">rho</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">z</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">z</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">))]</span> <span class="o">=</span> <span class="mf">4.186e-6</span>
+<span class="n">rho</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">z</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">2.871e-6</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">rho</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$z$ (Å)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\beta(z)$ (Å$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fourier_transforms_for_reflectometry_analysis_7_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_7_0.png" />
+</div>
+</div>
+<p>Again, we can find the derivative of this scattering length density profile and plot this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">rho</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$z$ (Å)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{d}</span><span class="s1">\beta(z)/\mathrm</span><span class="si">{d}</span><span class="s1">z$ (Å$^{-3}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fourier_transforms_for_reflectometry_analysis_9_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_9_0.png" />
+</div>
+</div>
+<p>Then, to calculate the Born approximated reflected intensity, we use the Fourier transform and scale by <span class="math notranslate nohighlight">\(16 \pi^2 / q ^4\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+    <span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">z</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">q</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">f</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">q</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;q (Å$^{-1}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;R(q)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fourier_transforms_for_reflectometry_analysis_11_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_11_0.png" />
+</div>
+</div>
+<p>Again the blue line shows the reflectometry profile.
+The black line (as above) shows where <span class="math notranslate nohighlight">\(R(q) = 1\)</span>, indicating that, using this approach, as <span class="math notranslate nohighlight">\(q\)</span> tends towards <span class="math notranslate nohighlight">\(0\)</span> the number of reflected nuetrons becomes greater than the number of neutrons on incident on the sample.
+This <strong>unphysical result</strong> is due, in part, to the utilisation of the Born approximation (this is discussed in detail on pg. 104 of “Elementary Scattering Theory: For X-ray and Neutron Users” <span id="id3">[<a class="reference internal" href="../intro.html#id2">Siv11</a>]</span>.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Reflected intensity is <strong>explicitly</strong> calculated as the number of reflected neutrons divided by the number of incident neutrons as a function of <span class="math notranslate nohighlight">\(q\)</span>.</p>
+</div>
+</div>
+<div class="section" id="using-the-born-approximation">
+<h2>Using the Born approximation<a class="headerlink" href="#using-the-born-approximation" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the unphysical intensities than can be produced from a Born approximation model, the <strong>phase problem</strong> is still present in this methodology.
+The <a class="reference external" href="https://en.wikipedia.org/wiki/Phase_problem">phase problem</a> is the loss of the radiation phase on measurement.
+This means that, as we will show below, although the thickness information is available from an inverse Fourier transform of measured data.
+A full analysis is not possible without the use of some phase retrival methodology <span id="id4">[<a class="reference internal" href="../intro.html#id3">MBD+98</a>]</span>.</p>
+<p>These issues do not render the Born approximation useless in reflectometry analysis.
+Instead, it can be used as a quick tool to estimate the thickness of some layered material from a reflectometry profile.
+We can perform an inverse Fourier transform as follows,</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{ACF}(z) = \frac{1}{16\pi^2}\int^{\infty}_{-\infty} q^4 R(q) \exp(\mathit{i}zq) \;\mathrm{d}q, 
+\]</div>
+<p>to obtain the <strong>autocorrelation function</strong> (ACF) from our data.
+The ACF can be thought of as a noisy version of our first derivative of the scattering length density profile.
+The noise is due to the limited <span class="math notranslate nohighlight">\(q\)</span>-range and resolution from our measurement, below we show the effect of different values of <span class="math notranslate nohighlight">\(q_{\mathrm{max}}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+        <span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">z</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">q2</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span> <span class="o">/</span> <span class="p">(</span><span class="n">q2</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">acf</span> <span class="o">=</span> <span class="p">(</span><span class="n">q</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+    <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">q</span> <span class="o">*</span> <span class="n">z</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">16</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">acf2</span> <span class="o">=</span> <span class="p">(</span><span class="n">q2</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">r2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+    <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">q2</span> <span class="o">*</span> <span class="n">z</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">16</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">acf</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$q_{\mathrm</span><span class="si">{max}</span><span class="s1">} = 0.2$ Å&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">acf2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$q_{\mathrm</span><span class="si">{max}</span><span class="s1">} = 1.0$ Å&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$z$ (Å)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;|ACF($z$)|&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fourier_transforms_for_reflectometry_analysis_13_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_13_0.png" />
+</div>
+</div>
+<p>Note, that the large peaks are at <span class="math notranslate nohighlight">\(0\)</span> Å and <span class="math notranslate nohighlight">\(200\)</span> Å, indicating that the structure in our data is in the region of <span class="math notranslate nohighlight">\(200\)</span> Å in thickness, which matches the layer that was used to produce this data.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -340,7 +477,7 @@ The first derivative of this is a scaled-<a class="reference external" href="htt
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">An Introduction to Fourier Transforms</p>
+                <p class="prevnext-title">An introduction to Fourier transforms</p>
             </div>
         </a>
     </div>
