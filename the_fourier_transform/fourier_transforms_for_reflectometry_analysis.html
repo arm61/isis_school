@@ -258,8 +258,52 @@ R(q) = \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \frac{\mathrm{
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="the-example-of-a-single-interface">
 <h1>The example of a single interface<a class="headerlink" href="#the-example-of-a-single-interface" title="Permalink to this headline">¶</a></h1>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>This example has been borrowed from the <strong>fantastic</strong> book by Dr Devinder Sivia, “Elementary Scattering Theory: For X-ray and Neutron Users” <span id="id2">[<a class="reference internal" href="../intro.html#id2">Siv11</a>]</span>.</p>
+</div>
 <p>In order to show the Fourier transform in action, we will first consider the simple example of the interface bewteen air and a flat piece of silicon.
-This example has been borrowed from the <strong>fantastic</strong> bok by Dr Devinder Sivia, “Elementary Scattering Theory: For X-ray and Neutron Users” <span id="id2">[<a class="reference internal" href="../intro.html#id2">Siv11</a>]</span>.</p>
+Let’s first visualise the scattering length density profile of this interface.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">rho</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">z</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">2.871e-6</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">rho</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$z$ (Å)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\beta(z)$ (Å$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fourier_transforms_for_reflectometry_analysis_1_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_1_0.png" />
+</div>
+</div>
+<p>The functional description of this interface is a <a class="reference external" href="https://en.wikipedia.org/wiki/Heaviside_step_function">Heaviside function</a>.
+The first derivative of this is a scaled-<a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_delta_function">delta function</a>, where the scaling is the change observed in the Heaviside function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">rho</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$z$ (Å)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{d}</span><span class="s1">\beta(z)/\mathrm</span><span class="si">{d}</span><span class="s1">z$ (Å$^{-3}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fourier_transforms_for_reflectometry_analysis_3_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_3_0.png" />
+</div>
+</div>
+<p>The scaled-delta function can be written as,</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{SLD'}(z) = \beta_{\mathrm{Si}} \delta(z),
+\]</div>
+<p>where, <span class="math notranslate nohighlight">\(\beta_{\mathrm{Si}}\)</span> is the scattering length density of Silicon (<span class="math notranslate nohighlight">\(2.871\times 10^{-6}\)</span> Å<sup>-2</sup>)</p>
 </div>
 
     <script type="text/x-thebe-config">
