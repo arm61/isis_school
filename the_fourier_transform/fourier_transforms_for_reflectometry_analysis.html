@@ -366,10 +366,7 @@ Let’s first visualise the scattering length density, <span class="math notrans
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
-</pre></div>
-</div>
-<img alt="../_images/fourier_transforms_for_reflectometry_analysis_1_1.png" src="../_images/fourier_transforms_for_reflectometry_analysis_1_1.png" />
+<img alt="../_images/fourier_transforms_for_reflectometry_analysis_1_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_1_0.png" />
 </div>
 </div>
 <p>The functional description of this interface is a <a class="reference external" href="https://en.wikipedia.org/wiki/Heaviside_step_function">Heaviside function</a>.
@@ -454,13 +451,13 @@ The scattering lenght density profile for this system is shown below, where <spa
 <img alt="../_images/fourier_transforms_for_reflectometry_analysis_9_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_9_0.png" />
 </div>
 </div>
-<p>Then, to calculate the Born approximated reflected intensity, we use the Fourier transform and scale by <span class="math notranslate nohighlight">\(16 \pi^2 / q ^4\)</span>.</p>
+<p>Then, to calculate the Born approximated reflected intensity, we use the square magnitude of the Fourier transform and scale by <span class="math notranslate nohighlight">\(16 \pi^2 / q ^4\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
 <span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
     <span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">z</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">q</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">r</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">f</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">q</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">q</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;q (Å$^{-1}$)&#39;</span><span class="p">)</span>
@@ -485,9 +482,13 @@ This <strong>unphysical result</strong> is due, in part, to the utilisation of t
 <div class="section" id="using-the-born-approximation">
 <h2>Using the Born approximation<a class="headerlink" href="#using-the-born-approximation" title="Permalink to this headline">¶</a></h2>
 <p>In addition to the unphysical intensities than can be produced from a Born approximation model, the <strong>phase problem</strong> is still present in this methodology.
-The <a class="reference external" href="https://en.wikipedia.org/wiki/Phase_problem">phase problem</a> is the loss of the radiation phase on measurement.
+The <a class="reference external" href="https://en.wikipedia.org/wiki/Phase_problem">phase problem</a> is the loss of the radiation phase on physical measurement.
 This means that, as we will show below, although the thickness information is available from an inverse Fourier transform of measured data.
 A full analysis is not possible without the use of some phase retrival methodology <span id="id4">[<a class="reference internal" href="../intro.html#id3">MBD+98</a>]</span>.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>If you have studied crystallography, this is the same <strong>phase problem</strong> you should be familiar with.</p>
+</div>
 <p>These issues do not render the Born approximation useless in reflectometry analysis.
 Instead, it can be used as a quick tool to estimate the thickness of some layered material from a reflectometry profile.
 We can perform an inverse Fourier transform as follows,</p>
