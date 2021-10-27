@@ -7,6 +7,8 @@ The aim of this course, and the companion lecture, are to give an introduction t
 - reparameterisation of these models to include chemical and physical insight; and 
 - the process and problems associated with fitting in a model-dependent analysis procedure. 
 
+The integration with JupyterHub is powered by the [PaNOSC project](https://www.panosc.eu). 
+
 This course was originally developed by [Andrew McCluskey](mailto:andrew.mccluskey@ess.eu) from the European Spallation Source for the [ISIS Virtual Reflectometry Training Course](https://indico.stfc.ac.uk/event/355/). 
 
 ```{note}
