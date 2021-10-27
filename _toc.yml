@@ -4,7 +4,27 @@
 format: jb-book
 root: intro
 parts:
-- caption: The Fourier Transform
+- caption: The Fourier transform
   chapters:
   - file: the_fourier_transform/an_introduction_to_fourier_transforms
   - file: the_fourier_transform/fourier_transforms_for_reflectometry_analysis
+- caption: Model-dependent analysis
+  chapters:
+  - file: model_dependent_analysis/what_is_model_dependent_analysis
+- caption: Reflectometry slab models
+  chapters:
+  - file: reflectometry_slab_models/the_slab_model
+  - file: reflectometry_slab_models/how_we_calculate_the_reflectivity_of_a_slab_model
+  - file: reflectometry_slab_models/roughness_and_microslicing
+- caption: Model reparameterisation
+  chapters:
+  - file: model_reparameterisation/a_case_for_model_reparameterisation
+  - file: model_reparameterisation/niti_multilayer_example
+  - file: model_reparameterisation/phospholipid_monolayer_example
+- caption: Fitting processes and problems
+  chapters:
+  - file: fitting_processes_and_problems/what_is_the_likelihood
+  - file: fitting_processes_and_problems/how_do_we_maximise_the_likelihood
+  - file: fitting_processes_and_problems/how_to_leverage_our_prior_knowledge
+  
+
