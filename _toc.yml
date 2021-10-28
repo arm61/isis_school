@@ -14,8 +14,8 @@ parts:
 - caption: Reflectometry slab models
   chapters:
   - file: reflectometry_slab_models/the_slab_model
-  - file: reflectometry_slab_models/roughness_and_microslicing
   - file: reflectometry_slab_models/how_we_calculate_the_reflectivity_of_a_slab_model
+  - file: reflectometry_slab_models/roughness_and_microslicing
 - caption: Model reparameterisation
   chapters:
   - file: model_reparameterisation/a_case_for_model_reparameterisation
