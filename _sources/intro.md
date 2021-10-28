@@ -7,9 +7,12 @@ The aim of this course, and the companion lecture, are to give an introduction t
 - **reparameterisation** of these models to include chemical and physical insight; and 
 - the process and problems associated with **fitting** in a model-dependent analysis procedure. 
 
+It is assumed that this reader has been introduced to the technique of neutron reflectometry, such as what this technique can be used to study and the data collection methodology.
+
 The integration with JupyterHub is powered by the [PaNOSC project](https://www.panosc.eu). 
 
-This course was originally developed by [Andrew McCluskey](mailto:andrew.mccluskey@ess.eu) from the European Spallation Source for the [ISIS Virtual Reflectometry Training Course](https://indico.stfc.ac.uk/event/355/). 
+This course was originally developed by [Andrew McCluskey](mailto:andrew.mccluskey@ess.eu) from the [European Spallation Source](https://europeanspallationsource.se/) for the [ISIS Virtual Reflectometry Training Course](https://indico.stfc.ac.uk/event/355/). 
+If you have any questions about this course, please get in touch.
 
 ```{note}
 In this course, we make use of the Python programming language heavily to show mathematics and plot figures. 

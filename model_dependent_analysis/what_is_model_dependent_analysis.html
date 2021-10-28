@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -134,13 +136,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../reflectometry_slab_models/how_we_calculate_the_reflectivity_of_a_slab_model.html">
-   How we calculate the reflectivity of a slab model
+  <a class="reference internal" href="../reflectometry_slab_models/roughness_and_microslicing.html">
+   Roughness and microslicing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../reflectometry_slab_models/roughness_and_microslicing.html">
-   Roughness and microslicing
+  <a class="reference internal" href="../reflectometry_slab_models/how_we_calculate_the_reflectivity_of_a_slab_model.html">
+   How we calculate the reflectivity of a slab model
   </a>
  </li>
 </ul>
@@ -228,9 +230,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/model_dependent_analysis/what_is_model_dependent_analysis.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/model_dependent_analysis/what_is_model_dependent_analysis.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -264,23 +266,6 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/arm61/isis_school/master?urlpath=tree/docs/model_dependent_analysis/what_is_model_dependent_analysis.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
@@ -296,9 +281,40 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="what-is-model-dependent-analysis">
 <h1>What is model-dependent analysis?<a class="headerlink" href="#what-is-model-dependent-analysis" title="Permalink to this headline">¶</a></h1>
+<p>The previous section on <a class="reference internal" href="../the_fourier_transform/fourier_transforms_for_reflectometry_analysis.html"><span class="doc">Fourier transforms for reflectometry analysis</span></a> introduced a <strong>model-independent approach</strong> to reflectometry analysis.
+However, as was noted in this section, this approach does not offer a complete understanding of the system we are investigating.
+Due to the limited <span class="math notranslate nohighlight">\(q\)</span>-range that we can probe experimentally, the limited <span class="math notranslate nohighlight">\(q\)</span>-resolution, as well as the ever present phase problem.
+A more common methodology for reflectometry analysis takes a model-dependent approach <span id="id1">[<a class="reference internal" href="../intro.html#id4">LR99</a>]</span>.</p>
+<p>Model-dependent is an analytical tool used to tackle a broad range of problems in the physical sciences.
+It is possible that you have already encounter model-dependent analysis in your career, without really considering what it is.
+If you have “fit” data to some analytical model, like an equation, then you have applied <strong>model-dependent analysis</strong>.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Some examples of model-dependent analysis that might be familiar include modelling <strong>enzyme kinetics</strong> with the Michaelis–Menten equation or finding the <strong>force constant</strong> for a diatomic molecule from the vibrational spectra.</p>
+</div>
+<p>The logical process underlying model-dependent analysis is rather simple, we need three things:</p>
+<ul class="simple">
+<li><p>a way to <strong>simulate</strong> our experimental data;</p></li>
+<li><p>some experimental data to <strong>compare</strong> with; and</p></li>
+<li><p>a <strong>figure of merit</strong> to compare our simulation to our experiment.</p></li>
+</ul>
+<p>The word <strong>simulation</strong> above is being used broadly above, but in the context of neutron reflectometry we are interested calculating the reflectivity that some model system would produce.
+In this course, we will not cover how to get the experimental data, but we will cover in detail how to simulate our data and how we compare it with the experimental data.
+Additionally, we will look at how we can <strong>improve</strong> our model and algorithms that are popular in reflectometry analysis to do this.</p>
+<p>A general workflow for model-dependent analysis is shown in <a class="reference internal" href="#flow-diagram"><span class="std std-numref">Fig. 2</span></a>.
+Firstly, we propose some model that we believe can accurate describe the system that we are studying.
+Then, we use some <strong>functional construct</strong> to calculate what the experimental data from such a system would look like.
+We compare this calculated, model data with our measured, experimental data and then <strong>change our model</strong> such as to improve the agreement between the two.</p>
 <div class="figure align-center" id="flow-diagram">
 <a class="reference internal image-reference" href="../_images/flow.png"><img alt="../_images/flow.png" src="../_images/flow.png" style="height: 200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">The logical flow of model-dependent analysis, showing the improvement of the model based on the agreement with the data.</span><a class="headerlink" href="#flow-diagram" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is important to be aware, that the process of proposing a model, and therefore the entire model-dependent analysis methodology, leads to an <strong>inherent bias</strong> in the modelling process.
+By defining that the data must be represented by some model there is a clear assumption being made.
+Typically this is a <strong>fair assumption</strong> to make, as we have an understanding of the synthesis or preparation of our sample that offers insight and expectations into the resulting structure.
+However, it is extremely important that we ensure that the known physics and chemistry in our system is represented in our model, where possible.</p>
 </div>
 </div>
 
