@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -286,6 +288,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-algorithm">
+   Model algorithm
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -296,6 +311,210 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="how-we-calculate-the-reflectivity-of-a-slab-model">
 <h1>How we calculate the reflectivity of a slab model<a class="headerlink" href="#how-we-calculate-the-reflectivity-of-a-slab-model" title="Permalink to this headline">¶</a></h1>
+<p>The slab model models the propagation of the neutron wave through a series of layers using the Abelès matrix formalism for stratified media <span id="id1">[<a class="reference internal" href="../intro.html#id5">Abeles48</a>, <a class="reference internal" href="../intro.html#id6">Par54</a>]</span>.
+Here, we will look closely at the algorithm used in this formalism in order to calculate the model reflectometry data.</p>
+<p>We will implement this in Python as we go, as a series of functions that we can bring together at the end.
+This implementation is taken from the <code class="docutils literal notranslate"><span class="pre">refnx</span></code> package <span id="id2">[<a class="reference internal" href="../intro.html#id7">NP19</a>]</span>, and is reproduced under the BSD-3 License.
+Most reflectometry analysis packages implement a similar algorithm.
+First we will import the necessary Python packages.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="model-algorithm">
+<h2>Model algorithm<a class="headerlink" href="#model-algorithm" title="Permalink to this headline">¶</a></h2>
+<p>This approach considers each <span class="math notranslate nohighlight">\(q\)</span>-value individually and constructs a series of matrices do describe each layer, <span class="math notranslate nohighlight">\(n\)</span>.
+The wavevector normal to the surface, <span class="math notranslate nohighlight">\(k(n)\)</span>, in each layer is found,</p>
+<div class="math notranslate nohighlight">
+\[ k_n(q) = \sqrt{k_0(q)^2 - 4\pi(\beta_n - \beta_0)},\]</div>
+<p>where, <span class="math notranslate nohighlight">\(k_0(q) = 0.5q\)</span>, and <span class="math notranslate nohighlight">\(\beta_n\)</span> and <span class="math notranslate nohighlight">\(\beta_0\)</span> are the scattering length densities in layer <span class="math notranslate nohighlight">\(n\)</span> and the superphase, layer <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">normal_wavevectors</span><span class="p">(</span><span class="n">q</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">beta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :param q: array of q-wavevectors</span>
+<span class="sd">    :param beta: array of scattering length densities</span>
+<span class="sd">    :return: wavevectors normal to surface</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">k0</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">q</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> 
+    <span class="n">kn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">k0</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">beta</span> <span class="o">-</span> <span class="n">beta</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">kn</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <span class="math notranslate nohighlight">\(k_n(q)\)</span> for each interface between two layers, a Frensel reflectance, <span class="math notranslate nohighlight">\(r_{n, n+1}(q)\)</span>, can be determined as,</p>
+<div class="math notranslate nohighlight">
+\[r_{n, n+1}(q) = \frac{k_n(q) - k_{n+1}(q)}{k_n(q) + k_{n+1}(q)}. \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fresnel_reflectance</span><span class="p">(</span><span class="n">kn</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :param kn: wavevectors normal to surface</span>
+<span class="sd">    :return: fresnel reflectance between layers</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">kn</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">kn</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="p">(</span><span class="n">kn</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">kn</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Additionally, the phase factor, <span class="math notranslate nohighlight">\(\phi_n(q)\)</span>, can be found as,</p>
+<div class="math notranslate nohighlight">
+\[ \phi_n(q) = \mathit{i} k_n(q) d_n, \]</div>
+<div class="math notranslate nohighlight">
+\[ \phi_0(q) = 0. \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">phase_factor</span><span class="p">(</span><span class="n">kn</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :param kn: wavevectors normal to surface</span>
+<span class="sd">    :param d: layer thicknesses</span>
+<span class="sd">    :return: phase factor</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">phi_t</span> <span class="o">=</span> <span class="n">kn</span> <span class="o">*</span> <span class="n">d</span>
+    <span class="n">phi_t</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">kn</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">phi_t</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The Fresnel reflectance and phase factor can be brought together to give a characteristic matrix for the interface between each layer, <span class="math notranslate nohighlight">\(M_{n, n+1}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}M_{n, n+1}(q) = 
+\begin{bmatrix} 
+\exp \phi_n(q) &amp; r_{n, n+1}\exp -\phi_n(q) \\
+r_{n, n+1}\exp \phi_n(q) &amp; \exp -\phi_n(q) 
+\end{bmatrix}.
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">characteristic_matrices</span><span class="p">(</span><span class="n">r</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">phi</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :param r: Fresnel reflectances</span>
+<span class="sd">    :param phi: phase factors</span>
+<span class="sd">    :returns: characteristic matrices</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">*</span><span class="n">r</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+    <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phi</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phi</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">M</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The resultant matrix for each <span class="math notranslate nohighlight">\(q\)</span>-vector, <span class="math notranslate nohighlight">\(B(q)\)</span>, can then be found from the product sum of all the characteristic matrices,</p>
+<div class="math notranslate nohighlight">
+\[ B(q) = \prod^{n_{\mathrm{max}}-1}_{n=0} M_{n, n+1}(q). \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">resultant_matrix</span><span class="p">(</span><span class="n">M</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :param M: characteristic matrices</span>
+<span class="sd">    :return: resultant matrix</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">M</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">p0</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span>
+        <span class="n">p1</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span>
+        <span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">p0</span>
+        <span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">p1</span>
+
+        <span class="n">p0</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span>
+        <span class="n">p1</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span>
+        <span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">p0</span>
+        <span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">p1</span>
+    <span class="k">return</span> <span class="n">B</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This product sum describes the reflectance and transmittance propagated through all of the interfaces.
+The overall reflectance and reflectivity is then calculated as,</p>
+<div class="math notranslate nohighlight">
+\[ r(q) = \frac{B_{0, 1}(q)}{B_{0, 0}(q)} \]</div>
+<div class="math notranslate nohighlight">
+\[ R(q) = r(q) \bar{r}(q),\]</div>
+<p>where, <span class="math notranslate nohighlight">\(\bar{r}(q)\)</span> is the complex conjugate of <span class="math notranslate nohighlight">\(r(q)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reflectivity</span><span class="p">(</span><span class="n">B</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :param B: resultant matrix</span>
+<span class="sd">    :return: reflectivity</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is all brought together in the function below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">abeles</span><span class="p">(</span><span class="n">q</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">beta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :param q: array of q-wavevectors</span>
+<span class="sd">    :param beta: array of scattering length densities</span>
+<span class="sd">    :param d: layer thicknesses</span>
+<span class="sd">    :returns: calculated reflectivity </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">kn</span> <span class="o">=</span> <span class="n">normal_wavevectors</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">phase_factor</span><span class="p">(</span><span class="n">kn</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">fresnel_reflectance</span><span class="p">(</span><span class="n">kn</span><span class="p">)</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">characteristic_matrices</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">resultant_matrix</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">reflectivity</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, we can compare the result from the application of the Abelès matrix formalism for stratified media to that from the Fourier transform shown previously.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Abeles method</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mf">4.186e-6</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mf">2.871e-6</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">])</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">r_abeles</span> <span class="o">=</span> <span class="n">abeles</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+
+<span class="c1"># Fourier transform</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">rho</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">z</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">z</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">))]</span> <span class="o">=</span> <span class="mf">4.186e-6</span>
+<span class="n">rho</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">z</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">2.871e-6</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+    <span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">z</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">q</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">r_fourier</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">q</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The results are plotted below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r_abeles</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Abelès&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r_fourier</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fourier&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;q (Å$^{-1}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;R(q)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/how_we_calculate_the_reflectivity_of_a_slab_model_19_0.png" src="../_images/how_we_calculate_the_reflectivity_of_a_slab_model_19_0.png" />
+</div>
+</div>
+<p>The deviation at low <span class="math notranslate nohighlight">\(q\)</span>-values is much clearer now, when comparing with the Abelès approach, which does not rely on the Born approximation.
+Instead, this approach makes use of the refraction of the neutron waves at a series of interfaces, based on the scattering length density of the materials.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
