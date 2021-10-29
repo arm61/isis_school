@@ -442,10 +442,6 @@ The roughness between the nickel and air is increased from <span class="math not
 <img alt="../_images/roughness_and_microslicing_6_0.png" src="../_images/roughness_and_microslicing_6_0.png" />
 </div>
 </div>
-<p>The red rectangle in the left hand plot identifies the region that is shown in the right hand plot.
-From these figures, it is clear that the roughness between the nickel and air is leaking through to the nickel-titanium interface.
-This can lead to an unphysical interpretation of our system, if we interograte the scattering length density profile.
-Additionally, given that the roughness parameter only influences the Fresnel reflectance between two interfaces, this “leaking” through it <strong>not</strong> reflected in the resulting calculated data.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
@@ -453,6 +449,10 @@ Additionally, given that the roughness parameter only influences the Fresnel ref
 <p>A common rule of thumb for using Nevot-Croce is that the roughness on an interface should be no more then <span class="math notranslate nohighlight">\(20\)</span> % of the thickness of the shortest slab.</p>
 </div>
 </div>
+<p>The red rectangle in the left hand plot identifies the region that is shown in the right hand plot.
+From these figures, it is clear that the roughness between the nickel and air is leaking through to the nickel-titanium interface.
+This can lead to an unphysical interpretation of our system, if we interograte the scattering length density profile.
+Additionally, given that the roughness parameter only influences the Fresnel reflectance between two interfaces, this “leaking” through it <strong>not</strong> reflected in the resulting calculated data.</p>
 </div>
 <div class="section" id="microslicing">
 <h2>Microslicing<a class="headerlink" href="#microslicing" title="Permalink to this headline">¶</a></h2>
@@ -460,6 +460,13 @@ Additionally, given that the roughness parameter only influences the Fresnel ref
 Therefore, it is important that there is a methodology to work around this problem.
 This method is <strong>microslicing</strong>, where the scattering length density profile is described as a series of very thin layers with no roughness between them.
 Consider the plot shown below, which shows the same interface as before, however this time comparing the Nevot-Croce approach and microslicing.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The microslicing code can be found in the <a class="reference external" href="https://github.com/arm61/isis_school/blob/main/reflectometry_slab_models/helper.py"><code class="docutils literal notranslate"><span class="pre">helper.py</span></code></a> module.</p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mf">9.4245e-06</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.9493e-06</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">])</span>
@@ -493,7 +500,7 @@ Consider the plot shown below, which shows the same interface as before, however
 </div>
 <p>Notice that now the system is a series of layers with a thicknes of <span class="math notranslate nohighlight">\(0.5\)</span> Å each.
 This means that by applying the Abelès matrix formalism to this profile, and ignoring any roughness, the reflectivity will be that for the (admittedly unphysical) system where the roughness <strong>does</strong> leak through.
-Below, we compare the two reflectometry profiles from the Nevot-Croce large roughness and the microsliced data, where we can see a clear difference.</p>
+Below, we compare the two reflectometry profiles from the Nevot-Croce large roughness and the microsliced data, where we can see a substantial difference.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
