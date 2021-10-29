@@ -1,6 +1,15 @@
 import numpy as np
 from scipy.stats import norm
 
+
+def step_f(z, scale, loc):
+    new_z = z - loc
+    f = np.ones_like(new_z) * 0.5
+    f[new_z <= -scale] = 0
+    f[new_z >= scale] = 1
+    return f
+
+
 def sld_with_roughness(beta: np.ndarray, d: np.ndarray, sigma: np.ndarray):
     """
     Determine the scattering length density profile 
@@ -17,12 +26,6 @@ def sld_with_roughness(beta: np.ndarray, d: np.ndarray, sigma: np.ndarray):
     zed = np.linspace(zstart, zend, 500)
     sld = np.ones_like(zed, dtype=float) * beta[0].real
     delta_rho = beta[1:].real - beta[:-1].real    
-    def step_f(z, scale, loc):
-        new_z = z - loc
-        f = np.ones_like(new_z) * 0.5
-        f[new_z <= -scale] = 0
-        f[new_z >= scale] = 1
-        return f
     erf_f = norm.cdf
     for i in range(beta.shape[0] - 1):
         f = erf_f
@@ -30,6 +33,34 @@ def sld_with_roughness(beta: np.ndarray, d: np.ndarray, sigma: np.ndarray):
             f = step_f
         sld += delta_rho[i] * f(zed, scale=sigma[i], loc=dist[i])
     return zed, sld
+
+def microslicing(beta, d, sigma, slice_size=0.5):
+    """
+    Creates a microslab representation of the Structure.
+    Parameters
+    ----------
+    slice_size : float
+        Thickness of each slab in the micro-slab representation
+    Returns
+    -------
+    micro_slabs : np.ndarray
+        The micro-slab representation of the model. See the
+        `Structure.slabs` method for a description of the array.
+    """
+    dist = np.cumsum(d[:-1])
+    zstart = -5.0 - 8 * sigma[1]
+    zend = 5.0 + dist[-1] + 8 * sigma[-1]
+    nsteps = int((zend - zstart) / slice_size + 1)
+    zed = np.linspace(zstart, zend, num=nsteps)
+    sld = np.ones_like(zed, dtype=float) * beta[0].real
+    delta_rho = beta[1:].real - beta[:-1].real
+    for i in range(len(d) - 1):
+        f = norm.cdf
+        if sigma[i] == 0:
+            f = step_f
+        p = f(zed, scale=sigma[i], loc=dist[i])
+        sld += delta_rho[i] * p
+    return zed + 0.5 * slice_size, sld
 
 
 def normal_wavevectors(q: np.ndarray, beta: np.ndarray) -> np.ndarray:
