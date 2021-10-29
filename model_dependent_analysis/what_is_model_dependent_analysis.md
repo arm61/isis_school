@@ -8,9 +8,11 @@ A more common methodology for reflectometry analysis takes a model-dependent app
 Model-dependent is an analytical tool used to tackle a broad range of problems in the physical sciences. 
 It is possible that you have already encounter model-dependent analysis in your career, without really considering what it is. 
 If you have "fit" data to some analytical model, like an equation, then you have applied **model-dependent analysis**.
-```{margin}
+````{margin}
+```{note}
 Some examples of model-dependent analysis that might be familiar include modelling **enzyme kinetics** with the Michaelis–Menten equation or finding the **force constant** for a diatomic molecule from the vibrational spectra. 
 ```
+````
 
 The logical process underlying model-dependent analysis is rather simple, we need three things:
 - a way to **simulate** our experimental data; 
