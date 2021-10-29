@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -286,6 +288,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interfacial-roughness">
+   Interfacial roughness
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems-with-interfacial-roughness">
+   Problems with interfacial roughness
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#microslicing">
+   Microslicing
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -296,6 +321,161 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="roughness-and-microslicing">
 <h1>Roughness and microslicing<a class="headerlink" href="#roughness-and-microslicing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="interfacial-roughness">
+<h2>Interfacial roughness<a class="headerlink" href="#interfacial-roughness" title="Permalink to this headline">¶</a></h2>
+<p>The slab model that has been discussed has a clear problem, it that it implies perfectly flat interfaces between different materials.
+These cannot exist in real materials, therefore it is necessary to enable <strong>roughness</strong> between the interfaces in our model.
+There are a range of functions that can be used to implement interfacial roughness in slab modelling.
+However, the most common is the use of an error function <span id="id1">[<a class="reference internal" href="../intro.html#id8">NevotC80</a>]</span>, also known as <strong>Nevot-Croce</strong> roughness.</p>
+<p>We can visualise a typical error function roughness below, where we show the silicon dioxide on silicon sample from before with a roughness of <span class="math notranslate nohighlight">\(0\)</span> Å between each layer and with a roughness of <span class="math notranslate nohighlight">\(10\)</span> Å between each layer.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The code used to obtain the scattering length density profile with roughness can be found in the <a class="reference external" href="https://github.com/arm61/isis_school/blob/main/reflectometry_slab_models/helper.py"><code class="docutils literal notranslate"><span class="pre">helper.py</span></code></a> module.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Rectangle</span>
+<span class="kn">from</span> <span class="nn">helper</span> <span class="kn">import</span> <span class="n">sld_with_roughness</span><span class="p">,</span> <span class="n">abeles</span><span class="p">,</span> <span class="n">abeles_with_roughness</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1758</span><span class="o">/</span><span class="mf">3237874360.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Rectangle</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">helper</span> <span class="kn">import</span> <span class="n">sld_with_roughness</span><span class="p">,</span> <span class="n">abeles</span><span class="p">,</span> <span class="n">abeles_with_roughness</span>
+
+<span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">isis_school</span><span class="o">/</span><span class="n">isis_school</span><span class="o">/</span><span class="n">reflectometry_slab_models</span><span class="o">/</span><span class="n">helper</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">sld_with_roughness</span><span class="p">(</span><span class="n">beta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">sigma</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mf">4.186e-6</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mf">2.871e-6</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">])</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">sigma2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">sld_with_roughness</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">sigma</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;0 Å&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">sld_with_roughness</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">sigma2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;10 Å&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$z$ (Å)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\beta(z)$ (Å$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/roughness_and_microslicing_2_0.png" src="../_images/roughness_and_microslicing_2_0.png" />
+</div>
+</div>
+<p>We can see that this roughness creates some smoothing of the interface between the layers.
+It is necessary that we modify the Abelès matrix formalism discussed previously to account for this smoothing.
+This is achieve by adapting the calculation of the Fresnel reflectance,</p>
+<div class="math notranslate nohighlight">
+\[r_{n, n+1}(q) = \frac{k_n(q) - k_{n+1}(q)}{k_n(q) + k_{n+1}(q)} \exp{(-2k_nk_{n+1}\sigma_{n,n+1}^2)},\]</div>
+<p>where, <span class="math notranslate nohighlight">\(\sigma_{n, n+1}^2\)</span> is the roughness width between the interfaces.
+We can use this to observe the effect that this interfacial roughness has on the resulting reflectometry profile, shown below.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Again, the code used to find the reflectivity with roughness (and without) can be found in the <a class="reference external" href="https://github.com/arm61/isis_school/blob/main/reflectometry_slab_models/helper.py"><code class="docutils literal notranslate"><span class="pre">helper.py</span></code></a> module.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mf">4.186e-6</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mf">2.871e-6</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">])</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">abeles</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">r_with_roughness</span> <span class="o">=</span> <span class="n">abeles_with_roughness</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;No roughness&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r_with_roughness</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;10 Å roughness&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;q (Å$^{-1}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;R(q)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/roughness_and_microslicing_4_0.png" src="../_images/roughness_and_microslicing_4_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="problems-with-interfacial-roughness">
+<h2>Problems with interfacial roughness<a class="headerlink" href="#problems-with-interfacial-roughness" title="Permalink to this headline">¶</a></h2>
+<p>This method for considering interfacial roughness between two layers is not perfect, and if used incorrectly can introduce unphysical artifacts into our reflectometry calculation.
+Consider the example shown below, where there is a <span class="math notranslate nohighlight">\(10\)</span> Å layer of nickel on a piece of titanium which is at the interface with air.
+The roughness between the nickel and air is increased from <span class="math notranslate nohighlight">\(3\)</span> Å to <span class="math notranslate nohighlight">\(7\)</span> Å with no roughness between the nickel and titanium.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mf">9.4245e-06</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.9493e-06</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">])</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">sigma3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">sigma5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">sigma7</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">12.8</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">sld_with_roughness</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">sigma3</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;3 Å&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">sld_with_roughness</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">sigma5</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;5 Å&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">sld_with_roughness</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">sigma7</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;7 Å&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$z$ (Å)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\beta(z)$ (Å$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">((</span><span class="mf">8.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">3e-6</span><span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">2e-6</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">sld_with_roughness</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">sigma3</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;3 Å&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">sld_with_roughness</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">sigma5</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;5 Å&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">sld_with_roughness</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">sigma7</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;7 Å&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$z$ (Å)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\beta(z)$ (Å$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">8.5</span><span class="p">,</span> <span class="mf">11.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">3e-6</span><span class="p">,</span> <span class="o">-</span><span class="mf">1e-6</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/roughness_and_microslicing_6_0.png" src="../_images/roughness_and_microslicing_6_0.png" />
+</div>
+</div>
+<p>The red rectangle in the left hand plot identifies the region that is shown in the right hand plot.
+From these figures, it is clear that the roughness between the nickel and air is leaking through to the nickel-titanium interface.
+This can lead to an unphysical interpretation of our system, if we interograte the scattering length density profile.
+Additionally, given that the roughness parameter only influences the Fresnel reflectance between two interfaces, this “leaking” through it <strong>not</strong> reflected in the resulting calculated data.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A common rule of thumb for using Nevot-Croce is that the roughness on an interface should be no more then <span class="math notranslate nohighlight">\(20\)</span> % of the thickness of the shortest slab.</p>
+</div>
+</div>
+</div>
+<div class="section" id="microslicing">
+<h2>Microslicing<a class="headerlink" href="#microslicing" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
