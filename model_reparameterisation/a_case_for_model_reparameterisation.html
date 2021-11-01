@@ -296,6 +296,16 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="a-case-for-model-reparameterisation">
 <h1>A case for model reparameterisation<a class="headerlink" href="#a-case-for-model-reparameterisation" title="Permalink to this headline">¶</a></h1>
+<p>The slab models introduced previously are a useful tool to simulate our reflectometry data.
+However, their parameterisation, in particular the concept of <strong>scattering length density</strong> is rather unintuative compared to how we typically think about our experimental systems.
+Therefore, it may be useful to <strong>reparameterise</strong> our model to translate more commonly used parameters, such as mass density or area-per-molecule, into these scattering length densities.</p>
+<div class="figure align-center" id="lipid">
+<a class="reference internal image-reference" href="../_images/lipid.jpg"><img alt="../_images/lipid.jpg" src="../_images/lipid.jpg" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">An example of a model reparameterisation from the work of John <em>et al.</em> <span id="id1">[<a class="reference internal" href="../intro.html#id9">JPSC21</a>]</span>.</span><a class="headerlink" href="#lipid" title="Permalink to this image">¶</a></p>
+</div>
+<p>In addition to making our model more understandable and allowing description of our system in a language that we are more familiar with, this approach can make physical constraints on our system more straightforward to apply.
+For example, we will be able to actively constrain the density of a given material based on literature values or introduce chemical stoichiometry to our model based on the synthesis process.
+In this section, we will work through a pair of examples of reparameterising or slab model in terms of chemical and physical parameters.</p>
 </div>
 
     <script type="text/x-thebe-config">
