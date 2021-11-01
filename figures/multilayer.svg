@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   sodipodi:docname="multilayer.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="1.3808888"
+     inkscape:cx="427.62314"
+     inkscape:cy="761.46609"
+     inkscape:window-width="2048"
+     inkscape:window-height="1235"
+     inkscape:window-x="0"
+     inkscape:window-y="478"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     showguides="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid908" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <rect
+       x="850"
+       y="610"
+       width="733.40843"
+       height="466.61409"
+       id="rect2326" />
+    <marker
+       style="overflow:visible"
+       id="StopL"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="StopL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8)"
+         style="fill:none;fill-opacity:0.75000000;fill-rule:evenodd;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,5.65 L 0.0,-5.65"
+         id="path1364" />
+    </marker>
+    <marker
+       inkscape:stockid="DistanceStart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="DistanceStart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <g
+         id="g2300">
+        <path
+           id="path2306"
+           d="M 0,0 L 2,0"
+           style="fill:none;stroke:context-fill;stroke-width:1.15;stroke-linecap:square" />
+        <path
+           id="path2302"
+           d="M 0,0 L 13,4 L 9,0 13,-4 L 0,0 z "
+           style="fill:context-stroke;fill-rule:evenodd;stroke:none" />
+        <path
+           id="path2304"
+           d="M 0,-4 L 0,40"
+           style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:square" />
+      </g>
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Sstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Sstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.2) translate(6,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path10953" />
+    </marker>
+    <rect
+       x="328.05082"
+       y="342.61136"
+       width="58.066749"
+       height="49.295337"
+       id="rect11791" />
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Send"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.2) rotate(180) translate(6,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path10956" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow2Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(1.1) rotate(180) translate(1,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="stroke:context-stroke;fill-rule:evenodd;fill:context-stroke;stroke-width:0.62500000;stroke-linejoin:round;"
+         id="path10962" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path10941" />
+    </marker>
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect1638" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="237.6557"
+       height="90.987491"
+       id="rect8404" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="275.66829"
+       height="83.274791"
+       id="rect12473" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="275.66829"
+       height="83.274791"
+       id="rect2895" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect5581" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect1850" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect1121" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect1131" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect1133" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect2105" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect8318" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6056" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6058" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6060" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6062" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6102" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6104" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6106" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6108" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6118" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text11789"
+       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;white-space:pre;shape-inside:url(#rect11791)" />
+    <rect
+       style="fill:#0173b2;fill-opacity:0.5;stroke:#0173b2;stroke-width:0.357864;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect910"
+       width="182.5625"
+       height="15.875012"
+       x="7.9375"
+       y="148.16666"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <rect
+       style="fill:#de8f05;fill-opacity:0.5;stroke:#de8f05;stroke-width:0.316929;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1032"
+       width="182.5625"
+       height="21.16666"
+       x="7.9375"
+       y="164.04164"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.879942;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL);marker-end:url(#StopL)"
+       d="m 198.43751,148.16666 v 15.87502"
+       id="path1748"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.77929;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL);marker-end:url(#StopL)"
+       d="M 198.43748,164.04163 V 185.2083"
+       id="path1750"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,182.21717,37.677277)"
+       id="text1848"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1850);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan6867"><tspan
+           style="font-style:italic"
+           id="tspan6863">d</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan6865">Ni</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text2324"
+       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;white-space:pre;shape-inside:url(#rect2326)" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,182.21717,56.198072)"
+       id="text1119"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1121);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan6873"><tspan
+           style="font-style:italic"
+           id="tspan6869">d</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan6871">Ti</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-7.7537194,37.673143)"
+       id="text1125"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1131);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan6879"><tspan
+           style="font-style:italic"
+           id="tspan6875">β</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan6877">Ni</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-7.7537194,56.193938)"
+       id="text2103"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect2105);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan6885"><tspan
+           style="font-style:italic;-inkscape-font-specification:'sans-serif Italic'"
+           id="tspan6881">β</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan6883">Ti</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.136;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Send)"
+       d="M -3.6666667e-7,190.50001 V 164.04167"
+       id="path8148"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-29.978717,58.843938)"
+       id="text8316"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect8318);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan6889"><tspan
+           style="font-style:italic"
+           id="tspan6887">z</tspan></tspan></text>
+    <rect
+       style="fill:#0173b2;fill-opacity:0.5;stroke:#0173b2;stroke-width:0.357864;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6018"
+       width="182.5625"
+       height="15.875012"
+       x="7.9375"
+       y="185.20836"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <rect
+       style="fill:#de8f05;fill-opacity:0.5;stroke:#de8f05;stroke-width:0.316929;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6020"
+       width="182.5625"
+       height="21.16666"
+       x="7.9375"
+       y="201.08333"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.879942;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL);marker-end:url(#StopL)"
+       d="m 198.43751,185.20835 v 15.87502"
+       id="path6022"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.77929;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL);marker-end:url(#StopL)"
+       d="m 198.43748,201.08332 v 21.16667"
+       id="path6024"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,182.21717,74.718967)"
+       id="text6032"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6056);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan6895"><tspan
+           style="font-style:italic"
+           id="tspan6891">d</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan6893">Ni</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,182.21717,93.239762)"
+       id="text6040"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6058);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan6901"><tspan
+           style="font-style:italic"
+           id="tspan6897">d</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan6899">Ti</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-7.7537194,74.714833)"
+       id="text6048"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6060);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan6907"><tspan
+           style="font-style:italic"
+           id="tspan6903">β</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan6905">Ni</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-7.7537194,93.235628)"
+       id="text6054"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6062);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan6913"><tspan
+           style="font-style:italic;-inkscape-font-specification:'sans-serif Italic'"
+           id="tspan6909">β</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan6911">Ti</tspan></tspan></text>
+    <rect
+       style="fill:#0173b2;fill-opacity:0.5;stroke:#0173b2;stroke-width:0.357864;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6064"
+       width="182.5625"
+       height="15.875012"
+       x="7.9375"
+       y="222.25005"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <rect
+       style="fill:#de8f05;fill-opacity:0.5;stroke:#de8f05;stroke-width:0.316929;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6066"
+       width="182.5625"
+       height="21.16666"
+       x="7.9375"
+       y="238.12502"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.879942;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL);marker-end:url(#StopL)"
+       d="m 198.43751,222.25004 v 15.87502"
+       id="path6068"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.77929;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL);marker-end:url(#StopL)"
+       d="m 198.43748,238.12501 v 21.16667"
+       id="path6070"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,182.21717,111.76066)"
+       id="text6078"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6102);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan6919"><tspan
+           style="font-style:italic"
+           id="tspan6915">d</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan6917">Ni</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,182.21717,130.28145)"
+       id="text6086"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6104);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan6925"><tspan
+           style="font-style:italic"
+           id="tspan6921">d</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan6923">Ti</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-7.7537194,111.75652)"
+       id="text6094"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6106);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan6931"><tspan
+           style="font-style:italic"
+           id="tspan6927">β</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan6929">Ni</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-7.7537194,130.27732)"
+       id="text6100"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6108);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan6937"><tspan
+           style="font-style:italic;-inkscape-font-specification:'sans-serif Italic'"
+           id="tspan6933">β</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan6935">Ti</tspan></tspan></text>
+    <rect
+       style="fill:#029e73;fill-opacity:0.50196081;stroke:#029e73;stroke-width:0.404006;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6110"
+       width="182.5625"
+       height="34.395699"
+       x="7.9375"
+       y="259.29181"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-7.7537194,158.03253)"
+       id="text6116"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6118);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/slab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan6943"><tspan
+           style="font-style:italic;-inkscape-font-specification:'sans-serif Italic'"
+           id="tspan6939">β</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan6941">Si</tspan></tspan></text>
+  </g>
+</svg>
