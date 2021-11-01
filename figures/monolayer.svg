@@ -1,0 +1,1277 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   sodipodi:docname="monolayer.svg"
+   inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/multilayer.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="1.059715"
+     inkscape:cx="534.5777"
+     inkscape:cy="766.71559"
+     inkscape:window-width="2048"
+     inkscape:window-height="1235"
+     inkscape:window-x="0"
+     inkscape:window-y="478"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     showguides="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid908" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <rect
+       x="850"
+       y="610"
+       width="733.40843"
+       height="466.61409"
+       id="rect2326" />
+    <marker
+       style="overflow:visible"
+       id="StopL"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="StopL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8)"
+         style="fill:none;fill-opacity:0.75000000;fill-rule:evenodd;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,5.65 L 0.0,-5.65"
+         id="path1364" />
+    </marker>
+    <marker
+       inkscape:stockid="DistanceStart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="DistanceStart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <g
+         id="g2300">
+        <path
+           id="path2306"
+           d="M 0,0 L 2,0"
+           style="fill:none;stroke:context-fill;stroke-width:1.15;stroke-linecap:square" />
+        <path
+           id="path2302"
+           d="M 0,0 L 13,4 L 9,0 13,-4 L 0,0 z "
+           style="fill:context-stroke;fill-rule:evenodd;stroke:none" />
+        <path
+           id="path2304"
+           d="M 0,-4 L 0,40"
+           style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:square" />
+      </g>
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Sstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Sstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.2) translate(6,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path10953" />
+    </marker>
+    <rect
+       x="328.05082"
+       y="342.61136"
+       width="58.066749"
+       height="49.295337"
+       id="rect11791" />
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Send"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.2) rotate(180) translate(6,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path10956" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow2Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(1.1) rotate(180) translate(1,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="stroke:context-stroke;fill-rule:evenodd;fill:context-stroke;stroke-width:0.62500000;stroke-linejoin:round;"
+         id="path10962" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path10941" />
+    </marker>
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect1638" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="237.6557"
+       height="90.987491"
+       id="rect8404" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="275.66829"
+       height="83.274791"
+       id="rect12473" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="275.66829"
+       height="83.274791"
+       id="rect2895" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect5581" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect1850" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect1121" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect1131" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect1133" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect2105" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect8318" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6056" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6058" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6060" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6062" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6102" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6104" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6106" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6108" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect6118" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect19128" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#029e73;fill-opacity:0.501961;stroke:#029e73;stroke-width:0.424129;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6110"
+       width="201.20195"
+       height="34.395699"
+       x="7.9375"
+       y="206.37509"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text11789"
+       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;white-space:pre;shape-inside:url(#rect11791)" />
+    <rect
+       style="fill:#0173b2;fill-opacity:0.5;stroke:#0173b2;stroke-width:0.592861;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect910"
+       width="200.96474"
+       height="39.579884"
+       x="8.056098"
+       y="145.57466"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <rect
+       style="fill:#de8f05;fill-opacity:0.5;stroke:#de8f05;stroke-width:0.332715;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1032"
+       width="201.20195"
+       height="21.16666"
+       x="7.9375"
+       y="185.20833"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.88;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL);marker-end:url(#StopL)"
+       d="m 217.48751,145.52085 v 39.68751"
+       id="path1748"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.88;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL);marker-end:url(#StopL)"
+       d="m 217.48748,185.20831 v 21.16667"
+       id="path1750"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,201.26717,46.903003)"
+       id="text1848"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1850);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan21688"><tspan
+           style="font-style:italic"
+           id="tspan21684">d</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan21686">tails</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text2324"
+       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;white-space:pre;shape-inside:url(#rect2326)" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,201.26717,77.36474)"
+       id="text1119"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1121);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan21694"><tspan
+           style="font-style:italic"
+           id="tspan21690">d</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan21692">heads</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.136;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Send)"
+       d="M -3.6666667e-7,190.50001 V 164.04167"
+       id="path8148"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-29.978717,58.843938)"
+       id="text8316"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect8318);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan21698"><tspan
+           style="font-style:italic"
+           id="tspan21696">z</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-7.7537194,105.11134)"
+       id="text6054"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6062);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan21704"><tspan
+           style="font-style:italic;-inkscape-font-specification:'sans-serif Italic'"
+           id="tspan21700">β</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan21702">water</tspan></tspan></text>
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15288"
+       cx="12.344123"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15308"
+       cx="21.33996"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15310"
+       cx="30.335791"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15312"
+       cx="39.331627"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15394"
+       cx="48.327457"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15396"
+       cx="57.323296"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15398"
+       cx="66.31913"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15400"
+       cx="75.314957"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15402"
+       cx="84.310791"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15404"
+       cx="93.306625"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15406"
+       cx="102.30244"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15408"
+       cx="111.29826"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15410"
+       cx="120.29408"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15412"
+       cx="129.28992"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15414"
+       cx="138.28574"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15416"
+       cx="147.28159"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15426"
+       cx="156.27745"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15428"
+       cx="165.2733"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15430"
+       cx="174.26912"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;fill-opacity:0.501961;stroke:#de8f05;stroke-width:0.853642;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse15432"
+       cx="183.26497"
+       cy="195.84489"
+       rx="3.9819286"
+       ry="9.9258986"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-7.7537194,77.360606)"
+       id="text2103"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect2105);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan21710"><tspan
+           style="font-style:italic;-inkscape-font-specification:'sans-serif Italic'"
+           id="tspan21706">β</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan21708">heads</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 11.1125,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path15835"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 11.1125,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path15989"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 14.287499,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path15991"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 20.108333,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path15993"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 23.283332,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path15995"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 20.10833,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path15997"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 23.283329,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path15999"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 29.104163,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16001"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 32.279162,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16003"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 29.104163,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16009"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 32.279162,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16011"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 29.104166,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16093"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 38.099999,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16099"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 41.274998,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16101"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 38.099996,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16103"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 41.274995,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16105"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 47.095829,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16107"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 50.270828,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16109"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 47.095829,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16111"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 50.270828,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16113"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 47.095829,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16275"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 56.091662,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16281"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 59.266661,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16283"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 56.091659,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16285"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 59.266658,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820833,-9.92187 5.820833,-9.92187"
+       id="path16287"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 65.087492,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820834,-9.92187 5.820834,-9.92187"
+       id="path16289"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 68.262491,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.61204,-2.58569 5.820817,-9.92187 5.820817,-9.92187"
+       id="path16291"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 65.087492,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820834,-9.92187 5.820834,-9.92187"
+       id="path16293"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 68.262491,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.61204,-2.58569 5.820817,-9.92187 5.820817,-9.92187"
+       id="path16295"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 65.087495,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820833,-9.92188 5.612055,-2.58569 5.820831,-9.92187 5.820831,-9.92187"
+       id="path16297"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 74.083328,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820813,-9.92188 5.61203,-2.58569 5.820807,-9.92187 5.820807,-9.92187"
+       id="path16299"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 77.258327,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612055,-2.5857 5.820832,-9.92188 5.820832,-9.92188 0,0 0.20877,-7.33619 5.820797,-9.92188 5.61203,-2.58569 5.82081,-9.92187 5.82081,-9.92187"
+       id="path16301"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 74.083325,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612054,-2.5857 5.820833,-9.92188 5.820833,-9.92188 0,0 0.208774,-7.33619 5.820816,-9.92188 5.61203,-2.58569 5.820797,-9.92187 5.820797,-9.92187"
+       id="path16303"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 77.258324,185.20833 c 0,0 0.208774,-7.33618 5.820834,-9.92187 5.612058,-2.5857 5.820825,-9.92188 5.820825,-9.92188 0,0 0.20878,-7.33619 5.820807,-9.92188 5.61203,-2.58569 5.82081,-9.92187 5.82081,-9.92187"
+       id="path16305"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 83.079158,185.20833 c 0,0 0.208774,-7.33618 5.820835,-9.92187 5.61202,-2.5857 5.820797,-9.92188 5.820797,-9.92188 0,0 0.20878,-7.33619 5.82081,-9.92188 5.61206,-2.58569 5.82083,-9.92187 5.82083,-9.92187"
+       id="path16307"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 86.254157,185.20833 c 0,0 0.208774,-7.33618 5.820808,-9.92187 5.61203,-2.5857 5.820807,-9.92188 5.820807,-9.92188 0,0 0.20877,-7.33619 5.820828,-9.92188 5.61205,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16309"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 83.079158,185.20833 c 0,0 0.208774,-7.33618 5.820835,-9.92187 5.61202,-2.5857 5.820797,-9.92188 5.820797,-9.92188 0,0 0.20878,-7.33619 5.82081,-9.92188 5.61206,-2.58569 5.82083,-9.92187 5.82083,-9.92187"
+       id="path16311"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 86.254157,185.20833 c 0,0 0.208774,-7.33618 5.820808,-9.92187 5.61203,-2.5857 5.820807,-9.92188 5.820807,-9.92188 0,0 0.20877,-7.33619 5.820828,-9.92188 5.61205,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16313"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 83.079167,185.20833 c 0,0 0.208774,-7.33618 5.820838,-9.92187 5.612038,-2.5857 5.820815,-9.92188 5.820815,-9.92188 0,0 0.20878,-7.33619 5.82081,-9.92188 5.61206,-2.58569 5.82083,-9.92187 5.82083,-9.92187"
+       id="path16475"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 92.074995,185.20833 c 0,0 0.20878,-7.33618 5.820807,-9.92187 5.612048,-2.5857 5.820828,-9.92188 5.820828,-9.92188 0,0 0.20877,-7.33619 5.82084,-9.92188 5.61205,-2.58569 5.82083,-9.92187 5.82083,-9.92187"
+       id="path16481"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 95.249987,185.20833 c 0,0 0.20877,-7.33618 5.820803,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82084,-9.92188 5.61205,-2.58569 5.82083,-9.92187 5.82083,-9.92187"
+       id="path16483"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 92.074995,185.20833 c 0,0 0.20878,-7.33618 5.820807,-9.92187 5.612048,-2.5857 5.820828,-9.92188 5.820828,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16485"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 95.249977,185.20833 c 0,0 0.20878,-7.33618 5.820813,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16487"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 101.07079,185.20833 c 0,0 0.20877,-7.33618 5.82084,-9.92187 5.61205,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20878,-7.33619 5.82084,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16489"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 104.24579,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16491"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 101.07079,185.20833 c 0,0 0.20877,-7.33618 5.82084,-9.92187 5.61205,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20878,-7.33619 5.82084,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16493"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 104.24579,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16495"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 101.07079,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16497"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 110.06663,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16499"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 113.24163,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16501"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 110.06663,185.20833 c 0,0 0.20877,-7.33618 5.82084,-9.92187 5.61205,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20878,-7.33619 5.82084,-9.92188 5.61206,-2.58569 5.82083,-9.92187 5.82083,-9.92187"
+       id="path16503"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 113.24163,185.20833 c 0,0 0.20877,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20878,-7.33619 5.82084,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16505"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 119.06247,185.20833 c 0,0 0.20877,-7.33618 5.82084,-9.92187 5.61205,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20878,-7.33619 5.82084,-9.92188 5.61206,-2.58569 5.82083,-9.92187 5.82083,-9.92187"
+       id="path16507"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 122.23747,185.20833 c 0,0 0.20877,-7.33618 5.82083,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82084,-9.92188 5.61205,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16509"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 119.06247,185.20833 c 0,0 0.20877,-7.33618 5.82084,-9.92187 5.61205,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20878,-7.33619 5.82084,-9.92188 5.61206,-2.58569 5.82083,-9.92187 5.82083,-9.92187"
+       id="path16511"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 122.23747,185.20833 c 0,0 0.20877,-7.33618 5.82083,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82084,-9.92188 5.61205,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16513"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 119.06247,185.20833 c 0,0 0.20877,-7.33618 5.82084,-9.92187 5.61205,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20878,-7.33619 5.82084,-9.92188 5.61206,-2.58569 5.82083,-9.92187 5.82083,-9.92187"
+       id="path16515"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 128.0583,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82084,-9.92188 5.61205,-2.58569 5.82083,-9.92187 5.82083,-9.92187"
+       id="path16517"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 131.23331,185.20833 c 0,0 0.20877,-7.33618 5.82083,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82084,-9.92188 5.61205,-2.58569 5.82083,-9.92187 5.82083,-9.92187"
+       id="path16519"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 128.0583,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20878,-7.33619 5.82084,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16521"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 131.2333,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16523"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 137.05414,185.20833 c 0,0 0.20877,-7.33618 5.82084,-9.92187 5.61205,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20878,-7.33619 5.82084,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16525"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 140.22914,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61204,-2.58569 5.82082,-9.92187 5.82082,-9.92187"
+       id="path16527"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 137.05414,185.20833 c 0,0 0.20877,-7.33618 5.82084,-9.92187 5.61205,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20878,-7.33619 5.82084,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16529"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 140.22914,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61204,-2.58569 5.82082,-9.92187 5.82082,-9.92187"
+       id="path16531"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 137.05414,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16533"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 146.04998,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82081,-9.92188 5.61203,-2.58569 5.82081,-9.92187 5.82081,-9.92187"
+       id="path16535"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 149.22498,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20877,-7.33619 5.82081,-9.92188 5.61203,-2.58569 5.82081,-9.92187 5.82081,-9.92187"
+       id="path16537"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 146.04998,185.20833 c 0,0 0.20877,-7.33618 5.82084,-9.92187 5.61205,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20878,-7.33619 5.82082,-9.92188 5.61203,-2.58569 5.8208,-9.92187 5.8208,-9.92187"
+       id="path16539"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 149.22498,185.20833 c 0,0 0.20877,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82082,-9.92188 5.82082,-9.92188 0,0 0.20878,-7.33619 5.82082,-9.92188 5.61203,-2.58569 5.82081,-9.92187 5.82081,-9.92187"
+       id="path16541"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 155.04582,185.20833 c 0,0 0.20877,-7.33618 5.82083,-9.92187 5.61203,-2.5857 5.82081,-9.92188 5.82081,-9.92188 0,0 0.20878,-7.33619 5.82081,-9.92188 5.61206,-2.58569 5.82083,-9.92187 5.82083,-9.92187"
+       id="path16543"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 158.22082,185.20833 c 0,0 0.20877,-7.33618 5.82081,-9.92187 5.61203,-2.5857 5.82081,-9.92188 5.82081,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61205,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16545"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 155.04582,185.20833 c 0,0 0.20877,-7.33618 5.82083,-9.92187 5.61203,-2.5857 5.82081,-9.92188 5.82081,-9.92188 0,0 0.20878,-7.33619 5.82081,-9.92188 5.61206,-2.58569 5.82083,-9.92187 5.82083,-9.92187"
+       id="path16547"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 158.22082,185.20833 c 0,0 0.20877,-7.33618 5.82081,-9.92187 5.61203,-2.5857 5.82081,-9.92188 5.82081,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61205,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16549"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 164.04166,185.20833 c 0,0 0.20877,-7.33618 5.82084,-9.92187 5.61205,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20878,-7.33619 5.82084,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16715"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 167.21666,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61204,-2.58569 5.82082,-9.92187 5.82082,-9.92187"
+       id="path16717"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 164.04166,185.20833 c 0,0 0.20877,-7.33618 5.82084,-9.92187 5.61205,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20878,-7.33619 5.82084,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16719"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 167.21666,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61204,-2.58569 5.82082,-9.92187 5.82082,-9.92187"
+       id="path16721"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 164.04166,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61206,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16723"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 173.0375,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82084,-9.92188 5.82084,-9.92188 0,0 0.20877,-7.33619 5.82081,-9.92188 5.61203,-2.58569 5.82081,-9.92187 5.82081,-9.92187"
+       id="path16725"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 176.2125,185.20833 c 0,0 0.20878,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20877,-7.33619 5.82081,-9.92188 5.61203,-2.58569 5.82081,-9.92187 5.82081,-9.92187"
+       id="path16727"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 173.0375,185.20833 c 0,0 0.20877,-7.33618 5.82084,-9.92187 5.61205,-2.5857 5.82083,-9.92188 5.82083,-9.92188 0,0 0.20878,-7.33619 5.82082,-9.92188 5.61203,-2.58569 5.8208,-9.92187 5.8208,-9.92187"
+       id="path16729"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 176.2125,185.20833 c 0,0 0.20877,-7.33618 5.82084,-9.92187 5.61206,-2.5857 5.82082,-9.92188 5.82082,-9.92188 0,0 0.20878,-7.33619 5.82082,-9.92188 5.61203,-2.58569 5.82081,-9.92187 5.82081,-9.92187"
+       id="path16731"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 182.03334,185.20833 c 0,0 0.20877,-7.33618 5.82083,-9.92187 5.61203,-2.5857 5.82081,-9.92188 5.82081,-9.92188 0,0 0.20878,-7.33619 5.82081,-9.92188 5.61206,-2.58569 5.82083,-9.92187 5.82083,-9.92187"
+       id="path16733"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 185.20834,185.20833 c 0,0 0.20877,-7.33618 5.82081,-9.92187 5.61203,-2.5857 5.82081,-9.92188 5.82081,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61205,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16735"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 182.03334,185.20833 c 0,0 0.20877,-7.33618 5.82083,-9.92187 5.61203,-2.5857 5.82081,-9.92188 5.82081,-9.92188 0,0 0.20878,-7.33619 5.82081,-9.92188 5.61206,-2.58569 5.82083,-9.92187 5.82083,-9.92187"
+       id="path16737"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#0173b2;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 185.20834,185.20833 c 0,0 0.20877,-7.33618 5.82081,-9.92187 5.61203,-2.5857 5.82081,-9.92188 5.82081,-9.92188 0,0 0.20877,-7.33619 5.82083,-9.92188 5.61205,-2.58569 5.82084,-9.92187 5.82084,-9.92187"
+       id="path16739"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-7.7537194,46.903003)"
+       id="text1125"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1131);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan21716"><tspan
+           style="font-style:italic"
+           id="tspan21712">β</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan21714">tails</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 198.4375,171.97916 -9.26042,13.22917 h 9.26042"
+       id="path17736"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,173.20324,62.242803)"
+       id="text19126"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect19128);fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/monolayer.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan21722"><tspan
+           style="font-style:italic"
+           id="tspan21718">ϴ</tspan><tspan
+           style="font-size:65%;baseline-shift:sub"
+           id="tspan21720">c</tspan></tspan></text>
+  </g>
+</svg>
