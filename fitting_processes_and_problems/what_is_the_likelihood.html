@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -296,6 +298,68 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="what-is-the-likelihood">
 <h1>What is the likelihood?<a class="headerlink" href="#what-is-the-likelihood" title="Permalink to this headline">¶</a></h1>
+<p>So far we have looked at how we can define, and reparameterise, our model.
+Now, we should consider how we compare our model to some experimental data.
+The broad aim of <em>fitting</em> is to get the model data to agree as best as is possible to the experimental data.
+Here, we discuss fitting in terms of the maximisation of likelihood, this is analogous to the <a class="reference external" href="https://en.wikipedia.org/wiki/Minimum_chi-square_estimation">minimisation</a> of a <span class="math notranslate nohighlight">\(\chi^2\)</span> goodness-of-fit metric.</p>
+<p>The likelihood, <span class="math notranslate nohighlight">\(\mathcal{L}(\theta|y)\)</span>, is a measure of the agreement between the model, which depends on parameters <span class="math notranslate nohighlight">\(\theta\)</span>, and the data, <span class="math notranslate nohighlight">\(y\)</span>.
+If we consider some values for <span class="math notranslate nohighlight">\(y\)</span>, which increase linearly with <span class="math notranslate nohighlight">\(x\)</span>, which have associated with them some value for <span class="math notranslate nohighlight">\(\sigma\)</span>, the uncertainty in <span class="math notranslate nohighlight">\(y\)</span>.
+Typically, we plot these uncertainties as <strong>error bars</strong> on our data.
+However, these uncertainty typically indicate a single standard deviation for the underlying probability distribution that the observed values of <span class="math notranslate nohighlight">\(y\)</span> are selected from.
+This is represented by the blue points and error bars and probability distributions shown in the figure below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="k">def</span> <span class="nf">straight_line</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">m</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :param x: the abscissa data</span>
+<span class="sd">    :param m: gradient of line</span>
+<span class="sd">    :param c: intercept</span>
+<span class="sd">    :returns: model values</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">m</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">c</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">12.8</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">))</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">straight_line</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">straight_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
+<span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y_fit</span> <span class="o">=</span> <span class="n">straight_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">yy</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">norm</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">sigma</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">yy</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#1f77b4&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_fit</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">norm</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">sigma</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">y_fit</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#ff7f0e&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$p(y)$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/what_is_the_likelihood_1_0.png" src="../_images/what_is_the_likelihood_1_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3.0496667614679125, 0.20384101638663543)
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we perform model-dependent analysis, we aim to find the parameters for some model that find the overall maximum for these probability distributions.
+This can be seen for the <em>line of best fit</em> to the data above, where the orange dots show where on these probability distributions this maximum likelihood model sits.
+For data where the uncertainty represents a single deviation on a normal distribution it is possible to calculate the likelihood, or as is done more commonly the log-likelihood, for a given model, <span class="math notranslate nohighlight">\(\mathrm{M}\)</span>, with the following,</p>
+<div class="math notranslate nohighlight">
+\[
+\ln[\mathcal{L}(\theta | y)] = -\frac{1}{2}\sum_{n=1}^{n_{\mathrm{max}}}\bigg\{\frac{[y_n - \mathrm{M}(x_n, \theta)] ^ 2}{\sigma_n ^ 2} + \ln(2\pi \sigma_n  ^ 2)\bigg\},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(n_{\mathrm{max}}\)</span> is the number of datapoints.
+You may notice that the first part of the summation is the same as a typical <span class="math notranslate nohighlight">\(\chi^2\)</span> goodness-of-fit metric that one may minimise, with the other elements being normalisation factors.
+For data where the uncertainty is not normally distributed, other likelihood functions may be used, however the majority of reflectometry analysis considers normal uncertainties.</p>
 </div>
 
     <script type="text/x-thebe-config">
