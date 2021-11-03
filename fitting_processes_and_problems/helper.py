@@ -1,6 +1,7 @@
 import numpy as np
+from typing import Tuple
 
-def mutation(p, b, km):
+def mutation(p: np.ndarray, b: np.ndarray, km: float) -> np.ndarray:
     m = np.zeros_like(p)
     R = np.random.randint(p.shape[1], size=(2, p.shape[1]))
     for j in range(p.shape[1]):
@@ -8,14 +9,14 @@ def mutation(p, b, km):
     return m
 
 
-def recombination(p, m, kr):
+def recombination(p: np.ndarray, m: np.ndarray, kr: float) -> np.ndarray:
     o = np.array(p)
     rand = np.random.rand(p.shape[0], p.shape[1])
     o[rand < kr] = m[rand < kr]
     return o
 
 
-def selection(p, o, f):
+def selection(p: np.ndarray, o: np.ndarray, f: callable) -> np.ndarray:
     new_p = np.array(p)
     for j in range(p.shape[1]):
         p_fom = f(p[:, j])
@@ -25,7 +26,7 @@ def selection(p, o, f):
     return new_p
 
 
-def differential_evolution(f, bounds, km=0.5, kr=0.5, max_iter=100, popsize=8):
+def differential_evolution(f: callable, bounds: Tuple[Tuple[float]], km: float=0.5, kr: float=0.5, max_iter: int=100, popsize: int=8) -> np.ndarray:
     population = np.zeros((len(bounds), 8))
     for j in range(len(bounds)):
         population[j] = np.random.uniform(*bounds[j], 8)
