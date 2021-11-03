@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -227,9 +229,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/fitting_processes_and_problems/how_to_leverage_our_prior_knowledge.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/fitting_processes_and_problems/how_to_leverage_our_prior_knowledge.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -263,28 +265,24 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/arm61/isis_school/master?urlpath=tree/docs/fitting_processes_and_problems/how_to_leverage_our_prior_knowledge.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-uniform-prior">
+   A uniform prior
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -295,6 +293,24 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="how-to-leverage-our-prior-knowledge">
 <h1>How to leverage our prior knowledge?<a class="headerlink" href="#how-to-leverage-our-prior-knowledge" title="Permalink to this headline">¶</a></h1>
+<p>In the introduction to model-dependent analysis, it was suggested that constructing a model and therefore biasing the analysis was acceptable, if the model is founded in logic.
+We can take this once step further but designing out model-dependent analysis such that we impose prior expectations about the values of parameters we are looking to probe.
+We achieve this using Bayes theorem <span id="id1">[<a class="reference internal" href="../intro.html#id17">BP63</a>]</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+p(y|\theta) = \frac{\mathcal{L}(\theta|y) p(\theta)}{p(y)} \propto \mathcal{L}(\theta|y) p(\theta),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(p(y|\theta)\)</span> is the posterior, <span class="math notranslate nohighlight">\(\mathcal{L}(\theta|y)\)</span> is the likleihood we have already seen, <span class="math notranslate nohighlight">\(p(\theta)\)</span> is our prior belief, and <span class="math notranslate nohighlight">\(p(y)\)</span> is the probability associated with the measured data, which is constant for all <span class="math notranslate nohighlight">\(\theta\)</span>.
+It is Bayes theorem that enables us to integrate our prior knowledge, as a probability, into our analysis.
+If we can describe our prior understanding about our parameters <span class="math notranslate nohighlight">\(\theta\)</span> as probabilities, we can look to maximise the posterior instead of the likelihood.</p>
+<div class="section" id="a-uniform-prior">
+<h2>A uniform prior<a class="headerlink" href="#a-uniform-prior" title="Permalink to this headline">¶</a></h2>
+<p>Lets consider a simple example, where we impose a uniform prior on some of parameters, we have infact already looked at such an example.
+When, in looking at the differential evolution algorithm we imposed maximum and minimum bounds for our parameters, we were infact introducing a prior.
+In this case, the prior stated that if <span class="math notranslate nohighlight">\(\theta\)</span> was within those bounds the probability was <span class="math notranslate nohighlight">\(1\)</span>, but if it were outside, the probability was <span class="math notranslate nohighlight">\(0\)</span>.
+Therefore, the posterior was <span class="math notranslate nohighlight">\(0\)</span> and this could not be the maximum.</p>
+<p>If you would like to find out more about using Bayesian analysis in data analysis the book Data Analysis: A Bayesian tutorial by Dr Devinder Sivia is a great place to start <span id="id2">[<a class="reference internal" href="../intro.html#id3">SJ06</a>]</span>.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
