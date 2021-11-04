@@ -1,12 +1,12 @@
 # The "slab model"
 
-Possibly the most common approach to generating **model reflectometry** data for comparison with, and refinement against, experimental data is the **slab model**. 
+Possibly the most common approach to simulating model reflectometry data for comparison with, and refinement against, experimental data is the **slab model**. 
 This is called the slab model as we describe the system as a series of slabs, with particular **thickness** and **scattering length density**.
-In this section, we will describe a typically slab model construction before going on to discuss some nuances of the model and how the reflectometry is calculated in later sections. 
+In this section, we will describe a typical slab model construction before going on to discuss some nuances of the model and how the reflectometry is calculated in later sections. 
 
 An example of such a slab model is shown in {numref}`slab-model` below. 
 This slab model consists of two layers, with thicknesses of $d_1$ and $d_2$ and scattering length densities of $\beta_1$ and $\beta_2$. 
-The scattering length density is a measure of how much the given material will scatter the neutron. 
+The scattering length density is a measure of how much the given material will scatter the incident neutron. 
 As we will see in {doc}`../model_reparameterisation/a_case_for_model_reparameterisation`, these parameters can be defined in terms of our chemical and physical understanding of the system.
 
 ```{figure} ../figures/slab.png
@@ -33,5 +33,5 @@ The same slab model as shown in {numref}`slab-model`, showing the paths taken by
 ```
 
 {numref}`slab-wave` shows how the neutron wave propagates through the slab model in reflection geometry. 
-Hopefully, it is clear how this would lead to constructive and destructive interference could be observed in this system.
+Hopefully, it is clear how this would lead to constructive and destructive interference could be observed in this system by some detector that measures the reflected waves.
 It is this interference pattern that we measure when we measure the reflectometry profile, however, obviously real experimental systems are less ordered. 
