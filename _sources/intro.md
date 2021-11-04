@@ -7,7 +7,7 @@ The aim of this course, and the companion lecture, are to give an introduction t
 - **reparameterisation** of these models to include chemical and physical insight; and 
 - the process and problems associated with **fitting** in a model-dependent analysis procedure. 
 
-It is assumed that this reader has been introduced to the technique of neutron reflectometry, such as what this technique can be used to study and the data collection methodology.
+It is **assumed** that this reader has been introduced to the technique of neutron reflectometry, such as what this technique can be used to study and the data collection methodology.
 
 The integration with JupyterHub is powered by the [PaNOSC project](https://www.panosc.eu). 
 
@@ -21,6 +21,14 @@ If you are not comfortable with Python, feel free to skip the code blocks, but m
 ```
 
 ## Bibliography
+
+Some particularly useful books and papers for reflectometry analysis, and data analysis in general include:
+- Elementary Scattering Theory: For X-ray and Neutron Users by Devinder Sivia {cite}`sivia_elementary_2011`;
+- *Current Opinion in Colloid & Interface Science*, **42**, 2019 covers a range of applications in soft and biological matter including {cite}`lakey_recent_2019,skoda_recent_2019,welbourn_new_2019`;
+- Some interesting reviews of magnetic reflectometry analysis include {cite}`fitzsimmons_applications_2005,zabel_polarized_2007,toperberg_neutron_2015`; and
+- Data Analysis: A Bayesian tutorial by Devinder Sivia and Johhn Skilling {cite}`sivia_data_2006`.
+
+Obviously, this list is not exhaustive and we suggest searching for and reading relevant work in your own field **once you understand the basics**. 
 
 ```{bibliography}
 ```

@@ -299,7 +299,7 @@
 <li><p><strong>reparameterisation</strong> of these models to include chemical and physical insight; and</p></li>
 <li><p>the process and problems associated with <strong>fitting</strong> in a model-dependent analysis procedure.</p></li>
 </ul>
-<p>It is assumed that this reader has been introduced to the technique of neutron reflectometry, such as what this technique can be used to study and the data collection methodology.</p>
+<p>It is <strong>assumed</strong> that this reader has been introduced to the technique of neutron reflectometry, such as what this technique can be used to study and the data collection methodology.</p>
 <p>The integration with JupyterHub is powered by the <a class="reference external" href="https://www.panosc.eu">PaNOSC project</a>.</p>
 <p>This course was originally developed by <a class="reference external" href="mailto:andrew&#46;mccluskey&#37;&#52;&#48;ess&#46;eu">Andrew McCluskey</a> from the <a class="reference external" href="https://europeanspallationsource.se/">European Spallation Source</a> for the <a class="reference external" href="https://indico.stfc.ac.uk/event/355/">ISIS Virtual Reflectometry Training Course</a>.
 If you have any questions about this course, please get in touch.</p>
@@ -311,54 +311,80 @@ If you are not comfortable with Python, feel free to skip the code blocks, but m
 </div>
 <div class="section" id="bibliography">
 <h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
-<p id="id1"><dl class="citation">
-<dt class="label" id="id6"><span class="brackets">Abeles48</span></dt>
+<p>Some particularly useful books and papers for reflectometry analysis, and data analysis in general include:</p>
+<ul class="simple">
+<li><p>Elementary Scattering Theory: For X-ray and Neutron Users by Devinder Sivia <span id="id1">[<a class="reference internal" href="#id6">Siv11</a>]</span>;</p></li>
+<li><p><em>Current Opinion in Colloid &amp; Interface Science</em>, <strong>42</strong>, 2019 covers a range of applications in soft and biological matter including <span id="id2">[<a class="reference internal" href="#id22">Lak19</a>, <a class="reference internal" href="#id23">Sko19</a>, <a class="reference internal" href="#id24">WC19</a>]</span>;</p></li>
+<li><p>Some interesting reviews of magnetic reflectometry analysis include <span id="id3">[<a class="reference internal" href="#id25">FM05</a>, <a class="reference internal" href="#id27">TZ07</a>, <a class="reference internal" href="#id26">ZTBT07</a>]</span>; and</p></li>
+<li><p>Data Analysis: A Bayesian tutorial by Devinder Sivia and Johhn Skilling <span id="id4">[<a class="reference internal" href="#id7">SJ06</a>]</span>.</p></li>
+</ul>
+<p>Obviously, this list is not exhaustive and we suggest searching for and reading relevant work in your own field <strong>once you understand the basics</strong>.</p>
+<p id="id5"><dl class="citation">
+<dt class="label" id="id10"><span class="brackets">Abeles48</span></dt>
 <dd><p>F. Abelès. Sur la propagation des ondes électromagnétiques dans les milieux sratifiés. <em>Ann. Phys.</em>, 12(3):504–520, 1948. <a class="reference external" href="https://doi.org/10.1051/anphys/194812030504">doi:10.1051/anphys/194812030504</a>.</p>
 </dd>
-<dt class="label" id="id17"><span class="brackets">BP63</span></dt>
+<dt class="label" id="id21"><span class="brackets">BP63</span></dt>
 <dd><p>T. Bayes and R. Price. An essay towards solving a problem in the doctrine of chances. <em>Phil. Trans. R. Soc. Lond</em>, 53:370–418, 1763. <a class="reference external" href="https://doi.org/10.1098/rstl.1763.0053">doi:10.1098/rstl.1763.0053</a>.</p>
 </dd>
-<dt class="label" id="id14"><span class="brackets">Bjorck11</span></dt>
+<dt class="label" id="id18"><span class="brackets">Bjorck11</span></dt>
 <dd><p>M. Björck. Fitting with differential evolution: an introduction and evaluation. <em>J. Appl. Crystallogr.</em>, 44(6):1198–1204, 2011. <a class="reference external" href="https://doi.org/10.1107/s0021889811041446">doi:10.1107/s0021889811041446</a>.</p>
 </dd>
-<dt class="label" id="id11"><span class="brackets">CSS+18</span></dt>
+<dt class="label" id="id15"><span class="brackets">CSS+18</span></dt>
 <dd><p>R. A. Campbell, Y. Saaka, Y. Shao, Y. Gerelli, R. Cubitt, E. Nazaruk, D. Matyszewska, and M. J. Lawrence. Structure of surfactant and phospholipid monolayers at the air/water interface modeled from neutron reflectivity data. <em>J. Colloid Interface Sci.</em>, 531:98–108, 2018. <a class="reference external" href="https://doi.org/10.1016/j.jcis.2018.07.022">doi:10.1016/j.jcis.2018.07.022</a>.</p>
 </dd>
-<dt class="label" id="id10"><span class="brackets">JPSC21</span></dt>
+<dt class="label" id="id25"><span class="brackets"><a class="fn-backref" href="#id3">FM05</a></span></dt>
+<dd><p>M. R. Fitzsimmons and C. F. Majkrzak. Applications of polarized neutron reflectometry to studies of artificially structured magnetic materials. In Y. Zhou, editor, <em>Neutron, X-Rays and Light. Scattering Methods Applied to Soft Condensed Matter</em>, pages 107–155. Springer, 2005.</p>
+</dd>
+<dt class="label" id="id14"><span class="brackets">JPSC21</span></dt>
 <dd><p>L. H. John, G. M. Preston, M. S. P. Sansom, and L. A. Clifton. Large scale model lipid membrane movement induced by a cation switch. <em>J. Colloid Interface Sci.</em>, 596:297–311, 2021. <a class="reference external" href="https://doi.org/10.1016/j.jcis.2021.03.078">doi:10.1016/j.jcis.2021.03.078</a>.</p>
 </dd>
-<dt class="label" id="id5"><span class="brackets">LR99</span></dt>
+<dt class="label" id="id22"><span class="brackets"><a class="fn-backref" href="#id2">Lak19</a></span></dt>
+<dd><p>J. H. Lakey. Recent advances in neutron reflectivity studies of biological membranes. <em>Curr. Opin. Colloid Interface Sci.</em>, 42:33–40, 2019. <a class="reference external" href="https://doi.org/10.1016/j.cocis.2019.02.012">doi:10.1016/j.cocis.2019.02.012</a>.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets">LR99</span></dt>
 <dd><p>M. R. Lovell and R. M. Richardson. Analysis methods in neutron and x-ray reflectometry. <em>Curr. Opin. Colloid Interface Sci.</em>, 4(3):197–204, 1999. <a class="reference external" href="https://doi.org/10.1016/S1359-0294(99)00039-4">doi:10.1016/S1359-0294(99)00039-4</a>.</p>
 </dd>
-<dt class="label" id="id4"><span class="brackets">MBD+98</span></dt>
+<dt class="label" id="id8"><span class="brackets">MBD+98</span></dt>
 <dd><p>C. F. Majkrzak, N. F. Berk, J. A. Dura, S. K. Satija, A. Karin, J. Pedulla, and R. D. Deslattes. Phase determination and inversion in specular neutron reflectometry. <em>Physica B</em>, 248(1–4):338–342, 1998. <a class="reference external" href="https://doi.org/10.1016/S0921-4526(98)00260-9">doi:10.1016/S0921-4526(98)00260-9</a>.</p>
 </dd>
-<dt class="label" id="id13"><span class="brackets">MSFE+19</span></dt>
+<dt class="label" id="id17"><span class="brackets">MSFE+19</span></dt>
 <dd><p>A. R. McCluskey, A. Sanchez-Fernandez, K. J. Edler, S. C. Parker, A. J. Jackson, R. A. Campbell, and T. Arnold. Bayesian determination of the effect of a deep eutectic solvent on the structure of lipid monolayers. <em>Phys. Chem. Chem. Phys.</em>, 21(11):6133–6141, 2019. <a class="reference external" href="https://doi.org/10.1039/c9cp00203k">doi:10.1039/c9cp00203k</a>.</p>
 </dd>
-<dt class="label" id="id8"><span class="brackets">NP19</span></dt>
+<dt class="label" id="id12"><span class="brackets">NP19</span></dt>
 <dd><p>A. R. J. Nelson and S. W. Prescott. Refnx: neutron and x-ray reflectometry analysis in python. <em>J. Appl. Crystallogr.</em>, 52(1):193–200, 2019. <a class="reference external" href="https://doi.org/10.1107/s1600576718017296">doi:10.1107/s1600576718017296</a>.</p>
 </dd>
-<dt class="label" id="id9"><span class="brackets">NevotC80</span></dt>
+<dt class="label" id="id13"><span class="brackets">NevotC80</span></dt>
 <dd><p>L. Névot and P. Croce. Caractérisation des surfaces par réflexion rasante de rayons x. application à l\textquotesingle étude du polissage de quelques verres silicates. <em>Rev. Phys. Appl. (Paris)</em>, 15(3):761–779, 1980. <a class="reference external" href="https://doi.org/10.1051/rphysap:01980001503076100">doi:10.1051/rphysap:01980001503076100</a>.</p>
 </dd>
-<dt class="label" id="id7"><span class="brackets">Par54</span></dt>
+<dt class="label" id="id11"><span class="brackets">Par54</span></dt>
 <dd><p>L. G. Parratt. Surface studies of solids by total reflection of x-rays. <em>Phys. Rev.</em>, 95(2):359–369, 1954. <a class="reference external" href="https://doi.org/10.1103/physrev.95.359">doi:10.1103/physrev.95.359</a>.</p>
 </dd>
-<dt class="label" id="id2"><span class="brackets">Siv11</span></dt>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id1">Siv11</a></span></dt>
 <dd><p>D. S. Sivia. <em>Elementary Scattering Theory: For X-Ray and Neutron Users</em>. Oxford University Press, 2011. ISBN 978-0-19-922868-3.</p>
 </dd>
-<dt class="label" id="id3"><span class="brackets">SJ06</span></dt>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id4">SJ06</a></span></dt>
 <dd><p>D. S. Sivia and Skilling J. <em>Data Analysis: A Bayesian tutorial</em>. Oxford University Press, 2 edition, 2006. ISBN 978-0-19-856832-2.</p>
 </dd>
-<dt class="label" id="id15"><span class="brackets">SP97</span></dt>
+<dt class="label" id="id23"><span class="brackets"><a class="fn-backref" href="#id2">Sko19</a></span></dt>
+<dd><p>M. W. A. Skoda. Recent developments in the application of x-ray and neutron reflectivity to soft-matter systems. <em>Curr. Opin. Colloid Interface Sci.</em>, 42:41–54, 2019. <a class="reference external" href="https://doi.org/10.1016/j.cocis.2019.03.003">doi:10.1016/j.cocis.2019.03.003</a>.</p>
+</dd>
+<dt class="label" id="id19"><span class="brackets">SP97</span></dt>
 <dd><p>R. Storn and K. Price. Differential evolution – a simple and efficient heuristic for global optimization over continuous spaces. <em>J. Glob. Optim.</em>, 11(4):341–359, 1997. <a class="reference external" href="https://doi.org/10.1023/a:1008202821328">doi:10.1023/a:1008202821328</a>.</p>
 </dd>
-<dt class="label" id="id12"><span class="brackets">Tan80</span></dt>
+<dt class="label" id="id16"><span class="brackets">Tan80</span></dt>
 <dd><p>C. Tanford. <em>The Hydrophobic Effect: Formation of Micelles and Biological Membranes</em>. John Wiley &amp; Sons, 2 edition, 1980. ISBN 978-0-471-04893-0.</p>
 </dd>
-<dt class="label" id="id16"><span class="brackets">WPMB99</span></dt>
+<dt class="label" id="id27"><span class="brackets"><a class="fn-backref" href="#id3">TZ07</a></span></dt>
+<dd><p>B. P. Toperverg and H. Zabel. Neutron Scattering in Nanomagnetism. In D. L. Price and F. Fernandez-Alonso, editors, <em>Neutron Scattering – Magnetic and Quantum Phenomena</em>, pages 339–434. Academic Press, 2007.</p>
+</dd>
+<dt class="label" id="id24"><span class="brackets"><a class="fn-backref" href="#id2">WC19</a></span></dt>
+<dd><p>R. J. L. Welbourn and S. M. Clarke. New insights into the solid-liquid interface exploiting neutron reflectivity. <em>Curr. Opin. Colloid Interface Sci.</em>, 42:87–98, 2019. <a class="reference external" href="https://doi.org/10.1016/j.cocis.2019.03.007">doi:10.1016/j.cocis.2019.03.007</a>.</p>
+</dd>
+<dt class="label" id="id20"><span class="brackets">WPMB99</span></dt>
 <dd><p>M. Wormington, C. Panaccione, K. M. Matney, and D. K. Bowen. Characterization of structures from x-ray scattering data using genetic algorithms. <em>Phil. Trans. R. Soc. Lond. A</em>, 357(1761):2827–2848, 1999. <a class="reference external" href="https://doi.org/10.1098/rsta.1999.0469">doi:10.1098/rsta.1999.0469</a>.</p>
+</dd>
+<dt class="label" id="id26"><span class="brackets"><a class="fn-backref" href="#id3">ZTBT07</a></span></dt>
+<dd><p>H. Zabel, K. Theis-Bröhl, and B. P. Toperverg. Polarized Neutron Reflectivity and Scattering from Magnetic nanostructures and spintronic materials. In H. Kronmüller, S. Parkin, R. Wiesendanger, and G. Guntherodt, editors, <em>Handbook of Magnetism and Advanced Magnetic Materials</em>. John Wiley &amp; Sons, 2007.</p>
 </dd>
 </dl>
 </p>
