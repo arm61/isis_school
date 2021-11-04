@@ -318,8 +318,8 @@ Below we show, graphically, a model that we may use for the simulation of reflec
 <a class="reference internal image-reference" href="../_images/multilayer.png"><img alt="../_images/multilayer.png" src="../_images/multilayer.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">A graphical example of the NiTi multilayer system consisting of three repeats.</span><a class="headerlink" href="#multilayer" title="Permalink to this image">¶</a></p>
 </div>
-<p>A common assumption that is made in the anlaysis of reflectometry data from such a sample include that the structure of each repeat is the same.
-Therefore the model can be defined such that there are only a limited number of variables.
+<p>A common assumption that is made in the analysis of reflectometry data from such a sample include that the structure of each repeat is the same.
+Therefore the model can be defined such that there are only a <strong>limited number of variables</strong>.
 However, this can still be unclear, as three of these parameters will be the scattering length densities of nickel, titanium, and silicon.
 While these values can be obtained from <a class="reference external" href="https://slddb.esss.dk/slddb/">online databases</a>, we can also reparameterised these in terms of the mass density of the material.</p>
 <div class="section" id="scattering-length-density-mass-density">
@@ -329,13 +329,13 @@ While these values can be obtained from <a class="reference external" href="http
 \[
 \beta = \frac{\rho N_a \sum_{i=1}^{N}b_i}{M_w}, 
 \]</div>
-<p>where, <span class="math notranslate nohighlight">\(N_a\)</span> is Avogardo’s constant, <span class="math notranslate nohighlight">\(b_i\)</span> are the neutron scattering lengths for each of the <span class="math notranslate nohighlight">\(N\)</span> elements in the material, and <span class="math notranslate nohighlight">\(M_w\)</span> is the molecular mass of the material.
+<p>where, <span class="math notranslate nohighlight">\(N_a\)</span> is Avogadro’s constant, <span class="math notranslate nohighlight">\(b_i\)</span> are the neutron scattering lengths for each of the <span class="math notranslate nohighlight">\(N\)</span> elements in the material, and <span class="math notranslate nohighlight">\(M_w\)</span> is the molecular mass of the material.
 Therefore, if we consider nickel, which has a density of <span class="math notranslate nohighlight">\(8.908\)</span> gcm<sup>-3</sup> at room temperature and a <a class="reference external" href="https://www.ncnr.nist.gov/resources/n-lengths/elements/ni.html">scattering length</a> of <span class="math notranslate nohighlight">\(10.3\)</span> fm, the scattering length density is found as follows,</p>
 <div class="math notranslate nohighlight">
 \[
 \beta_{\mathrm{Ni}} = \frac{\rho_{\mathrm{Ni}} N_a b_{\mathrm{Ni}}}{M_{w, \mathrm{Ni}}} = \frac{8.91 [\mathrm{g cm}^{-3}] \cdot 6.022\times 10^{23} [\mathrm{mol}^{-1}] \cdot 10.3 [\mathrm{fm}]}{58.69 [\mathrm{g mol}^{-1}]} = 9.417\times 10^{-6} [\mathrm{Å}^{-2}].
 \]</div>
-<p>We evaluate this in code below.</p>
+<p>We evaluate this in the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -373,7 +373,7 @@ Therefore, if we consider nickel, which has a density of <span class="math notra
 </div>
 </div>
 <p>Using this approach, the parameter that we vary in the <a class="reference internal" href="../model_dependent_analysis/what_is_model_dependent_analysis.html"><span class="doc std std-doc">model-dependent analysis approach</span></a> can be the mass density rather than the more abstract scattering length density.
-Additionally, this means that we can more easily constrain out fit, by assigning a set of bounds on our parameter (more on this <a class="reference internal" href="../fitting_processes_and_problems/how_to_leverage_our_prior_knowledge.html"><span class="doc std std-doc">later</span></a>) based on <strong>reasonable</strong> values for the density of the material.
+Additionally, this means that we can more easily <strong>constrain</strong> our fitting process, by assigning a set of bounds on our parameter (more on this <a class="reference internal" href="../fitting_processes_and_problems/how_to_leverage_our_prior_knowledge.html"><span class="doc std std-doc">later</span></a>) based on <strong>reasonable</strong> values for the density of the material.
 The majority of fitting packages can allow the reflectometry analysis model to be defined in terms of the parameters such as mass density, instead of the more traditional scattering length density.</p>
 <p>We can also find the scattering length density of titanium by the same approach as above.</p>
 <div class="cell docutils container">

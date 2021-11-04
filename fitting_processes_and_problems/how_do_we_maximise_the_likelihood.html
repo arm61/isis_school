@@ -316,15 +316,16 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="how-do-we-maximise-the-likelihood">
 <h1>How do we maximise the likelihood?<a class="headerlink" href="#how-do-we-maximise-the-likelihood" title="Permalink to this headline">¶</a></h1>
-<p>Now that there is a metric we will use to assess the quality of agreement between our model and our data, we can consider <strong>how</strong> we obtain the maximum likelihood for a given system.
-In this section we will look at a couple of common method for likelihood maximisation that are used in neutron reflectometry analysis.
+<p>Now that there is a metric we will use to assess the quality of agreement between our model and our data, we can consider <strong>how</strong> we find the maximum likelihood for a given system.
+In this section, we will look at a couple of common methods for likelihood maximisation that are used in neutron reflectometry analysis.
 These methods take on two <em>flavours</em>, that we will investigate in turn.</p>
 <div class="section" id="gradient-methods">
 <h2>Gradient methods<a class="headerlink" href="#gradient-methods" title="Permalink to this headline">¶</a></h2>
-<p>The first method for likelihood maximisation that one will encounter in reflectometry analysis are the <strong>gradient</strong> methods.
-These are optimisation algorithms which aim to maximise the likelihood by starting from initial guess position and finding the local gradient.
+<p>The first method for likelihood maximisation that one will encounter in reflectometry analysis are <strong>gradient</strong> methods.
+These are optimisation algorithms that aim to maximise the likelihood by starting from the initial guess position and finding the local gradient.
 Once this is determined, the gradient method looks to move the current guess uphill to eventually reach some nearby maximum value.
-We can see a simple example of this below, where we find the maximum likelihood by a gradient method for a two-dimensional normal distribution.</p>
+We can see a simple example of this below, where we find the maximum likelihood by a gradient method for a two-dimensional normal distribution.
+A range of gradient methods exist, but in general, they all try to find the maximum be considering local gradients.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
@@ -344,7 +345,7 @@ We can see a simple example of this below, where we find the maximum likelihood 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="o">=</span> <span class="n">multivariate_normal</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[[</span><span class="mf">0.0330252</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.16748113</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.16748113</span><span class="p">,</span>  <span class="mf">1.09209783</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="o">=</span> <span class="n">multivariate_normal</span><span class="p">([</span><span class="mf">3.000</span><span class="p">,</span> <span class="mf">1.000</span><span class="p">],</span> <span class="p">[[</span><span class="mf">0.033</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.167</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.167</span><span class="p">,</span>  <span class="mf">1.092</span><span class="p">]])</span>
 <span class="n">gradient_v</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">def</span> <span class="nf">gradient_callback</span><span class="p">(</span><span class="n">current_theta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">gradient_v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_theta</span><span class="p">)</span>
@@ -374,14 +375,14 @@ We can see a simple example of this below, where we find the maximum likelihood 
 </div>
 </div>
 </div>
-<p>We can see above that the black line, indicating the path of the solution towards the maximum, moves in a rational path up towards the maximum, following the regions of increasing gradient.
-Eventually after a number of steps, the maximum is found.</p>
-<p>Gradient methods are effective for discovery of local maxima, however for more complex model-dependent analysis, this can be a problem.
-If the maxima that is found by the gradient method is not the global maxima, then it is not possible for these algorithms to easily go back “downhill”.
+<p>We can see above that the black line, indicating the path of the solution towards the maximum, moves in a rational path up towards the maximum, following the regions of an increasing gradient.
+Eventually, after a number of steps, the maximum is found.</p>
+<p>Gradient methods are effective for the discovery of local maxima, however, for more complex model-dependent analysis, this can be a problem.
+If the maximum that is found by the gradient method is not the global maxima, then it is not possible for these algorithms to easily go back “downhill”.
 This means that the <strong>starting position</strong> of the algorithm is very important.</p>
-<p>Consider the two routes shown below on the multi-modal (more than one maxima) likelihood function.
-The blue line starts near to the local minimum at <span class="math notranslate nohighlight">\((3, 0)\)</span> and therefore the gradient approach is used, it is this minima that is found.
-However, when the algorithm is started from <span class="math notranslate nohighlight">\((10, 5)\)</span> (orange line), the true global minimum at <span class="math notranslate nohighlight">\((8, 2)\)</span> is found instead.
+<p>Consider the two routes shown below on the multi-modal (more than one maximum) likelihood function.
+The blue line starts near to the local maximum at <span class="math notranslate nohighlight">\((3, 0)\)</span> and therefore the gradient approach is used, it is this maximum that is found.
+However, when the algorithm is started from <span class="math notranslate nohighlight">\((10, 5)\)</span> (orange line), the true global maximum at <span class="math notranslate nohighlight">\((8, 2)\)</span> is found instead.
 It is clear that for the <strong>non-unique</strong> analyses of neutron reflectometry, we desire a <strong>global optimisation</strong> approach.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -423,9 +424,9 @@ Orange Maximum: [7.9957561  1.99615666]
 </div>
 <div class="section" id="stochastic-methods">
 <h2>Stochastic methods<a class="headerlink" href="#stochastic-methods" title="Permalink to this headline">¶</a></h2>
-<p>The most common form of gloabl optimisation methods are the stochastic methods, where stochastic means <strong>random</strong>.
-There are a variety of these methods, such as <a class="reference external" href="https://en.wikipedia.org/wiki/Particle_swarm_optimization">particle swarm</a>, which moves in the semi-random fashion analogus to a swarm of insects, or <a class="reference external" href="https://en.wikipedia.org/wiki/Evolutionary_algorithm">evolutionary algorithms</a>, which are inspired by biological evolution in order to find the optimum.
-The most commonly applied in neutron reflectometry model optimisation is the differential evolution method <span id="id1">[<a class="reference internal" href="../intro.html#id19">Bjorck11</a>, <a class="reference internal" href="../intro.html#id20">SP97</a>, <a class="reference internal" href="../intro.html#id21">WPMB99</a>]</span>.</p>
+<p>The most common form of global optimisation methods are the stochastic methods, where stochastic means <strong>random</strong>.
+There are a variety of these methods, such as <a class="reference external" href="https://en.wikipedia.org/wiki/Particle_swarm_optimization">particle swarm</a>, which moves in the semi-random fashion analogous to a swarm of insects, or <a class="reference external" href="https://en.wikipedia.org/wiki/Evolutionary_algorithm">evolutionary algorithms</a>, which are inspired by biological evolution in order to find the optimum.
+The most commonly applied in neutron reflectometry model optimisation is the <strong>differential evolution</strong> method <span id="id1">[<a class="reference internal" href="../intro.html#id20">Bjorck11</a>, <a class="reference internal" href="../intro.html#id21">SP97</a>, <a class="reference internal" href="../intro.html#id22">WPMB99</a>]</span>.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
@@ -434,9 +435,9 @@ The most commonly applied in neutron reflectometry model optimisation is the dif
 </div>
 </div>
 <p>In the figure below, we show the application of a differential evolution algorithm with a population of <span class="math notranslate nohighlight">\(8\)</span> (however, the optimisation route of the <span class="math notranslate nohighlight">\(4\)</span> best members are shown).
-It is clear that the methodology results in a more complete assessment of the complex optimisation space.
-Typically once a solution is found using the differential evolution is found, this is further optimised with a gradient descent method to find the maximum global likelihood.
-This is necessary as, as we can see from the oberall maximum, the differential evolution will not find the absolute maximum alone.</p>
+It is clear that the methodology results in a more complete interrogation of the complex optimisation space.
+Typically once a solution is found using the differential evolution is found, this is <strong>further optimised</strong> with a gradient descent method to find the maximum global likelihood.
+This is necessary as, as we can see from the overall maximum, the differential evolution will not find the absolute maximum alone.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">helper</span> <span class="kn">import</span> <span class="n">differential_evolution</span>
@@ -458,15 +459,16 @@ This is necessary as, as we can see from the oberall maximum, the differential e
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/how_do_we_maximise_the_likelihood_6_0.png" src="../_images/how_do_we_maximise_the_likelihood_6_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overall Maximum: [8.5918653  2.28806727]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overall Maximum: [8.15829973 2.04905551]
 </pre></div>
 </div>
 </div>
 </div>
-<p>It is important to note that as the dimensionality to a fitting problem increases, as in the number of free parameters in our model increases, it will become harder and harder to find an optimised solution.
-Therefore, we should carefully consider which parameters in a model are allowed to varying in the fitting process, ensuring that the minimum number of parameters are changing.
-There are some important considerations that feed into this, for example that having <strong>more isotopic contrasts</strong> of neutron reflectometry data means that more parameters can be varied.
-Additionally, is it possibly to quantify the maximum number of free parameters, however this is computationally intensive and beyond the scope of this course, as is the fact that once some likelihood maximum is found, it is possible to probe the shape of that maximum, to draw conclusions about robustivity of the result.</p>
+<p>It is important to note that as the dimensionality to a fitting problem increases, as the number of free parameters in our model increases, it will become harder and harder to find an optimised solution.
+Therefore, we should carefully consider which parameters in a model are allowed to vary in the fitting process, ensuring that the minimum number of parameters are changing.
+There are some important considerations that feed into this, for example, that having <strong>more isotopic contrasts</strong> of neutron reflectometry data means that more parameters can be varied.</p>
+<p>Once some maximum likelihood is found, it is possible to probe the shape of that maximum and draw conclusions about the robustivity of the result.
+Additionally, the maximum number of free parameters that a given dataset(s) can describe is quantifiable, however, very computationally intensive <span id="id2">[<a class="reference internal" href="../intro.html#id8">TKH+19</a>]</span>.</p>
 </div>
 </div>
 
