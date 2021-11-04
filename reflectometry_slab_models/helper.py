@@ -1,13 +1,14 @@
+from typing import Tuple
 import numpy as np
 from scipy.stats import norm
 
 
 def step_f(z: np.ndarray, scale: float, loc: float) -> np.ndarray:
-    """
+    """    
     :param z: z-dimension
     :param scale: width of step function, always 0
     :param loc: position of step
-    :return: 
+    :return: positioned step function
     """
     new_z = z - loc
     f = np.ones_like(new_z) * 0.5
@@ -16,10 +17,9 @@ def step_f(z: np.ndarray, scale: float, loc: float) -> np.ndarray:
     return f
 
 
-def sld_with_roughness(beta: np.ndarray, d: np.ndarray, sigma: np.ndarray):
+def sld_with_roughness(beta: np.ndarray, d: np.ndarray, sigma: np.ndarray) -> Tuple[np.ndarray]:
     """
-    Determine the scattering length density profile 
-    shape, with roughness present.
+    Determine the scattering length density profile shape, with roughness present.
     
     :param beta: array of scattering length densities, shape: (number_layers)
     :param d: layer thicknesses, shape: (number_layers)
@@ -41,13 +41,14 @@ def sld_with_roughness(beta: np.ndarray, d: np.ndarray, sigma: np.ndarray):
     return zed, sld
 
 
-def microslicing(beta, d, sigma, slice_size=0.5):
+def microslicing(beta: np.ndarray, d: np.ndarray, sigma: np.ndarray, slice_size: float=0.5) -> Tuple[np.ndarray]:
     """
-    Creates a microslab representation of the Structure.
-    Parameters
-    ----------
-    slice_size : float
-        Thickness of each slab in the micro-slab representation
+    Creates a microslab representation of the scattering length density profile.
+    
+    :param beta: scattering length densitys, shape: (number_layers)
+    :param d: layer thicknesses, shape: (number_layers)
+    :param sigma: interfacial roughnesses, shape: (number_layers-1)
+    :param slice_size: Thickness of each slab in the micro-slab representation
     Returns
     -------
     micro_slabs : np.ndarray
@@ -153,6 +154,8 @@ def reflectivity(B: np.ndarray) -> np.ndarray:
 
 def abeles(q: np.ndarray, beta: np.ndarray, d: np.ndarray) -> np.ndarray:
     """
+    Use Abeles to find reflectometry data. 
+    
     :param q: array of q-wavevectors, shape: (number_q)
     :param beta: array of scattering length densities, shape: (number_layers)
     :param d: layer thicknesses, shape: (number_layers)
@@ -168,6 +171,8 @@ def abeles(q: np.ndarray, beta: np.ndarray, d: np.ndarray) -> np.ndarray:
 
 def abeles_with_roughness(q: np.ndarray, beta: np.ndarray, d: np.ndarray, sigma:np.ndarray) -> np.ndarray:
     """
+    Use Abeles with some interfacial roughness to find reflectometry data.
+    
     :param q: array of q-wavevectors, shape: (number_q)
     :param beta: array of scattering length densities, shape: (number_layers)
     :param d: layer thicknesses, shape: (number_layers)

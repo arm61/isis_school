@@ -6,7 +6,7 @@ def mutation(p: np.ndarray, b: np.ndarray, km: float) -> np.ndarray:
     :param p: Population vector
     :param b: Best population member
     :param km: Mutation constant
-    :returns: Mutant vector
+    :return: Mutant vector
     """
     m = np.zeros_like(p)
     R = np.random.randint(p.shape[1], size=(2, p.shape[1]))
@@ -20,7 +20,7 @@ def recombination(p: np.ndarray, m: np.ndarray, kr: float) -> np.ndarray:
     :param p: Population vector
     :param m: Mutant member
     :param km: Recombination constant
-    :returns: Offspring vector
+    :return: Offspring vector
     """
     o = np.array(p)
     rand = np.random.rand(p.shape[0], p.shape[1])
@@ -33,7 +33,7 @@ def selection(p: np.ndarray, o: np.ndarray, f: callable) -> np.ndarray:
     :param p: Population vector
     :param o: Offspring vector
     :param f: Objective function
-    :returns: New parent population
+    :return: New parent population
     """
     new_p = np.array(p)
     for j in range(p.shape[1]):
@@ -46,13 +46,15 @@ def selection(p: np.ndarray, o: np.ndarray, f: callable) -> np.ndarray:
 
 def differential_evolution(f: callable, bounds: Tuple[Tuple[float]], km: float=0.5, kr: float=0.5, iterations: int=100, popsize: int=8) -> np.ndarray:
     """
+    An implementation of the differential evolution algorithm, returning the full history of parameter values. 
+    
     :param f: Objective function
     :param bounds: Min and Max values for parameters
     :param km: Mutation constant
     :param km: Recombination constant
     :param iterations: Number of iterations
     :param popsize: Size of the populations
-    :returns: A genelogy for the parameter values
+    :return: A genelogy for the parameter values
     """
     population = np.zeros((len(bounds), 8))
     for j in range(len(bounds)):
