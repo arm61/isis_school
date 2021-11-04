@@ -2,7 +2,13 @@ import numpy as np
 from scipy.stats import norm
 
 
-def step_f(z, scale, loc):
+def step_f(z: np.ndarray, scale: float, loc: float) -> np.ndarray:
+    """
+    :param z: z-dimension
+    :param scale: width of step function, always 0
+    :param loc: position of step
+    :return: 
+    """
     new_z = z - loc
     f = np.ones_like(new_z) * 0.5
     f[new_z <= -scale] = 0
@@ -34,6 +40,7 @@ def sld_with_roughness(beta: np.ndarray, d: np.ndarray, sigma: np.ndarray):
         sld += delta_rho[i] * f(zed, scale=sigma[i], loc=dist[i])
     return zed, sld
 
+
 def microslicing(beta, d, sigma, slice_size=0.5):
     """
     Creates a microslab representation of the Structure.
@@ -48,8 +55,8 @@ def microslicing(beta, d, sigma, slice_size=0.5):
         `Structure.slabs` method for a description of the array.
     """
     dist = np.cumsum(d[:-1])
-    zstart = -5.0 - 8 * sigma[1]
-    zend = 5.0 + dist[-1] + 8 * sigma[-1]
+    zstart = -20.0 - 8 * sigma[0]
+    zend = 20.0 + dist[-1] + 8 * sigma[0]
     nsteps = int((zend - zstart) / slice_size + 1)
     zed = np.linspace(zstart, zend, num=nsteps)
     sld = np.ones_like(zed, dtype=float) * beta[0].real
