@@ -323,10 +323,10 @@
 <h1>Roughness and microslicing<a class="headerlink" href="#roughness-and-microslicing" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="interfacial-roughness">
 <h2>Interfacial roughness<a class="headerlink" href="#interfacial-roughness" title="Permalink to this headline">¶</a></h2>
-<p>The slab model that has been discussed has a clear problem, it that it implies perfectly flat interfaces between different materials.
-These cannot exist in real materials, therefore it is necessary to enable <strong>roughness</strong> between the interfaces in our model.
+<p>The slab model that has been discussed has a clear problem, it that it implies <strong>perfectly flat</strong> interfaces between different materials.
+These cannot exist in real materials, therefore it is necessary to enable some <strong>roughness</strong> between the interfaces in our model.
 There are a range of functions that can be used to implement interfacial roughness in slab modelling.
-However, the most common is the use of an error function <span id="id1">[<a class="reference internal" href="../intro.html#id13">NevotC80</a>]</span>, also known as <strong>Nevot-Croce</strong> roughness.</p>
+However, the most common is the use of an error function <span id="id1">[<a class="reference internal" href="../intro.html#id14">NevotC80</a>]</span>, also known as <strong>Nevot-Croce</strong> roughness.</p>
 <p>We can visualise a typical error function roughness below, where we show the silicon dioxide on silicon sample from before with a roughness of <span class="math notranslate nohighlight">\(0\)</span> Å between each layer and with a roughness of <span class="math notranslate nohighlight">\(10\)</span> Å between each layer.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -365,12 +365,12 @@ However, the most common is the use of an error function <span id="id1">[<a clas
 </div>
 </div>
 <p>We can see that this roughness creates some smoothing of the interface between the layers.
-It is necessary that we modify the Abelès matrix formalism discussed previously to account for this smoothing.
-This is achieve by adapting the calculation of the Fresnel reflectance,</p>
+We must modify the Abelès matrix formalism discussed previously to account for this smoothing.
+This is achieved by adapting the calculation of the Fresnel reflectance,</p>
 <div class="math notranslate nohighlight">
 \[r_{n, n+1}(q) = \frac{k_n(q) - k_{n+1}(q)}{k_n(q) + k_{n+1}(q)} \exp{(-2k_nk_{n+1}\sigma_{n,n+1}^2)},\]</div>
 <p>where, <span class="math notranslate nohighlight">\(\sigma_{n, n+1}^2\)</span> is the roughness width between the interfaces.
-We can use this to observe the effect that this interfacial roughness has on the resulting reflectometry profile, shown below.</p>
+We can observe the effect that this interfacial roughness has on the resulting reflectometry profile, shown below.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
@@ -404,8 +404,8 @@ We can use this to observe the effect that this interfacial roughness has on the
 </div>
 <div class="section" id="problems-with-interfacial-roughness">
 <h2>Problems with interfacial roughness<a class="headerlink" href="#problems-with-interfacial-roughness" title="Permalink to this headline">¶</a></h2>
-<p>This method for considering interfacial roughness between two layers is not perfect, and if used incorrectly can introduce unphysical artifacts into our reflectometry calculation.
-Consider the example shown below, where there is a <span class="math notranslate nohighlight">\(10\)</span> Å layer of nickel on a piece of silicon which is at the interface with air.
+<p>This method for considering interfacial roughness between two layers is not perfect, and if used incorrectly can introduce unphysical artefacts to our reflectometry calculation.
+Consider the example shown below, where there is a <span class="math notranslate nohighlight">\(10\)</span> Å layer of nickel on a piece of silicon that is at the interface with air.
 The roughness between the nickel and air is increased from <span class="math notranslate nohighlight">\(3\)</span> Å to <span class="math notranslate nohighlight">\(7\)</span> Å with no roughness between the nickel and silicon.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -446,20 +446,20 @@ The roughness between the nickel and air is increased from <span class="math not
 <p class="sidebar-title"></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>A common rule of thumb for using Nevot-Croce is that the roughness on an interface should be no more then <span class="math notranslate nohighlight">\(20\)</span> % of the thickness of the shortest slab.</p>
+<p>A common rule of thumb for using Nevot-Croce is that the roughness on an interface should be no more than <span class="math notranslate nohighlight">\(20\)</span> % of the thickness of the shortest slab.</p>
 </div>
 </div>
-<p>The red rectangle in the left hand plot identifies the region that is shown in the right hand plot.
+<p>The red rectangle in the left-hand plot identifies the region that is shown in the right-hand plot.
 From these figures, it is clear that the roughness between the nickel and air is leaking through to the nickel-silicon interface.
-This can lead to an unphysical interpretation of our system, if we interograte the scattering length density profile.
+This can lead to an unphysical interpretation of our system if we interrogate the scattering length density profile.
 Additionally, given that the roughness parameter only influences the Fresnel reflectance between two interfaces, this “leaking” through it <strong>not</strong> reflected in the resulting calculated data.</p>
 </div>
 <div class="section" id="microslicing">
 <h2>Microslicing<a class="headerlink" href="#microslicing" title="Permalink to this headline">¶</a></h2>
-<p>It is still possible that twe would like to be able to have such a scattering length density profile.
-Therefore, it is important that there is a methodology to work around this problem with the Nevot-Croce roughness.
+<p>It is still possible that we would like to be able to simulate such a scattering length density profile as is shown above, accurately.
+Therefore, there must be a methodology to work around this problem with the Nevot-Croce roughness.
 This method is <strong>microslicing</strong>, where the scattering length density profile is described as a series of very thin layers with no roughness between them.
-Consider the plot shown below, which shows the same interface as before, however this time comparing the Nevot-Croce approach and microslicing.</p>
+Consider the plot shown below, which presents the same interface as before, however, this time comparing the Nevot-Croce approach and microslicing.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
@@ -499,10 +499,10 @@ Consider the plot shown below, which shows the same interface as before, however
 <img alt="../_images/roughness_and_microslicing_8_0.png" src="../_images/roughness_and_microslicing_8_0.png" />
 </div>
 </div>
-<p>Notice that now the system is a series of layers with a thicknes of <span class="math notranslate nohighlight">\(0.5\)</span> Å each.
-This means that by applying the Abelès matrix formalism to this profile, and ignoring any roughness, the reflectivity will be that for the (admittedly unphysical) system where the roughness <strong>does</strong> leak through.
-Below, we compare two reflectometry prfiles using the Nevot-Croce roughness and where the microsliced scattering length density profile is used.
-In order to show clearly the impact of the Nevot-Croce roughness being inaccurate, we show data where the roughness has a width of <span class="math notranslate nohighlight">\(50\)</span> Å.</p>
+<p>Notice that now the system is a series of layers with a thickness of <span class="math notranslate nohighlight">\(0.5\)</span> Å each.
+This means that by applying the Abelès matrix formalism to this profile and ignoring any roughness, the reflectivity will be that for the (admittedly unphysical) system where the roughness <strong>does</strong> leak through.
+Below, we compare two reflectometry profiles using the Nevot-Croce roughness and where the microsliced scattering length density profile is used.
+To show clearly the impact of the Nevot-Croce roughness being inaccurate, we show data where the roughness has a width of <span class="math notranslate nohighlight">\(50\)</span> Å.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>

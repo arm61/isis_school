@@ -318,7 +318,7 @@
 <h1>Phospholipid monolayer example<a class="headerlink" href="#phospholipid-monolayer-example" title="Permalink to this headline">¶</a></h1>
 <p>A more complex example of model reparameterisation is that of a phospholipid monolayer, were the reparameterisation of our model allows additional constraints to be included that would be very difficult to apply in a traditional slab model approach.
 The amphiphilic nature of a phospholipid molecule, which consists of a water-soluble head group and insoluble, hydrocarbon tail group, means that these molecules will <strong>self-assemble</strong> at the air-water interface.</p>
-<p>For a typical phospholipid, such as <a class="reference external" href="https://en.wikipedia.org/wiki/Dipalmitoylphosphatidylcholine">DPPC</a>, there are two tail strands attached to each head and these tails typically sit with some chain tilt angle, <span class="math notranslate nohighlight">\(\theta\)</span>, which depends on the pressure acting on the tail groups in the <span class="math notranslate nohighlight">\(xy\)</span>-plane <span id="id1">[<a class="reference internal" href="../intro.html#id15">CSS+18</a>]</span>.
+<p>For a typical phospholipid, such as <a class="reference external" href="https://en.wikipedia.org/wiki/Dipalmitoylphosphatidylcholine">DPPC</a>, there are two tail strands attached to each head and these tails typically sit with some chain tilt angle, <span class="math notranslate nohighlight">\(\theta\)</span>, which depends on the pressure acting on the tail groups in the <span class="math notranslate nohighlight">\(xy\)</span>-plane <span id="id1">[<a class="reference internal" href="../intro.html#id16">CSS+18</a>]</span>.
 This pressure effects the density of the phospholipids at the interface, also known as the area per molecule, <span class="math notranslate nohighlight">\(\mathrm{APM}\)</span>, with higher pressures causing a higher density.
 The slab model description of this system is shown in <a class="reference internal" href="#monolayer"><span class="std std-numref">Fig. 7</span></a>.</p>
 <div class="figure align-center" id="monolayer">
@@ -328,7 +328,7 @@ The slab model description of this system is shown in <a class="reference intern
 <div class="section" id="chain-tilt-angle">
 <h2>Chain tilt angle<a class="headerlink" href="#chain-tilt-angle" title="Permalink to this headline">¶</a></h2>
 <p>A common reparameterisation approach for the modelling of a phospholipid monolayer is to make the assumption that <strong>the hydrocarbon tail will be fully extended</strong>.
-Wwe can use the Tanford length <span id="id2">[<a class="reference internal" href="../intro.html#id16">Tan80</a>]</span> to find the length of this fully extended tail, <span class="math notranslate nohighlight">\(t_t\)</span>,</p>
+Wwe can use the Tanford length <span id="id2">[<a class="reference internal" href="../intro.html#id17">Tan80</a>]</span> to find the length of this fully extended tail, <span class="math notranslate nohighlight">\(t_t\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
 t_t = 1.5 + 1.265n_c [\mathrm{Å}], 
@@ -375,7 +375,7 @@ The scattering length density for one of the layers, <span class="math notransla
 <p>where, <span class="math notranslate nohighlight">\(d_i\)</span> is the layer thickness, <span class="math notranslate nohighlight">\(\phi_i\)</span> is the fractional solvation of the layer, by the solvent <span class="math notranslate nohighlight">\(\mathrm{s}\)</span>, with scattering length density, <span class="math notranslate nohighlight">\(\beta_{\mathrm{s}}\)</span>.</p>
 <p>The use of <span class="math notranslate nohighlight">\(\mathrm{APM}\)</span> reduces the number of parameters in the model, given that now both <span class="math notranslate nohighlight">\(\beta_{\mathrm{heads}}\)</span> and <span class="math notranslate nohighlight">\(\beta_{\mathrm{tails}}\)</span> are constrained by other parameters in the model and only <span class="math notranslate nohighlight">\(\mathrm{APM}\)</span> has been added.
 It should be noted that the solvation of a layer is a common approach for monlayer systems, as the hydrophilic head group layer will be very likely to have some composition of the solvent intercalated.
-For the tail group layer, <span class="math notranslate nohighlight">\(\phi_i\)</span> is typically assumed to be <span class="math notranslate nohighlight">\(0\)</span>, as it is unlikely that solvent would intercalate into this hydrophobic region <span id="id3">[<a class="reference internal" href="../intro.html#id17">MSFE+19</a>]</span>.</p>
+For the tail group layer, <span class="math notranslate nohighlight">\(\phi_i\)</span> is typically assumed to be <span class="math notranslate nohighlight">\(0\)</span>, as it is unlikely that solvent would intercalate into this hydrophobic region <span id="id3">[<a class="reference internal" href="../intro.html#id18">MSFE+19</a>]</span>.</p>
 <p>This approach is extremely important in the model-dependent analysis of reflectometry data as it:</p>
 <ul class="simple">
 <li><p>reduces the number of parameters that must be optimised; and</p></li>

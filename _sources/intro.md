@@ -9,15 +9,20 @@ The aim of this course, and the companion lecture, are to give an introduction t
 
 It is **assumed** that this reader has been introduced to the technique of neutron reflectometry, such as what this technique can be used to study and the data collection methodology.
 
+```{note}
+If you are participating in the [ISIS Virtual Reflectometry Training Course](https://indico.stfc.ac.uk/event/355/), please try and read through this material before the lecture on the 18th November 2021. 
+The lecture will **not** cover all of this material, but aims to answer student questions and work through some of the more interesting and problematic parts.
+```
+
 The integration with JupyterHub is powered by the [PaNOSC project](https://www.panosc.eu). 
 
-This course was originally developed by [Andrew McCluskey](mailto:andrew.mccluskey@ess.eu) from the [European Spallation Source](https://europeanspallationsource.se/) for the [ISIS Virtual Reflectometry Training Course](https://indico.stfc.ac.uk/event/355/). 
-If you have any questions about this course, please get in touch.
+This material was developed by [Andrew McCluskey](mailto:andrew.mccluskey@ess.eu) from the [European Spallation Source](https://europeanspallationsource.se/). 
+If you have any questions, please get in touch.
 Thanks to Drs Maximilian Skoda, Andrew Caruana, and Stephen Hall for feedback on this material.
 
 ```{note}
 In this course, we make use of the Python programming language heavily to show mathematics and plot figures. 
-The aim is that the course should not require knowledge of Python to understand the content.
+The aim is that the course should **not** require knowledge of Python to understand the content.
 If you are not comfortable with Python, feel free to skip the code blocks, but make sure to **pay attention** to the plots that are produced. 
 ```
 

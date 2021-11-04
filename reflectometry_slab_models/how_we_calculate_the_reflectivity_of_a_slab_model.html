@@ -311,17 +311,17 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="how-we-calculate-the-reflectivity-of-a-slab-model">
 <h1>How we calculate the reflectivity of a slab model<a class="headerlink" href="#how-we-calculate-the-reflectivity-of-a-slab-model" title="Permalink to this headline">¶</a></h1>
-<p>The slab model models the propagation of the neutron wave through a series of layers using the Abelès matrix formalism for stratified media <span id="id1">[<a class="reference internal" href="../intro.html#id10">Abeles48</a>, <a class="reference internal" href="../intro.html#id11">Par54</a>]</span>.
-Here, we will look closely at the algorithm used in this formalism in order to calculate the model reflectometry data.</p>
+<p>The slab model models the propagation of the neutron wave through a series of layers using the <strong>Abelès matrix formalism for stratified media</strong> or the <strong>Parratt recursive formalism</strong> <span id="id1">[<a class="reference internal" href="../intro.html#id11">Abeles48</a>, <a class="reference internal" href="../intro.html#id12">Par54</a>]</span>.
+Here, we will look closely at the algorithm used in these formalisms to calculate the model reflectometry data.</p>
 <p>We will implement this in Python as we go, as a series of functions that we can bring together at the end.
-This implementation is taken from the <code class="docutils literal notranslate"><span class="pre">refnx</span></code> package <span id="id2">[<a class="reference internal" href="../intro.html#id12">NP19</a>]</span>, and is reproduced under the BSD-3 License.
+This implementation is taken from the <code class="docutils literal notranslate"><span class="pre">refnx</span></code> package <span id="id2">[<a class="reference internal" href="../intro.html#id13">NP19</a>]</span>, and is modified and reproduced under the BSD-3 License.
 Most reflectometry analysis packages implement a similar algorithm.
 First we will import the necessary Python packages.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Additionally, for each of the functions the shape of the input parameters and returned values have been included in the docstring, to aid understanding.</p>
+<p>Additionally, for each of the functions, the shape of the input parameters and returned values have been included in the docstring, to aid understanding.</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -334,8 +334,8 @@ First we will import the necessary Python packages.</p>
 </div>
 <div class="section" id="model-algorithm">
 <h2>Model algorithm<a class="headerlink" href="#model-algorithm" title="Permalink to this headline">¶</a></h2>
-<p>This approach considers each <span class="math notranslate nohighlight">\(q\)</span>-value individually and constructs a series of matrices do describe each layer, <span class="math notranslate nohighlight">\(n\)</span>.
-The wavevector normal to the surface, <span class="math notranslate nohighlight">\(k(n)\)</span>, in each layer is found,</p>
+<p>This approach considers each <span class="math notranslate nohighlight">\(q\)</span>-value individually and constructs a series of matrices to describe each layer, <span class="math notranslate nohighlight">\(n\)</span>.
+The wavevector normal to the surface, <span class="math notranslate nohighlight">\(k(n)\)</span>, in each layer is first found,</p>
 <div class="math notranslate nohighlight">
 \[ k_n(q) = \sqrt{k_0(q)^2 - 4\pi(\beta_n - \beta_0)},\]</div>
 <p>where, <span class="math notranslate nohighlight">\(k_0(q) = 0.5q\)</span>, and <span class="math notranslate nohighlight">\(\beta_n\)</span> and <span class="math notranslate nohighlight">\(\beta_0\)</span> are the scattering length densities in layer <span class="math notranslate nohighlight">\(n\)</span> and the superphase, layer <span class="math notranslate nohighlight">\(0\)</span>.</p>
@@ -461,7 +461,7 @@ The overall reflectance and reflectivity is then calculated as,</p>
 </div>
 </div>
 </div>
-<p>This is all brought together in the function below.</p>
+<p>This is <strong>all brought together</strong> in the function below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">abeles</span><span class="p">(</span><span class="n">q</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">beta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
@@ -481,7 +481,7 @@ The overall reflectance and reflectivity is then calculated as,</p>
 </div>
 </div>
 </div>
-<p>Then, we can compare the result from the application of the Abelès matrix formalism for stratified media to that from the Fourier transform shown previously.</p>
+<p>Then, we can <strong>compare</strong> the result from the application of the Abelès matrix formalism for stratified media to that from the Fourier transform shown previously.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Abeles method</span>
@@ -519,7 +519,7 @@ The overall reflectance and reflectivity is then calculated as,</p>
 <img alt="../_images/how_we_calculate_the_reflectivity_of_a_slab_model_19_0.png" src="../_images/how_we_calculate_the_reflectivity_of_a_slab_model_19_0.png" />
 </div>
 </div>
-<p>The deviation at low <span class="math notranslate nohighlight">\(q\)</span>-values is much clearer now, when comparing with the Abelès approach, which does not rely on the Born approximation.
+<p>The deviation at low <span class="math notranslate nohighlight">\(q\)</span>-values is much clearer now, when comparing with the Abelès approach, which <strong>does not</strong> rely on the Born approximation.
 Instead, this approach makes use of the refraction of the neutron waves at a series of interfaces, based on the scattering length density of the materials.</p>
 </div>
 </div>
