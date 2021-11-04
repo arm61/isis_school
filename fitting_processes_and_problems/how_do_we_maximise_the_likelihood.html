@@ -458,12 +458,15 @@ This is necessary as, as we can see from the oberall maximum, the differential e
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/how_do_we_maximise_the_likelihood_6_0.png" src="../_images/how_do_we_maximise_the_likelihood_6_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overall Maximum: [7.70534417 1.91166223]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overall Maximum: [8.35882291 2.21752861]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Once some likelihood maximum is found, it is valuable to probe the shape of that maximum, to draw conclusions about robustivity of the result, but that is beyond the scope for this course.</p>
+<p>It is important to note that as the dimensionality to a fitting problem increases, as in the number of free parameters in our model increases, it will become harder and harder to find an optimised solution.
+Therefore, we should carefully consider which parameters in a model are allowed to varying in the fitting process, ensuring that the minimum number of parameters are changing.
+There are some important considerations that feed into this, for example that having <strong>more isotopic contrasts</strong> of neutron reflectometry data means that more parameters can be varied.
+Additionally, is it possibly to quantify the maximum number of free parameters, however this is computationally intensive and beyond the scope of this course, as is the fact that once some likelihood maximum is found, it is possible to probe the shape of that maximum, to draw conclusions about robustivity of the result.</p>
 </div>
 </div>
 

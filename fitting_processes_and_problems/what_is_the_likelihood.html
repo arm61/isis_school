@@ -360,6 +360,9 @@ For data where the uncertainty represents a single deviation on a normal distrib
 <p>where <span class="math notranslate nohighlight">\(n_{\mathrm{max}}\)</span> is the number of datapoints.
 You may notice that the first part of the summation is the same as a typical <span class="math notranslate nohighlight">\(\chi^2\)</span> goodness-of-fit metric that one may minimise, with the other elements being normalisation factors.
 For data where the uncertainty is not normally distributed, other likelihood functions may be used, however the majority of reflectometry analysis considers normal uncertainties.</p>
+<p>The value of a likelihood (and any goodness of fit metric) depends heavily on the data that it is describing.
+Hence, the likelihood is written <span class="math notranslate nohighlight">\(\mathcal{L}(\theta | y)\)</span>, where the <span class="math notranslate nohighlight">\(|y\)</span> indicates that this is given some data <span class="math notranslate nohighlight">\(y\)</span>.
+This means that one cannot compare likelihood values across datasets, it is only possible to compare likelihood values across models for a single dataset.</p>
 </div>
 
     <script type="text/x-thebe-config">
