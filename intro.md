@@ -14,7 +14,7 @@ The aim of this course, and the companion lecture, are to give an introduction t
 
 It is **assumed** that this reader has been introduced to the technique of neutron reflectometry, such as what this technique can be used to study and the data collection methodology.
 
-The integration with JupyterHub is powered by the [PaNOSC project](https://www.panosc.eu). 
+The integration with JupyterHub is powered by the [PaNOSC project](https://www.panosc.eu) and running on compute at the European Spallation Source's Data Management and Software Centre. 
 
 This material was developed by [Andrew McCluskey](mailto:andrew.mccluskey@ess.eu) from the [European Spallation Source](https://europeanspallationsource.se/). 
 If you have any questions, please get in touch.
