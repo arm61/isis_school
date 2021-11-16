@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How to leverage our prior knowledge? &#8212; Introduction to neutron reflectometry fitting</title>
+    <title>The “slab model” &#8212; Introduction to neutron reflectometry fitting</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -42,7 +42,7 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
@@ -53,9 +53,13 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="How do we maximise the likelihood?" href="how_do_we_maximise_the_likelihood.html" />
+    <link rel="next" title="How we calculate the reflectivity of a slab model" href="how_we_calculate_the_reflectivity_of_a_slab_model.html" />
+    <link rel="prev" title="What is model-dependent analysis?" href="../2_model_dependent_analysis/what_is_model_dependent_analysis.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -94,97 +98,97 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   The Fourier transform
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../the_fourier_transform/an_introduction_to_fourier_transforms.html">
+  <a class="reference internal" href="../1_the_fourier_transform/an_introduction_to_fourier_transforms.html">
    An introduction to Fourier transforms
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../the_fourier_transform/fourier_transforms_for_reflectometry_analysis.html">
+  <a class="reference internal" href="../1_the_fourier_transform/fourier_transforms_for_reflectometry_analysis.html">
    Fourier transforms for reflectometry analysis
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Model-dependent analysis
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../model_dependent_analysis/what_is_model_dependent_analysis.html">
+  <a class="reference internal" href="../2_model_dependent_analysis/what_is_model_dependent_analysis.html">
    What is model-dependent analysis?
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Reflectometry slab models
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../reflectometry_slab_models/the_slab_model.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    The “slab model”
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../reflectometry_slab_models/how_we_calculate_the_reflectivity_of_a_slab_model.html">
+  <a class="reference internal" href="how_we_calculate_the_reflectivity_of_a_slab_model.html">
    How we calculate the reflectivity of a slab model
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../reflectometry_slab_models/roughness_and_microslicing.html">
+  <a class="reference internal" href="roughness_and_microslicing.html">
    Roughness and microslicing
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Model reparameterisation
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../model_reparameterisation/a_case_for_model_reparameterisation.html">
+  <a class="reference internal" href="../4_model_reparameterisation/a_case_for_model_reparameterisation.html">
    A case for model reparameterisation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../model_reparameterisation/niti_multilayer_example.html">
+  <a class="reference internal" href="../4_model_reparameterisation/niti_multilayer_example.html">
    NiTi multilayer example
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../model_reparameterisation/phospholipid_monolayer_example.html">
+  <a class="reference internal" href="../4_model_reparameterisation/phospholipid_monolayer_example.html">
    Phospholipid monolayer example
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Fitting processes and problems
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="what_is_the_likelihood.html">
+  <a class="reference internal" href="../5_fitting_processes_and_problems/what_is_the_likelihood.html">
    What is the likelihood?
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="how_do_we_maximise_the_likelihood.html">
+  <a class="reference internal" href="../5_fitting_processes_and_problems/how_do_we_maximise_the_likelihood.html">
    How do we maximise the likelihood?
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5_fitting_processes_and_problems/how_to_leverage_our_prior_knowledge.html">
    How to leverage our prior knowledge?
   </a>
  </li>
@@ -229,7 +233,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/fitting_processes_and_problems/how_to_leverage_our_prior_knowledge.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/3_reflectometry_slab_models/the_slab_model.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -249,7 +253,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/arm61/isis_school/issues/new?title=Issue%20on%20page%20%2Ffitting_processes_and_problems/how_to_leverage_our_prior_knowledge.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/arm61/isis_school/issues/new?title=Issue%20on%20page%20%2F3_reflectometry_slab_models/the_slab_model.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -270,19 +274,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-uniform-prior">
-   A uniform prior
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -291,26 +282,30 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="how-to-leverage-our-prior-knowledge">
-<h1>How to leverage our prior knowledge?<a class="headerlink" href="#how-to-leverage-our-prior-knowledge" title="Permalink to this headline">¶</a></h1>
-<p>In the introduction to model-dependent analysis, it was suggested that constructing a model and therefore biasing the analysis was acceptable, <strong>if the model is founded in logic</strong>.
-We can take this one step further but designing out model-dependent analysis such that we impose prior expectations about the values of parameters we are looking to probe.
-We achieve this using Bayes theorem <span id="id1">[<a class="reference internal" href="../intro.html#id23">BP63</a>]</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-p(y|\theta) = \frac{\mathcal{L}(\theta|y) p(\theta)}{p(y)} \propto \mathcal{L}(\theta|y) p(\theta),
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(p(y|\theta)\)</span> is the posterior, <span class="math notranslate nohighlight">\(\mathcal{L}(\theta|y)\)</span> is the likleihood we have already seen, <span class="math notranslate nohighlight">\(p(\theta)\)</span> is our prior belief, and <span class="math notranslate nohighlight">\(p(y)\)</span> is the probability associated with the measured data, which is constant for all <span class="math notranslate nohighlight">\(\theta\)</span>.
-It is Bayes theorem that enables us to integrate our prior knowledge, as a probability, into our analysis.
-If we can describe our prior understanding of our parameters <span class="math notranslate nohighlight">\(\theta\)</span> as probabilities, we can look to maximise the posterior instead of the likelihood.</p>
-<div class="section" id="a-uniform-prior">
-<h2>A uniform prior<a class="headerlink" href="#a-uniform-prior" title="Permalink to this headline">¶</a></h2>
-<p>Let’s consider a simple example, where we impose a uniform prior on some of the parameters, we have in fact already looked at such an example.
-When looking at the differential evolution algorithm we <strong>imposed maximum and minimum bounds</strong> for our parameters, we were introducing a prior.
-In this case, the prior stated that if <span class="math notranslate nohighlight">\(\theta\)</span> was within those bounds the probability was <span class="math notranslate nohighlight">\(1\)</span>, but if it were outside, the probability was <span class="math notranslate nohighlight">\(0\)</span>.
-Therefore, the posterior was <span class="math notranslate nohighlight">\(0\)</span> and this could not be the maximum.</p>
-<p>If you would like to find out more about using Bayesian analysis in data analysis the book Data Analysis: A Bayesian Tutorial by Dr Devinder Sivia is a great place to start <span id="id2">[<a class="reference internal" href="../intro.html#id9">SJ06</a>]</span>.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="the-slab-model">
+<h1>The “slab model”<a class="headerlink" href="#the-slab-model" title="Permalink to this headline">¶</a></h1>
+<p>Possibly the most common approach to simulating model reflectometry data for comparison with, and refinement against, experimental data is the <strong>slab model</strong>.
+This is called the slab model as we describe the system as a series of slabs, with particular <strong>thickness</strong> and <strong>scattering length density</strong>.
+In this section, we will describe a typical slab model construction before going on to discuss some nuances of the model and how the reflectometry is calculated in later sections.</p>
+<p>An example of such a slab model is shown in <a class="reference internal" href="#slab-model"><span class="std std-numref">Fig. 3</span></a> below.
+This slab model consists of two layers, with thicknesses of <span class="math notranslate nohighlight">\(d_1\)</span> and <span class="math notranslate nohighlight">\(d_2\)</span> and scattering length densities of <span class="math notranslate nohighlight">\(\beta_1\)</span> and <span class="math notranslate nohighlight">\(\beta_2\)</span>.
+The scattering length density is a measure of how much the given material will scatter the incident neutron.
+As we will see in <span class="xref std std-doc">../model_reparameterisation/a_case_for_model_reparameterisation</span>, these parameters can be defined in terms of our chemical and physical understanding of the system.</p>
+<div class="figure align-center" id="slab-model">
+<a class="reference internal image-reference" href="../_images/slab.png"><img alt="../_images/slab.png" src="../_images/slab.png" style="height: 175px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">An example of a simple slab model, showing the scattering length densities (<span class="math notranslate nohighlight">\(\beta_1\)</span> and <span class="math notranslate nohighlight">\(\beta_2\)</span>) the thicknesses (<span class="math notranslate nohighlight">\(d_1\)</span> and <span class="math notranslate nohighlight">\(d_2\)</span>) and the <span class="math notranslate nohighlight">\(z\)</span>-dimension.</span><a class="headerlink" href="#slab-model" title="Permalink to this image">¶</a></p>
 </div>
+<p>In <span class="xref std std-doc">../the_fourier_transform/fourier_transforms_for_reflectometry_analysis</span>, it was introduced that the first derivative of the scattering length density profile, i.e. the difference in scattering length density as a function of <span class="math notranslate nohighlight">\(z\)</span>, was fundamental to the modelling of reflectivity.
+The importance of this is not lost in the slab models, where the model reflectometry data depends on the ratio between the scattering length densities in two layers.
+The reflectometry calculation from a slab model involves considering the reflection and refraction of the neutron wave at each interface.
+How much the wave is refracted at each interface depends on the ratio of the scattering length densities.</p>
+<div class="figure align-center" id="slab-wave">
+<a class="reference internal image-reference" href="../_images/slab_wave.png"><img alt="../_images/slab_wave.png" src="../_images/slab_wave.png" style="height: 220px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The same slab model as shown in <a class="reference internal" href="#slab-model"><span class="std std-numref">Fig. 3</span></a>, showing the paths taken by the incident (<em>i</em>) wave that can result in the reflected (<em>r</em>) waves.</span><a class="headerlink" href="#slab-wave" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#slab-wave"><span class="std std-numref">Fig. 4</span></a> shows how the neutron wave propagates through the slab model in reflection geometry.
+Hopefully, it is clear how this would lead to constructive and destructive interference could be observed in this system by some detector that measures the reflected waves.
+It is this interference pattern that we measure when we measure the reflectometry profile, however, obviously real experimental systems are less ordered.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -326,7 +321,7 @@ Therefore, the posterior was <span class="math notranslate nohighlight">\(0\)</s
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./fitting_processes_and_problems"
+            path: "./3_reflectometry_slab_models"
         },
         predefinedOutput: true
     }
@@ -336,22 +331,22 @@ Therefore, the posterior was <span class="math notranslate nohighlight">\(0\)</s
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="how_do_we_maximise_the_likelihood.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">How do we maximise the likelihood?</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../2_model_dependent_analysis/what_is_model_dependent_analysis.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">What is model-dependent analysis?</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="how_we_calculate_the_reflectivity_of_a_slab_model.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How we calculate the reflectivity of a slab model</p>
     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -372,8 +367,7 @@ Therefore, the posterior was <span class="math notranslate nohighlight">\(0\)</s
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
