@@ -1,6 +1,6 @@
 # What is model-dependent analysis?
 
-The previous section on {doc}`../the_fourier_transform/fourier_transforms_for_reflectometry_analysis` introduced a **model-independent approach** to reflectometry analysis.
+The previous section on {doc}`../1_the_fourier_transform/fourier_transforms_for_reflectometry_analysis` introduced a **model-independent approach** to reflectometry analysis.
 However, as was noted in this section, this approach does not offer a complete interpretation of the system we are investigating. 
 Due to the limited $q$-range and the limited $q$-resolution that we can probe experimentally, as well as the ever present phase problem. 
 A more common methodology for reflectometry analysis takes a model-dependent approach {cite}`lovell_analysis_1999`. 
