@@ -1,4 +1,4 @@
-jupyter-book==0.12.0
+jupyter-book==0.11.0
 matplotlib
 numpy
 scipy
