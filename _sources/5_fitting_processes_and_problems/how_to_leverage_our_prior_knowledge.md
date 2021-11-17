@@ -8,7 +8,7 @@ $$
 p(y|\theta) = \frac{\mathcal{L}(\theta|y) p(\theta)}{p(y)} \propto \mathcal{L}(\theta|y) p(\theta),
 $$
 
-where $p(y|\theta)$ is the posterior, $\mathcal{L}(\theta|y)$ is the likleihood we have already seen, $p(\theta)$ is our prior belief, and $p(y)$ is the probability associated with the measured data, which is constant for all $\theta$. 
+where $p(y|\theta)$ is the posterior, $\mathcal{L}(\theta|y)$ is the likelihood we have already seen, $p(\theta)$ is our prior belief, and $p(y)$ is the probability associated with the measured data, which is constant for all $\theta$. 
 It is Bayes theorem that enables us to integrate our prior knowledge, as a probability, into our analysis. 
 If we can describe our prior understanding of our parameters $\theta$ as probabilities, we can look to maximise the posterior instead of the likelihood. 
 
