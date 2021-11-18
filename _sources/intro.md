@@ -18,7 +18,7 @@ The integration with JupyterHub is powered by the [PaNOSC project](https://www.p
 
 This material was developed by [Andrew McCluskey](mailto:andrew.mccluskey@ess.eu) from the [European Spallation Source](https://europeanspallationsource.se/). 
 If you have any questions, please get in touch.
-Thanks to Drs Maximilian Skoda, Andrew Caruana, and Stephen Hall for feedback on this material.
+Thanks to Drs Maximilian Skoda, Andrew Caruana, Stephen Hall., and Andrew Nelson for feedback on this material.
 
 ```{note}
 In this course, we make use of the Python programming language heavily to show mathematics and plot figures. 
