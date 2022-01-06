@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -238,7 +238,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -289,7 +289,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -314,7 +314,35 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>How do we maximise the likelihood?</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradient-methods">
+   Gradient methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stochastic-methods">
+   Stochastic methods
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="how-do-we-maximise-the-likelihood">
@@ -430,7 +458,7 @@ Orange Maximum: [7.9957561  1.99615666]
 <h2>Stochastic methods<a class="headerlink" href="#stochastic-methods" title="Permalink to this headline">¶</a></h2>
 <p>The most common form of global optimisation methods are the stochastic methods, where stochastic means <strong>random</strong>.
 There are a variety of these methods, such as <a class="reference external" href="https://en.wikipedia.org/wiki/Particle_swarm_optimization">particle swarm</a>, which moves in the semi-random fashion analogous to a swarm of insects, or <a class="reference external" href="https://en.wikipedia.org/wiki/Evolutionary_algorithm">evolutionary algorithms</a>, which are inspired by biological evolution in order to find the optimum.
-The most commonly applied in neutron reflectometry model optimisation is the <strong>differential evolution</strong> method <span id="id1">[<a class="reference internal" href="../intro.html#id20">Bjorck11</a>, <a class="reference internal" href="../intro.html#id21">SP97</a>, <a class="reference internal" href="../intro.html#id22">WPMB99</a>]</span>.</p>
+The most commonly applied in neutron reflectometry model optimisation is the <strong>differential evolution</strong> method <span id="id1">[<a class="reference internal" href="../intro.html#id20" title="M. Björck. Fitting with differential evolution: an introduction and evaluation. J. Appl. Crystallogr., 44(6):1198–1204, 2011. doi:10.1107/s0021889811041446.">Bjorck11</a>, <a class="reference internal" href="../intro.html#id21" title="R. Storn and K. Price. Differential evolution – a simple and efficient heuristic for global optimization over continuous spaces. J. Glob. Optim., 11(4):341–359, 1997. doi:10.1023/a:1008202821328.">SP97</a>, <a class="reference internal" href="../intro.html#id22" title="M. Wormington, C. Panaccione, K. M. Matney, and D. K. Bowen. Characterization of structures from x-ray scattering data using genetic algorithms. Phil. Trans. R. Soc. Lond. A, 357(1761):2827–2848, 1999. doi:10.1098/rsta.1999.0469.">WPMB99</a>]</span>.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
@@ -463,7 +491,7 @@ This is necessary as, as we can see from the overall maximum, the differential e
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/how_do_we_maximise_the_likelihood_6_0.png" src="../_images/how_do_we_maximise_the_likelihood_6_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overall Maximum: [ 3.04483341 -0.02605967]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overall Maximum: [7.50382347 1.7286497 ]
 </pre></div>
 </div>
 </div>
@@ -472,7 +500,7 @@ This is necessary as, as we can see from the overall maximum, the differential e
 Therefore, we should carefully consider which parameters in a model are allowed to vary in the fitting process, ensuring that the minimum number of parameters are changing.
 There are some important considerations that feed into this, for example, that having <strong>more isotopic contrasts</strong> of neutron reflectometry data means that more parameters can be varied.</p>
 <p>Once some maximum likelihood is found, it is possible to probe the shape of that maximum and draw conclusions about the robustivity of the result.
-Additionally, the maximum number of free parameters that a given dataset(s) can describe is quantifiable, however, very computationally intensive <span id="id2">[<a class="reference internal" href="../intro.html#id8">TKH+19</a>]</span>.</p>
+Additionally, the maximum number of free parameters that a given dataset(s) can describe is quantifiable, however, very computationally intensive <span id="id2">[<a class="reference internal" href="../intro.html#id8" title="B. W. Treece, P. A. Kienzle, D. P. Hoogerheide, C. F. Majkrzak, M. Lösche, and F. Heinrich. Optimization of reflectometry experiments using information theory. J. Appl. Crystallogr., 52(1):47–59, 2019. doi:10.1107/s1600576718017016.">TKH+19</a>]</span>.</p>
 </div>
 </div>
 
@@ -498,8 +526,8 @@ Additionally, the maximum number of free parameters that a given dataset(s) can 
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="what_is_the_likelihood.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -516,19 +544,17 @@ Additionally, the maximum number of free parameters that a given dataset(s) can 
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Andrew R. McCluskey<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Andrew R. McCluskey<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

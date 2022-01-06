@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -238,7 +238,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -289,7 +289,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -309,16 +309,39 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>How we calculate the reflectivity of a slab model</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-algorithm">
+   Model algorithm
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="how-we-calculate-the-reflectivity-of-a-slab-model">
 <h1>How we calculate the reflectivity of a slab model<a class="headerlink" href="#how-we-calculate-the-reflectivity-of-a-slab-model" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://pan-learning.org/moodle/course/view.php?id=96"><strong>Interact with this notebook via pan-learning.org</strong></a></p>
-<p>The slab model models the propagation of the neutron wave through a series of layers using the <strong>Abelès matrix formalism for stratified media</strong> or the <strong>Parratt recursive formalism</strong> <span id="id1">[<a class="reference internal" href="../intro.html#id12">Abeles48</a>, <a class="reference internal" href="../intro.html#id13">Par54</a>]</span>.
+<p>The slab model models the propagation of the neutron wave through a series of layers using the <strong>Abelès matrix formalism for stratified media</strong> or the <strong>Parratt recursive formalism</strong> <span id="id1">[<a class="reference internal" href="../intro.html#id12" title="F. Abelès. Sur la propagation des ondes électromagnétiques dans les milieux sratifiés. Ann. Phys., 12(3):504–520, 1948. doi:10.1051/anphys/194812030504.">Abeles48</a>, <a class="reference internal" href="../intro.html#id13" title="L. G. Parratt. Surface studies of solids by total reflection of x-rays. Phys. Rev., 95(2):359–369, 1954. doi:10.1103/physrev.95.359.">Par54</a>]</span>.
 Here, we will look closely at the algorithm used in these formalisms to calculate the model reflectometry data.</p>
 <p>We will implement this in Python as we go, as a series of functions that we can bring together at the end.
-This implementation is taken from the <code class="docutils literal notranslate"><span class="pre">refnx</span></code> package <span id="id2">[<a class="reference internal" href="../intro.html#id14">NP19</a>]</span>, and is modified and reproduced under the BSD-3 License.
+This implementation is taken from the <code class="docutils literal notranslate"><span class="pre">refnx</span></code> package <span id="id2">[<a class="reference internal" href="../intro.html#id14" title="A. R. J. Nelson and S. W. Prescott. Refnx: neutron and x-ray reflectometry analysis in python. J. Appl. Crystallogr., 52(1):193–200, 2019. doi:10.1107/s1600576718017296.">NP19</a>]</span>, and is modified and reproduced under the BSD-3 License.
 Most reflectometry analysis packages implement a similar algorithm.
 First we will import the necessary Python packages.</p>
 <div class="margin sidebar">
@@ -550,8 +573,8 @@ Instead, this approach makes use of the refraction of the neutron waves at a ser
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="the_slab_model.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -568,19 +591,17 @@ Instead, this approach makes use of the refraction of the neutron waves at a ser
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Andrew R. McCluskey<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Andrew R. McCluskey<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

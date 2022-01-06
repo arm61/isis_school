@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -238,7 +238,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -289,7 +289,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -314,7 +314,35 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Phospholipid monolayer example</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chain-tilt-angle">
+   Chain tilt angle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#area-per-molecule">
+   Area per molecule
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="phospholipid-monolayer-example">
@@ -322,7 +350,7 @@
 <p><a class="reference external" href="https://pan-learning.org/moodle/course/view.php?id=96"><strong>Interact with this notebook via pan-learning.org</strong></a></p>
 <p>A more complex example of model reparameterisation is that of a phospholipid monolayer, where the reparameterisation of our model allows <strong>additional constraints</strong> to be included that would be very difficult to apply in a traditional slab model approach.
 The amphiphilic nature of a phospholipid molecule, which consists of a water-soluble head group and insoluble, hydrocarbon tail group, means that these molecules will <strong>self-assemble</strong> at the air-water interface.</p>
-<p>For a typical phospholipid, such as <a class="reference external" href="https://en.wikipedia.org/wiki/Dipalmitoylphosphatidylcholine">DPPC</a>, there are two tail strands <strong>attached</strong> to each head and these tails typically sit with some <strong>chain tilt angle</strong>, <span class="math notranslate nohighlight">\(\theta\)</span>, which depends on the pressure acting on the tail groups in the <span class="math notranslate nohighlight">\(xy\)</span>-plane <span id="id1">[<a class="reference internal" href="../intro.html#id17">CSS+18</a>]</span>.
+<p>For a typical phospholipid, such as <a class="reference external" href="https://en.wikipedia.org/wiki/Dipalmitoylphosphatidylcholine">DPPC</a>, there are two tail strands <strong>attached</strong> to each head and these tails typically sit with some <strong>chain tilt angle</strong>, <span class="math notranslate nohighlight">\(\theta\)</span>, which depends on the pressure acting on the tail groups in the <span class="math notranslate nohighlight">\(xy\)</span>-plane <span id="id1">[<a class="reference internal" href="../intro.html#id17" title="R. A. Campbell, Y. Saaka, Y. Shao, Y. Gerelli, R. Cubitt, E. Nazaruk, D. Matyszewska, and M. J. Lawrence. Structure of surfactant and phospholipid monolayers at the air/water interface modeled from neutron reflectivity data. J. Colloid Interface Sci., 531:98–108, 2018. doi:10.1016/j.jcis.2018.07.022.">CSS+18</a>]</span>.
 This pressure affects the density of the phospholipids at the interface, also known as the <strong>area per molecule</strong>, <span class="math notranslate nohighlight">\(\mathrm{APM}\)</span>, with higher pressures causing a higher density.
 The slab model description of this system is shown in <a class="reference internal" href="#monolayer"><span class="std std-numref">Fig. 7</span></a>.</p>
 <div class="figure align-center" id="monolayer">
@@ -332,7 +360,7 @@ The slab model description of this system is shown in <a class="reference intern
 <div class="section" id="chain-tilt-angle">
 <h2>Chain tilt angle<a class="headerlink" href="#chain-tilt-angle" title="Permalink to this headline">¶</a></h2>
 <p>A common reparameterisation for the modelling of a phospholipid monolayer is to make the assumption that <strong>the hydrocarbon tail will be fully extended</strong>.
-Wwe can use the Tanford length <span id="id2">[<a class="reference internal" href="../intro.html#id18">Tan80</a>]</span> to find the length of this fully extended tail, <span class="math notranslate nohighlight">\(t_t\)</span>,</p>
+Wwe can use the Tanford length <span id="id2">[<a class="reference internal" href="../intro.html#id18" title="C. Tanford. The Hydrophobic Effect: Formation of Micelles and Biological Membranes. John Wiley &amp; Sons, 2 edition, 1980. ISBN 978-0-471-04893-0.">Tan80</a>]</span> to find the length of this fully extended tail, <span class="math notranslate nohighlight">\(t_t\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
 t_t = 1.5 + 1.265n_c [\mathrm{Å}], 
@@ -379,7 +407,7 @@ The scattering length density for one of the layers, <span class="math notransla
 <p>where, <span class="math notranslate nohighlight">\(d_i\)</span> is the layer thickness, <span class="math notranslate nohighlight">\(\phi_i\)</span> is the fractional solvation of the layer, by the solvent <span class="math notranslate nohighlight">\(\mathrm{s}\)</span>, with scattering length density, <span class="math notranslate nohighlight">\(\beta_{\mathrm{s}}\)</span>.</p>
 <p>The use of <span class="math notranslate nohighlight">\(\mathrm{APM}\)</span> reduces the number of parameters in the model, given that now both <span class="math notranslate nohighlight">\(\beta_{\mathrm{heads}}\)</span> and <span class="math notranslate nohighlight">\(\beta_{\mathrm{tails}}\)</span> are constrained by other parameters in the model and <strong>only</strong> <span class="math notranslate nohighlight">\(\mathrm{APM}\)</span> has been added.
 It should be noted that the solvation of a layer is a common approach for monolayer systems, as the hydrophilic head group layer will be very likely to have some composition of the solvent intercalated.
-For the tail group layer, <span class="math notranslate nohighlight">\(\phi_i\)</span> is typically assumed to be <span class="math notranslate nohighlight">\(0\)</span>, as it is unlikely that solvent would intercalate into this hydrophobic region <span id="id3">[<a class="reference internal" href="../intro.html#id19">MSFE+19</a>]</span>.</p>
+For the tail group layer, <span class="math notranslate nohighlight">\(\phi_i\)</span> is typically assumed to be <span class="math notranslate nohighlight">\(0\)</span>, as it is unlikely that solvent would intercalate into this hydrophobic region <span id="id3">[<a class="reference internal" href="../intro.html#id19" title="A. R. McCluskey, A. Sanchez-Fernandez, K. J. Edler, S. C. Parker, A. J. Jackson, R. A. Campbell, and T. Arnold. Bayesian determination of the effect of a deep eutectic solvent on the structure of lipid monolayers. Phys. Chem. Chem. Phys., 21(11):6133–6141, 2019. doi:10.1039/c9cp00203k.">MSFE+19</a>]</span>.</p>
 <p>This approach is extremely important in the model-dependent analysis of reflectometry data as it:</p>
 <ul class="simple">
 <li><p>reduces the number of parameters that must be optimised; and</p></li>
@@ -412,8 +440,8 @@ One of the best ways to learn about how best to parameterise your model is to sp
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="niti_multilayer_example.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -430,19 +458,17 @@ One of the best ways to learn about how best to parameterise your model is to sp
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Andrew R. McCluskey<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Andrew R. McCluskey<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

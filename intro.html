@@ -41,7 +41,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -235,7 +235,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -269,7 +269,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -289,7 +289,30 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to neutron reflectometry fitting</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliography">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-neutron-reflectometry-fitting">
@@ -326,10 +349,10 @@ It may take up to 5 minutes after you enrol for the system to recognize you so i
 <h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
 <p>Some particularly useful books and papers for reflectometry analysis, and data analysis in general include:</p>
 <ul class="simple">
-<li><p>Elementary Scattering Theory: For X-ray and Neutron Users by Devinder Sivia <span id="id1">[<a class="reference internal" href="#id6">Siv11</a>]</span>;</p></li>
-<li><p><em>Current Opinion in Colloid &amp; Interface Science</em>, <strong>42</strong>, 2019 covers a range of applications in soft and biological matter including <span id="id2">[<a class="reference internal" href="#id24">Lak19</a>, <a class="reference internal" href="#id25">Sko19</a>, <a class="reference internal" href="#id26">WC19</a>]</span>;</p></li>
-<li><p>Some interesting reviews of magnetic reflectometry analysis include <span id="id3">[<a class="reference internal" href="#id27">FM05</a>, <a class="reference internal" href="#id29">TZ07</a>, <a class="reference internal" href="#id28">ZTBT07</a>]</span>; and</p></li>
-<li><p>Data Analysis: A Bayesian Tutorial by Devinder Sivia and John Skilling <span id="id4">[<a class="reference internal" href="#id9">SJ06</a>]</span>.</p></li>
+<li><p>Elementary Scattering Theory: For X-ray and Neutron Users by Devinder Sivia <span id="id1">[<a class="reference internal" href="#id6" title="D. S. Sivia. Elementary Scattering Theory: For X-Ray and Neutron Users. Oxford University Press, 2011. ISBN 978-0-19-922868-3.">Siv11</a>]</span>;</p></li>
+<li><p><em>Current Opinion in Colloid &amp; Interface Science</em>, <strong>42</strong>, 2019 covers a range of applications in soft and biological matter including <span id="id2">[<a class="reference internal" href="#id24" title="J. H. Lakey. Recent advances in neutron reflectivity studies of biological membranes. Curr. Opin. Colloid Interface Sci., 42:33–40, 2019. doi:10.1016/j.cocis.2019.02.012.">Lak19</a>, <a class="reference internal" href="#id25" title="M. W. A. Skoda. Recent developments in the application of x-ray and neutron reflectivity to soft-matter systems. Curr. Opin. Colloid Interface Sci., 42:41–54, 2019. doi:10.1016/j.cocis.2019.03.003.">Sko19</a>, <a class="reference internal" href="#id26" title="R. J. L. Welbourn and S. M. Clarke. New insights into the solid-liquid interface exploiting neutron reflectivity. Curr. Opin. Colloid Interface Sci., 42:87–98, 2019. doi:10.1016/j.cocis.2019.03.007.">WC19</a>]</span>;</p></li>
+<li><p>Some interesting reviews of magnetic reflectometry analysis include <span id="id3">[<a class="reference internal" href="#id27" title="M. R. Fitzsimmons and C. F. Majkrzak. Applications of polarized neutron reflectometry to studies of artificially structured magnetic materials. In Y. Zhou, editor, Neutron, X-Rays and Light. Scattering Methods Applied to Soft Condensed Matter, pages 107-155. Springer, 2005.">FM05</a>, <a class="reference internal" href="#id29" title="B. P. Toperverg and H. Zabel. Neutron Scattering in Nanomagnetism. In D. L. Price and F. Fernandez-Alonso, editors, Neutron Scattering – Magnetic and Quantum Phenomena, pages 339-434. Academic Press, 2007.">TZ07</a>, <a class="reference internal" href="#id28" title="H. Zabel, K. Theis-Bröhl, and B. P. Toperverg. Polarized Neutron Reflectivity and Scattering from Magnetic nanostructures and spintronic materials. In H. Kronmüller, S. Parkin, R. Wiesendanger, and G. Guntherodt, editors, Handbook of Magnetism and Advanced Magnetic Materials. John Wiley &amp; Sons, 2007.">ZTBT07</a>]</span>; and</p></li>
+<li><p>Data Analysis: A Bayesian Tutorial by Devinder Sivia and John Skilling <span id="id4">[<a class="reference internal" href="#id9" title="D. S. Sivia and Skilling J. Data Analysis: A Bayesian tutorial. Oxford University Press, 2 edition, 2006. ISBN 978-0-19-856832-2.">SJ06</a>]</span>.</p></li>
 </ul>
 <p>This list is not exhaustive and we suggest searching for and reading relevant work in your field <strong>once you understand the basics</strong>.</p>
 <p id="id5"><dl class="citation">
@@ -442,8 +465,8 @@ It may take up to 5 minutes after you enrol for the system to recognize you so i
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
     <a class='right-next' id="next-link" href="1_the_fourier_transform/an_introduction_to_fourier_transforms.html" title="next page">
     <div class="prev-next-info">
@@ -453,19 +476,17 @@ It may take up to 5 minutes after you enrol for the system to recognize you so i
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Andrew R. McCluskey<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Andrew R. McCluskey<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
