@@ -3,4 +3,4 @@ matplotlib
 numpy
 scipy
 pint
-sphinx-book-theme
+pydata-sphinx-theme
