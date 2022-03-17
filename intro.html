@@ -37,17 +37,19 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -317,11 +319,6 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-neutron-reflectometry-fitting">
 <h1>Introduction to neutron reflectometry fitting<a class="headerlink" href="#introduction-to-neutron-reflectometry-fitting" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you are participating in the <a class="reference external" href="https://indico.stfc.ac.uk/event/355/">ISIS Virtual Reflectometry Training Course</a>, please try and read through this material before the lecture on the 18th November 2021.
-The lecture will <strong>not</strong> cover all of this material, but aims to answer student questions and work through some of the more interesting and problematic parts.</p>
-</div>
 <p>The aim of this course, and the companion lecture, are to give an introduction to the following subjects:</p>
 <ul class="simple">
 <li><p>the <strong>Fourier transform</strong> and how a Born approximation approach may be used to analyse neutron reflectometry data;</p></li>
