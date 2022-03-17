@@ -1,10 +1,5 @@
 # Introduction to neutron reflectometry fitting
 
-```{warning}
-If you are participating in the [ISIS Virtual Reflectometry Training Course](https://indico.stfc.ac.uk/event/355/), please try and read through this material before the lecture on the 18th November 2021. 
-The lecture will **not** cover all of this material, but aims to answer student questions and work through some of the more interesting and problematic parts.
-```
-
 The aim of this course, and the companion lecture, are to give an introduction to the following subjects: 
 - the **Fourier transform** and how a Born approximation approach may be used to analyse neutron reflectometry data; 
 - the logic of **model-dependent analysis**; 
