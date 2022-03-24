@@ -27,7 +27,7 @@ repository:
 
 sphinx:
   config:
-    html_theme: pydata_sphinx_theme
+    html_theme: jupyter_book_theme
     
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
