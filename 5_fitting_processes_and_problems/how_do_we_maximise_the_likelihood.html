@@ -609,14 +609,21 @@ This is necessary as, as we can see from the overall maximum, the differential e
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/how_do_we_maximise_the_likelihood_6_0.png" src="../_images/how_do_we_maximise_the_likelihood_6_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overall Maximum: [7.96145886 2.17229287]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overall Maximum: [7.5934141  1.79948396]
 </pre></div>
 </div>
 </div>
 </div>
-<p>It is important to note that as the dimensionality to a fitting problem increases, as the number of free parameters in our model increases, it will become harder and harder to find an optimised solution.
-Therefore, we should carefully consider which parameters in a model are allowed to vary in the fitting process, ensuring that the minimum number of parameters are changing.
-There are some important considerations that feed into this, for example, that having <strong>more isotopic contrasts</strong> of neutron reflectometry data means that more parameters can be varied.</p>
+<p>It is important to note that as the dimensionality to a fitting problem increases, as the number of free parameters in our model increases, it will become harder and harder to find an optimised solution.</p>
+<p>[TODO: ADD AN EXAMPLE HERE OF MULTIPLE SOLUTIONS/MINIMA TO THE SAME REFLECTIVITY DATA]</p>
+<p>Therefore, we should carefully consider which parameters in a model are allowed to vary in the fitting process, ensuring that the minimum number of parameters are changing.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>One way to reduce the number of possible solutions is to use multiple contrasts, for example <strong>isotopic or magnetic contrasts</strong>. Though this increases the number of parameters which need to be varied, a suitable choice of contrasts should add sufficient additional information to offset this.</p>
+</div>
+</aside>
 <p>Once some maximum likelihood is found, it is possible to probe the shape of that maximum and draw conclusions about the robustivity of the result.
 Additionally, the maximum number of free parameters that a given dataset(s) can describe is quantifiable, however, very computationally intensive <span id="id2">[<a class="reference internal" href="../intro.html#id8" title="B. W. Treece, P. A. Kienzle, D. P. Hoogerheide, C. F. Majkrzak, M. Lösche, and F. Heinrich. Optimization of reflectometry experiments using information theory. J. Appl. Crystallogr., 52(1):47–59, 2019. doi:10.1107/s1600576718017016.">TKH+19</a>]</span>.</p>
 </section>
