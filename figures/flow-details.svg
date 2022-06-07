@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="flow-details.svg"
+   inkscape:export-filename="flow-details.png"
+   inkscape:export-xdpi="98.939049"
+   inkscape:export-ydpi="98.939049"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.3808888"
+     inkscape:cx="354.11975"
+     inkscape:cy="398.2942"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="Arrow1Sstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Sstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.2) translate(6,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path10953" />
+    </marker>
+    <rect
+       x="328.05082"
+       y="342.61136"
+       width="58.066749"
+       height="49.295337"
+       id="rect11791" />
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Send"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.2) rotate(180) translate(6,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path10956" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow2Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(1.1) rotate(180) translate(1,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="stroke:context-stroke;fill-rule:evenodd;fill:context-stroke;stroke-width:0.62500000;stroke-linejoin:round;"
+         id="path10962" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path10941" />
+    </marker>
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="309.97033"
+       height="134.65984"
+       id="rect1638" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="237.6557"
+       height="90.987491"
+       id="rect8404" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="275.66829"
+       height="83.274791"
+       id="rect12473" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="274.94411"
+       height="216.52231"
+       id="rect2895" />
+    <rect
+       x="83.849104"
+       y="430.7317"
+       width="191.93041"
+       height="81.071162"
+       id="rect5581" />
+    <rect
+       x="83.849106"
+       y="430.73169"
+       width="277.84079"
+       height="110.06913"
+       id="rect2895-7" />
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path10956-9" />
+    </marker>
+    <rect
+       x="83.849106"
+       y="430.73169"
+       width="419.42269"
+       height="120.67851"
+       id="rect8404-1" />
+    <rect
+       x="83.849106"
+       y="430.73169"
+       width="191.9304"
+       height="81.071159"
+       id="rect5581-1" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <rect
+       style="fill:none;stroke:#de8f05;stroke-width:0.462;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect846"
+       width="65.811096"
+       height="34.21627"
+       x="89.717781"
+       y="50.481155"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/flow.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <rect
+       style="fill:none;stroke:#de8f05;stroke-width:0.583345;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect846-9"
+       width="115.6983"
+       height="31.029268"
+       x="113.73192"
+       y="142.36679"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/flow.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <ellipse
+       style="fill:none;stroke:#0173b2;stroke-width:0.549796;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path870"
+       cx="23.213078"
+       cy="67.589287"
+       rx="35.491451"
+       ry="17.097242"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/flow.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-39.823358,-58.474572)"
+       id="text1636"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1638);display:inline;fill:#0173b2;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/flow.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="136.30879"
+         y="455.06126"
+         id="tspan2692"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2688">Propose a </tspan><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2690">model,
+</tspan></tspan><tspan
+         x="154.21246"
+         y="488.70332"
+         id="tspan2696"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2694">initial guesses,
+</tspan></tspan><tspan
+         x="179.19296"
+         y="522.34538"
+         id="tspan2700"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2698">and priors</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,68.83651,-55.481781)"
+       id="text8402"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect8404);display:inline;fill:#de8f05;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/flow.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="85.508641"
+         y="455.06126"
+         id="tspan2704"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2702">Calculate the model </tspan></tspan><tspan
+         x="124.1415"
+         y="488.70332"
+         id="tspan2708"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2706">reflectometry</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,92.789979,30.978263)"
+       id="text8402-6"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect8404-1);display:inline;fill:#de8f05;fill-opacity:1;stroke:none"
+       x="340.20337"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/flow.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="109.79078"
+         y="455.06126"
+         id="tspan2712"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2710">Report best-fit parameters with </tspan></tspan><tspan
+         x="108.15667"
+         y="488.70332"
+         id="tspan2716"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2714">error-bars, confidence intervals, </tspan></tspan><tspan
+         x="92.26472"
+         y="522.34538"
+         id="tspan2722"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2718">posterior distribution</tspan><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI'"
+           id="tspan2720"> distributions</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.136;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Send)"
+       d="M 58.961841,67.58929 H 87.699716"
+       id="path10939"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/flow.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text11789"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect11791);display:inline;fill:#000000;fill-opacity:1;stroke:none" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,166.50385,-59.103302)"
+       id="text2893"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect2895);display:inline;fill:#029e73;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/flow.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="138.9579"
+         y="455.06126"
+         id="tspan2726"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2724">Compare with </tspan></tspan><tspan
+         x="115.42923"
+         y="488.70332"
+         id="tspan2730"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2728">experimental data
+</tspan></tspan><tspan
+         x="98.410978"
+         y="522.34538"
+         id="tspan2734"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2732">using figure of merit.
+</tspan></tspan><tspan
+         x="103.77557"
+         y="555.98747"
+         id="tspan2738"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2736">Can we improve the </tspan></tspan><tspan
+         x="116.8485"
+         y="589.62956"
+         id="tspan2742"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2740">model and/or our </tspan></tspan><tspan
+         x="125.09721"
+         y="623.27165"
+         id="tspan2746"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2744">confidence in it?</tspan></tspan></text>
+    <path
+       sodipodi:type="star"
+       style="fill:none;fill-opacity:1;stroke:#029e73;stroke-width:0.638565;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path5267"
+       inkscape:flatsided="true"
+       sodipodi:sides="5"
+       sodipodi:cx="191.71568"
+       sodipodi:cy="442.92932"
+       sodipodi:r1="36.426586"
+       sodipodi:r2="29.469727"
+       sodipodi:arg1="-1.5707963"
+       sodipodi:arg2="-0.9424778"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 191.71568,406.50274 34.64375,25.17015 -13.23274,40.72616 -42.82202,0 -13.23273,-40.72616 z"
+       transform="matrix(1.0987057,0,0,1.0354051,14.24253,-379.23824)"
+       inkscape:transform-center-y="-3.6016072"
+       inkscape:transform-center-x="-1.0885921e-05"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/flow.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.136;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Send)"
+       d="m 155.79939,67.58929 h 28.73789"
+       id="path5407"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/flow.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.12176;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Send-5)"
+       d="m 225.46276,110.1721 0.0479,29.69856"
+       id="path5407-4"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/flow.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.12073;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Send)"
+       d="M 199.24344,105.52512 H 121.85321 V 87.374383"
+       id="path5495"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/flow.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"
+       sodipodi:nodetypes="ccc" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,116.52522,-7.170439)"
+       id="text5579"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect5581);display:inline;fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/flow.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="108.44718"
+         y="455.06126"
+         id="tspan2750"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2748">Improve the </tspan></tspan><tspan
+         x="142.46415"
+         y="488.70332"
+         id="tspan2754"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;text-anchor:middle"
+           id="tspan2752">model</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,205.01707,5.5174905)"
+       id="text5579-5"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect5581-1);display:inline;fill:#000000;fill-opacity:1;stroke:none"
+       x="133.93359"
+       y="0"
+       inkscape:export-filename="/Users/andrewmccluskey/work/teaching/isis_school/figures/flow.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         x="83.849609"
+         y="455.06126"
+         id="tspan2758"><tspan
+           style="font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI'"
+           id="tspan2756">No</tspan></tspan></text>
+  </g>
+</svg>
