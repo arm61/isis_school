@@ -28,13 +28,19 @@ First, we propose some **model** that we believe can accurately describe the sys
 Then, we use some **functional construct** to calculate what the *experimental* data from such a system would look like. 
 We compare this calculated, model data with our measured, experimental data and then **change our model** such as to improve the agreement between the two. 
 
-```{figure} ../figures/flow.png
+```{mermaid}
 ---
-height: 200px
 align: center
-name: flow-diagram
+caption: The logical flow of model-dependent analysis, showing the improvement of the model based on the agreement with the data.
 ---
-The logical flow of model-dependent analysis, showing the improvement of the model based on the agreement with the data.
+    flowchart LR
+        id1{{Propose a model}}
+        id2((Calculate the<br>model reflectometry))
+        id3>Compare with<br>experimental data]
+        id1-->id2-->id3-- Improve<br>the model-->id2
+        style id1 fill:#0173B288
+        style id2 fill:#029E7388
+        style id3 fill:#D55E0088
 ```
 
 ```{warning}
