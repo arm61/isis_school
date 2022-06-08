@@ -503,7 +503,15 @@ The sensitivity to the first derivative indicates the importance of the change o
 R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \frac{\mathrm{d}\beta}{\mathrm{d}z} \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2,
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\beta(z)\)</span> is the scattering length density profile as a function of <span class="math notranslate nohighlight">\(z\)</span>.</p>
-<p>TODO: Disclaimer not to use the Born approx for analysis.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The Born approximation is not commonly used from reflectometry data analysis.
+It can however be a valuable tool for quick data exploration and is important to understanding the nature of reflectivity.
+Hence, we discuss it here.</p>
+</div>
+</aside>
 </section>
 <section id="the-example-of-a-single-interface">
 <h2>The example of a single interface<a class="headerlink" href="#the-example-of-a-single-interface" title="Permalink to this headline">#</a></h2>
@@ -732,13 +740,13 @@ The cosine function in the Born approximation above can be used to rationalise t
 
 <span class="n">distances</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">peaks</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Calculated thickness = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> +/-&#39;</span>
-       <span class="s1">&#39; {np.std(distances):.2f} Å&#39;</span><span class="p">)</span>
+      <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> Å&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/fourier_transforms_for_reflectometry_analysis_18_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_18_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculated thickness = 200.46 +/- {np.std(distances):.2f} Å
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculated thickness = 200.46 +/- 1.25 Å
 </pre></div>
 </div>
 </div>
