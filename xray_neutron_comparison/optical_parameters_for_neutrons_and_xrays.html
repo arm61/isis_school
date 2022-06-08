@@ -1,0 +1,712 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Optical parameters for neutrons and x-rays &#8212; A Guide to Reflectometry</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="How to leverage our prior knowledge?" href="../5_fitting_processes_and_problems/how_to_leverage_our_prior_knowledge.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">A Guide to Reflectometry</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    A Guide to Reflectometry
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The Fourier transform
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_the_fourier_transform/an_introduction_to_fourier_transforms.html">
+   An introduction to Fourier transforms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_the_fourier_transform/fourier_transforms_for_reflectometry_analysis.html">
+   Fourier transforms for reflectometry analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Model-dependent analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_model_dependent_analysis/what_is_model_dependent_analysis.html">
+   What is model-dependent analysis?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reflectometry slab models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_reflectometry_slab_models/the_slab_model.html">
+   The “slab model”
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_reflectometry_slab_models/how_we_calculate_the_reflectivity_of_a_slab_model.html">
+   How we calculate the reflectivity of a slab model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_reflectometry_slab_models/roughness_and_microslicing.html">
+   Roughness and microslicing
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Model reparameterisation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_model_reparameterisation/a_case_for_model_reparameterisation.html">
+   A case for model reparameterisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_model_reparameterisation/niti_multilayer_example.html">
+   NiTi multilayer example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_model_reparameterisation/phospholipid_monolayer_example.html">
+   Phospholipid monolayer example
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fitting processes and problems
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5_fitting_processes_and_problems/what_is_the_likelihood.html">
+   What is the likelihood?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5_fitting_processes_and_problems/how_do_we_maximise_the_likelihood.html">
+   How do we maximise the likelihood?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5_fitting_processes_and_problems/how_to_leverage_our_prior_knowledge.html">
+   How to leverage our prior knowledge?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Differences and complimentarity of neutrons and x-rays in reflectometry
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Optical parameters for neutrons and x-rays
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/reflectivity/learn/main?urlpath=tree/docs/xray_neutron_comparison/optical_parameters_for_neutrons_and_xrays.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/reflectivity/learn"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/reflectivity/learn/issues/new?title=Issue%20on%20page%20%2Fxray_neutron_comparison/optical_parameters_for_neutrons_and_xrays.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/xray_neutron_comparison/optical_parameters_for_neutrons_and_xrays.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fresnel-reflectivity-and-refraction-in-terms-of-refractive-index">
+   Fresnel reflectivity and refraction in terms of refractive index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#refractive-index-and-the-scattering-length-density-sld">
+   Refractive index and the scattering length density (SLD)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sld-for-neutrons">
+   SLD for neutrons
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#refractive-index-for-x-rays">
+   Refractive index for x-rays
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implications-of-different-contrasts-for-neutrons-and-x-rays">
+   Implications of different contrasts for neutrons and x-rays
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Optical parameters for neutrons and x-rays</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fresnel-reflectivity-and-refraction-in-terms-of-refractive-index">
+   Fresnel reflectivity and refraction in terms of refractive index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#refractive-index-and-the-scattering-length-density-sld">
+   Refractive index and the scattering length density (SLD)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sld-for-neutrons">
+   SLD for neutrons
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#refractive-index-for-x-rays">
+   Refractive index for x-rays
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implications-of-different-contrasts-for-neutrons-and-x-rays">
+   Implications of different contrasts for neutrons and x-rays
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="optical-parameters-for-neutrons-and-x-rays">
+<h1>Optical parameters for neutrons and x-rays<a class="headerlink" href="#optical-parameters-for-neutrons-and-x-rays" title="Permalink to this headline">#</a></h1>
+<section id="fresnel-reflectivity-and-refraction-in-terms-of-refractive-index">
+<h2>Fresnel reflectivity and refraction in terms of refractive index<a class="headerlink" href="#fresnel-reflectivity-and-refraction-in-terms-of-refractive-index" title="Permalink to this headline">#</a></h2>
+<p>While the refractive index in reflectometry experiments is define the same way as in classical optics (see <a class="reference external" href="https://en.wikipedia.org/wiki/Snell%27s_law">Wikipedia</a>) the typical choice for the angle <span class="math notranslate nohighlight">\(\alpha\)</span> is with respect to the surface of the sample, not the surface normal.</p>
+<p><img src="../figures/snell_refl.png" alt="angle sketch" width="20%"/>)</p>
+<p>Thus the Snell’s Law becomes:</p>
+<p><span class="math notranslate nohighlight">\(\frac{n_1}{n_0} = \frac{\cos{\alpha_0}}{\cos{\alpha_1}}\)</span></p>
+<p>Here the <span class="math notranslate nohighlight">\(n_0\)</span> and <span class="math notranslate nohighlight">\(n_1\)</span> are the refractive indices of the material befor and after the interface, respectively.</p>
+<p>Equivalently to the reciprocal space definition used in chapter <a class="reference internal" href="../3_reflectometry_slab_models/how_we_calculate_the_reflectivity_of_a_slab_model.html"><span class="doc std std-doc">3</span></a> one can calculate the Fresnel reflectivity accoring to these refractive indices:</p>
+<p><span class="math notranslate nohighlight">\(r_{n, n+1}(\alpha) = \left| \frac{ n_0 \sin{\alpha_0} - n_1 \sin{\alpha_1} }{ n_0 \sin{\alpha_0} + n_1 \sin{\alpha_1} } \right|^2\)</span></p>
+</section>
+<section id="refractive-index-and-the-scattering-length-density-sld">
+<h2>Refractive index and the scattering length density (SLD)<a class="headerlink" href="#refractive-index-and-the-scattering-length-density-sld" title="Permalink to this headline">#</a></h2>
+<p>For neutrons and x-rays the refractive index is always close to 1. It is convenitently described by the radiation and material dependent scattering length density (SLD) according to:</p>
+<p><span class="math notranslate nohighlight">\( n^2 = 1 - \lambda^2 \frac{SLD_{n/x}}{\pi}\)</span></p>
+<p>In the case of neutrons <span class="math notranslate nohighlight">\(\lambda^2 \frac{SLD}{\pi}\)</span> is in the order of <span class="math notranslate nohighlight">\(10^{-6}\)</span> while for x-rays it is around <span class="math notranslate nohighlight">\(10^{-5}\)</span>.
+The SLD is a complex quantity where the imaginary part descirbes effects of absorption. For most elements the absorption for neutrons is negligible.</p>
+</section>
+<section id="sld-for-neutrons">
+<h2>SLD for neutrons<a class="headerlink" href="#sld-for-neutrons" title="Permalink to this headline">#</a></h2>
+<p>In thermal and cold neutrons for most elements the SLD does not depend on the beam energy/wavelength and can be directly calculated from the material density and the elemental coherent scattering length <span class="math notranslate nohighlight">\(b_n\)</span> that are tabulated in (see <a class="reference external" href="https://www.ncnr.nist.gov/resources/n-lengths/">NIST table</a>):</p>
+<p><span class="math notranslate nohighlight">\( SLD_n = \rho_{FU} \sum_{FU}{ b_{n_i} } \)</span></p>
+<p>Where <span class="math notranslate nohighlight">\(\rho_{FU}\)</span> is the number density of the formula unit and the scattering length, <span class="math notranslate nohighlight">\(b_{n_i}\)</span>, of all elements in the FU are summed.</p>
+<p>Magnetic moments on individual atoms also contribute to the SLD with a sign that depends on the relative orientation to the neutron spin. This is outside of the scope of this chapter.</p>
+</section>
+<section id="refractive-index-for-x-rays">
+<h2>Refractive index for x-rays<a class="headerlink" href="#refractive-index-for-x-rays" title="Permalink to this headline">#</a></h2>
+<p>For x-rays the energy dependance of the SLD can not be ignored, especially close to absorption edges of the elements in the sample material.
+The scattering Thopson potential leads to a SLD defined as:</p>
+<p><span class="math notranslate nohighlight">\( SLD_x(E) = \rho_{FU} \sum_{FU}{ \frac{r_e}{2} (f'(E) - i f''(E)) }\)</span> # please check this!!!</p>
+<p>Here <span class="math notranslate nohighlight">\(r_e = \frac{1}{4\pi}\frac{e^2}{m_e c^2}\)</span> is the classical electron radius (see <a class="reference external" href="https://en.wikipedia.org/wiki/Classical_electron_radius">Wikipedia</a>) and f’ and f’’ are the energy dependent x-ray scattering factors.</p>
+</section>
+<section id="implications-of-different-contrasts-for-neutrons-and-x-rays">
+<h2>Implications of different contrasts for neutrons and x-rays<a class="headerlink" href="#implications-of-different-contrasts-for-neutrons-and-x-rays" title="Permalink to this headline">#</a></h2>
+<p>We will calculate an example to illustrate the difference the SLD calculation makes to the reflectivity experiment.
+We will use the simple example of a layer of something on water:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">utils</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2120</span><span class="o">/</span><span class="mf">1251681342.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">utils</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;utils&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span>
+
+<span class="n">rho_FU_water</span> <span class="o">=</span> <span class="mf">0.03342360</span> <span class="c1"># 1/angstrom³</span>
+<span class="n">rho_FU_layer</span> <span class="o">=</span> <span class="mf">0.00461223</span> <span class="c1"># 1/angstrom³</span>
+<span class="n">r_e</span> <span class="o">=</span> <span class="mf">2.817940326e-5</span> <span class="c1"># angstrom</span>
+
+<span class="n">SLDn_H2O</span> <span class="o">=</span> <span class="n">rho_FU_water</span> <span class="o">*</span>   <span class="p">(</span> <span class="o">-</span><span class="mf">3.75e-5</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">5.83e-5</span> <span class="p">)</span>
+<span class="n">SLDn_D2O</span> <span class="o">=</span> <span class="n">rho_FU_water</span> <span class="o">*</span>   <span class="p">(</span>  <span class="mf">6.67e-5</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">5.83e-5</span><span class="p">)</span>
+<span class="n">SLDn_layer</span> <span class="o">=</span> <span class="n">rho_FU_layer</span> <span class="o">*</span> <span class="p">(</span> <span class="o">-</span><span class="mf">3.75e-5</span><span class="o">*</span><span class="mi">14</span> <span class="o">+</span> <span class="mf">6.646e-5</span><span class="o">*</span><span class="mi">6</span> <span class="p">)</span> <span class="c1"># C6H14</span>
+<span class="n">SLDx_water</span> <span class="o">=</span> <span class="n">rho_FU_water</span> <span class="o">*</span> <span class="n">r_e</span><span class="o">*</span><span class="p">((</span><span class="mf">1.00001</span><span class="o">-</span><span class="mf">0.00000</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">8.05139</span><span class="o">-</span><span class="mf">0.03156</span><span class="n">j</span><span class="p">)</span>
+<span class="n">SLDx_layer</span> <span class="o">=</span> <span class="n">rho_FU_layer</span> <span class="o">*</span> <span class="n">r_e</span><span class="o">*</span><span class="p">((</span><span class="mf">1.00001</span><span class="o">-</span><span class="mf">0.00000</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="mi">14</span> <span class="o">+</span> <span class="p">(</span><span class="mf">6.01934</span><span class="o">-</span><span class="mf">0.00890</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="mi">6</span> <span class="p">)</span> <span class="c1"># C6H14</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The neutron values are: </span><span class="si">{</span><span class="n">SLDn_H2O</span><span class="si">=}</span><span class="s1">, </span><span class="si">{</span><span class="n">SLDn_D2O</span><span class="si">=}</span><span class="s1">, </span><span class="si">{</span><span class="n">SLDn_layer</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The x-ray values are: </span><span class="si">{</span><span class="n">SLDx_water</span><span class="si">=}</span><span class="s1">, </span><span class="si">{</span><span class="n">SLDx_layer</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The neutron values are: SLDn_H2O=-5.581741199999997e-07, SLDn_D2O=6.407304119999999e-06, SLDn_layer=-5.822479152000001e-07
+The x-ray values are: SLDx_water=(9.466991901664356e-06-2.9725010164397537e-08j), SLDx_layer=(6.51359435660888e-06-6.940392077826248e-09j)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We use the RefNX package to calculate the reflecitity curves:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">refnx.reflect</span> <span class="kn">import</span> <span class="n">SLD</span><span class="p">,</span> <span class="n">ReflectModel</span><span class="p">,</span> <span class="n">Structure</span>
+
+<span class="n">q</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">1.54</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+
+<span class="n">structure</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">()</span>
+<span class="n">air</span> <span class="o">=</span> <span class="n">SLD</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">structure</span> <span class="o">|=</span> <span class="n">air</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="n">mn_layer</span> <span class="o">=</span> <span class="n">SLD</span><span class="p">(</span><span class="n">SLDn_layer</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">)</span>
+<span class="n">structure</span> <span class="o">|=</span> <span class="n">mn_layer</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="n">mn_H2O</span> <span class="o">=</span> <span class="n">SLD</span><span class="p">(</span><span class="n">SLDn_H2O</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">)</span>
+<span class="n">structure</span> <span class="o">|=</span> <span class="n">mn_H2O</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ReflectModel</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="n">bkg</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">model</span><span class="p">(</span><span class="n">q</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;neutron protonated&#39;</span><span class="p">)</span>
+
+<span class="n">structure</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">()</span>
+<span class="n">air</span> <span class="o">=</span> <span class="n">SLD</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">structure</span> <span class="o">|=</span> <span class="n">air</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="n">mn_layer</span> <span class="o">=</span> <span class="n">SLD</span><span class="p">(</span><span class="n">SLDn_layer</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">)</span>
+<span class="n">structure</span> <span class="o">|=</span> <span class="n">mn_layer</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="n">mn_D2O</span> <span class="o">=</span> <span class="n">SLD</span><span class="p">(</span><span class="n">SLDn_D2O</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">)</span>
+<span class="n">structure</span> <span class="o">|=</span> <span class="n">mn_D2O</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ReflectModel</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="n">bkg</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">model</span><span class="p">(</span><span class="n">q</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;neutron deuterated&#39;</span><span class="p">)</span>
+
+<span class="n">structure</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">()</span>
+<span class="n">air</span> <span class="o">=</span> <span class="n">SLD</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">structure</span> <span class="o">|=</span> <span class="n">air</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="n">mx_layer</span> <span class="o">=</span> <span class="n">SLD</span><span class="p">(</span><span class="n">SLDx_layer</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">)</span>
+<span class="n">structure</span> <span class="o">|=</span> <span class="n">mx_layer</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="n">mx_H2O</span> <span class="o">=</span> <span class="n">SLD</span><span class="p">(</span><span class="n">SLDx_water</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">)</span>
+<span class="n">structure</span> <span class="o">|=</span> <span class="n">mx_H2O</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ReflectModel</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="n">bkg</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">model</span><span class="p">(</span><span class="n">q</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;x-ray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/optical_parameters_for_neutrons_and_xrays_8_0.png" src="../_images/optical_parameters_for_neutrons_and_xrays_8_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we should add a second example with more absorption and heavier elements</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./xray_neutron_comparison"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../5_fitting_processes_and_problems/how_to_leverage_our_prior_knowledge.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">How to leverage our prior knowledge?</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Andrew R. McCluskey<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
