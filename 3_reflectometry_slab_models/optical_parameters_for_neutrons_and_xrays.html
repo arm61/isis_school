@@ -447,6 +447,11 @@ title="Print to PDF"
    Implications of different contrasts for neutrons and x-rays
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#retreiving-optical-parameters-from-orso-database">
+   Retreiving optical parameters from ORSO database
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -491,6 +496,11 @@ title="Print to PDF"
    Implications of different contrasts for neutrons and x-rays
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#retreiving-optical-parameters-from-orso-database">
+   Retreiving optical parameters from ORSO database
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -508,22 +518,26 @@ title="Print to PDF"
 <p>While the refractive index in reflectometry experiments is define the same way as in classical optics (see <a class="reference external" href="https://en.wikipedia.org/wiki/Snell%27s_law">Wikipedia</a>) the typical choice for the angle <span class="math notranslate nohighlight">\(\alpha\)</span> is with respect to the surface of the sample, not the surface normal.</p>
 <img src="../figures/snell_refl.png" alt="angle sketch" width="20%"/>
 <p>Thus the Snell’s Law becomes:</p>
-<p><span class="math notranslate nohighlight">\(\frac{n_1}{n_0} = \frac{\cos{\alpha_0}}{\cos{\alpha_1}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\frac{n_1}{n_0} = \frac{\cos{\alpha_0}}{\cos{\alpha_1}}\]</div>
 <p>Here the <span class="math notranslate nohighlight">\(n_0\)</span> and <span class="math notranslate nohighlight">\(n_1\)</span> are the refractive indices of the material befor and after the interface, respectively.</p>
 <p>Equivalently to the reciprocal space definition used in chapter <a class="reference internal" href="how_we_calculate_the_reflectivity_of_a_slab_model.html"><span class="doc std std-doc">3</span></a> one can calculate the Fresnel reflectivity accoring to these refractive indices:</p>
-<p><span class="math notranslate nohighlight">\(r_{n, n+1}(\alpha) = \left| \frac{ n_0 \sin{\alpha_0} - n_1 \sin{\alpha_1} }{ n_0 \sin{\alpha_0} + n_1 \sin{\alpha_1} } \right|^2\)</span></p>
+<div class="math notranslate nohighlight">
+\[r_{n, n+1}(\alpha) = \left| \frac{ n_0 \sin{\alpha_0} - n_1 \sin{\alpha_1} }{ n_0 \sin{\alpha_0} + n_1 \sin{\alpha_1} } \right|^2\]</div>
 </section>
 <section id="refractive-index-and-the-scattering-length-density-sld">
 <h2>Refractive index and the scattering length density (SLD)<a class="headerlink" href="#refractive-index-and-the-scattering-length-density-sld" title="Permalink to this headline">#</a></h2>
 <p>For neutrons and x-rays the refractive index is always close to 1. It is convenitently described by the radiation and material dependent scattering length density (SLD) according to:</p>
-<p><span class="math notranslate nohighlight">\( n^2 = 1 - \lambda^2 \frac{SLD_{n/x}}{\pi}\)</span></p>
+<div class="math notranslate nohighlight">
+\[ n^2 = 1 - \lambda^2 \frac{SLD_{n/x}}{\pi}\]</div>
 <p>In the case of neutrons <span class="math notranslate nohighlight">\(\lambda^2 \frac{SLD}{\pi}\)</span> is in the order of <span class="math notranslate nohighlight">\(10^{-6}\)</span> while for x-rays it is around <span class="math notranslate nohighlight">\(10^{-5}\)</span>.
 The SLD is a complex quantity where the imaginary part descirbes effects of absorption. For most elements the absorption for neutrons is negligible.</p>
 </section>
 <section id="sld-for-neutrons">
 <h2>SLD for neutrons<a class="headerlink" href="#sld-for-neutrons" title="Permalink to this headline">#</a></h2>
 <p>In thermal and cold neutrons for most elements the SLD does not depend on the beam energy/wavelength and can be directly calculated from the material density and the elemental coherent scattering length <span class="math notranslate nohighlight">\(b_n\)</span> that are tabulated in (see <a class="reference external" href="https://www.ncnr.nist.gov/resources/n-lengths/">NIST table</a>):</p>
-<p><span class="math notranslate nohighlight">\( SLD_n = \rho_{FU} \sum_{FU}{ b_{n_i} } \)</span></p>
+<div class="math notranslate nohighlight">
+\[ SLD_n = \rho_{FU} \sum_{FU}{ b_{n_i} } \]</div>
 <p>Where <span class="math notranslate nohighlight">\(\rho_{FU}\)</span> is the number density of the formula unit and the scattering length, <span class="math notranslate nohighlight">\(b_{n_i}\)</span>, of all elements in the FU are summed.</p>
 <p>Magnetic moments on individual atoms also contribute to the SLD with a sign that depends on the relative orientation to the neutron spin. This is outside of the scope of this chapter.</p>
 </section>
@@ -531,7 +545,7 @@ The SLD is a complex quantity where the imaginary part descirbes effects of abso
 <h2>Refractive index for x-rays<a class="headerlink" href="#refractive-index-for-x-rays" title="Permalink to this headline">#</a></h2>
 <p>For x-rays the energy dependance of the SLD can not be ignored, especially close to absorption edges of the elements in the sample material.
 The scattering Thopson potential leads to a SLD defined as:</p>
-<p><span class="math notranslate nohighlight">\( SLD_x(E) = \rho_{FU} \sum_{FU}{ \frac{r_e}{2} (f'(E) - i f''(E)) }\)</span> # please check this!!!</p>
+<p>$<span class="math notranslate nohighlight">\( SLD_x(E) = \rho_{FU} \sum_{FU}{ \frac{r_e}{2} (f'(E) - i f''(E)) }\)</span>$ # please check this!!!</p>
 <p>Here <span class="math notranslate nohighlight">\(r_e = \frac{1}{4\pi}\frac{e^2}{m_e c^2}\)</span> is the classical electron radius (see <a class="reference external" href="https://en.wikipedia.org/wiki/Classical_electron_radius">Wikipedia</a>) and f’ and f’’ are the energy dependent x-ray scattering factors.</p>
 </section>
 <section id="implications-of-different-contrasts-for-neutrons-and-x-rays">
@@ -542,19 +556,6 @@ We will use the simple example of a layer of something on water:</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">utils</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1949</span><span class="o">/</span><span class="mf">1251681342.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">utils</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;utils&#39;
 </pre></div>
 </div>
 </div>
@@ -573,14 +574,16 @@ We will use the simple example of a layer of something on water:</p>
 <span class="n">SLDx_water</span> <span class="o">=</span> <span class="n">rho_FU_water</span> <span class="o">*</span> <span class="n">r_e</span><span class="o">*</span><span class="p">((</span><span class="mf">1.00001</span><span class="o">-</span><span class="mf">0.00000</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">8.05139</span><span class="o">-</span><span class="mf">0.03156</span><span class="n">j</span><span class="p">)</span>
 <span class="n">SLDx_layer</span> <span class="o">=</span> <span class="n">rho_FU_layer</span> <span class="o">*</span> <span class="n">r_e</span><span class="o">*</span><span class="p">((</span><span class="mf">1.00001</span><span class="o">-</span><span class="mf">0.00000</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="mi">14</span> <span class="o">+</span> <span class="p">(</span><span class="mf">6.01934</span><span class="o">-</span><span class="mf">0.00890</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="mi">6</span> <span class="p">)</span> <span class="c1"># C6H14</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The neutron values are: </span><span class="si">{</span><span class="n">SLDn_H2O</span><span class="si">=}</span><span class="s1">, </span><span class="si">{</span><span class="n">SLDn_D2O</span><span class="si">=}</span><span class="s1">, </span><span class="si">{</span><span class="n">SLDn_layer</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The x-ray values are: </span><span class="si">{</span><span class="n">SLDx_water</span><span class="si">=}</span><span class="s1">, </span><span class="si">{</span><span class="n">SLDx_layer</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The neutron values are: </span><span class="si">{</span><span class="n">SLDn_H2O</span><span class="si">=:</span><span class="s1">.4e</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">SLDn_D2O</span><span class="si">=:</span><span class="s1">.4e</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">SLDn_layer</span><span class="si">=:</span><span class="s1">.4e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The x-ray values are: </span><span class="si">{</span><span class="n">SLDx_water</span><span class="si">=:</span><span class="s1">.4e</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">SLDx_layer</span><span class="si">=:</span><span class="s1">.4e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The neutron values are: SLDn_H2O=-5.581741199999997e-07, SLDn_D2O=6.407304119999999e-06, SLDn_layer=-5.822479152000001e-07
-The x-ray values are: SLDx_water=(9.466991901664356e-06-2.9725010164397537e-08j), SLDx_layer=(6.51359435660888e-06-6.940392077826248e-09j)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;fstring&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="p">(</span><span class="n">SLDn_H2O</span><span class="o">=</span><span class="p">)</span>
+             <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
@@ -639,6 +642,124 @@ The x-ray values are: SLDx_water=(9.466991901664356e-06-2.9725010164397537e-08j)
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we should add a second example with more absorption and heavier elements</span>
 </pre></div>
 </div>
+</div>
+</div>
+</section>
+<section id="retreiving-optical-parameters-from-orso-database">
+<h2>Retreiving optical parameters from ORSO database<a class="headerlink" href="#retreiving-optical-parameters-from-orso-database" title="Permalink to this headline">#</a></h2>
+<p>The ORSO SLD database contains density and scattering information to calculate the optical parameters for various materials.
+The <em>orsopy</em> package can be used to retreive those programatically.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">orsopy.slddb</span> <span class="kn">import</span> <span class="n">api</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A search query will return a list of dictionaries with the information from the matching database entries. The search fields are defined as keyword arguments:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">api</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;Fe&quot;</span><span class="p">)</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;ID&#39;: 26,
+  &#39;validated&#39;: &#39;2021-11-18 22:35:52&#39;,
+  &#39;validated_by&#39;: &#39;Artur Glavic &lt;artur.glavic@psi.ch&gt;&#39;,
+  &#39;name&#39;: &#39;Iron&#39;,
+  &#39;description&#39;: &#39;&#39;,
+  &#39;formula&#39;: &#39;Fe&#39;,
+  &#39;HR_formula&#39;: None,
+  &#39;density&#39;: 7.874,
+  &#39;FU_volume&#39;: None,
+  &#39;SLD_n&#39;: None,
+  &#39;SLD_x&#39;: None,
+  &#39;E_x&#39;: None,
+  &#39;mu&#39;: 0.0,
+  &#39;physical_state&#39;: &#39;solid&#39;,
+  &#39;tags&#39;: [],
+  &#39;ref_website&#39;: &#39;https://github.com/pkienzle/periodictable&#39;,
+  &#39;reference&#39;: &#39;Python module periodictable, \ndata source: ILL Neutron Data Booklet&#39;,
+  &#39;doi&#39;: None,
+  &#39;purity&#39;: None,
+  &#39;CAS_No&#39;: None,
+  &#39;crystal_data&#39;: None,
+  &#39;temperature&#39;: None,
+  &#39;magnetic_field&#39;: None,
+  &#39;data_origin&#39;: &#39;textbook&#39;,
+  &#39;comments&#39;: None},
+ {&#39;ID&#39;: 106,
+  &#39;validated&#39;: None,
+  &#39;validated_by&#39;: None,
+  &#39;name&#39;: &#39;Fe &#39;,
+  &#39;description&#39;: None,
+  &#39;formula&#39;: &#39;Fe&#39;,
+  &#39;HR_formula&#39;: None,
+  &#39;density&#39;: 7.874,
+  &#39;FU_volume&#39;: None,
+  &#39;SLD_n&#39;: None,
+  &#39;SLD_x&#39;: None,
+  &#39;E_x&#39;: None,
+  &#39;mu&#39;: 2.2,
+  &#39;physical_state&#39;: &#39;solid&#39;,
+  &#39;tags&#39;: [&#39;magnetic&#39;],
+  &#39;ref_website&#39;: None,
+  &#39;reference&#39;: &#39;Christy Kinane&#39;,
+  &#39;doi&#39;: None,
+  &#39;purity&#39;: None,
+  &#39;CAS_No&#39;: None,
+  &#39;crystal_data&#39;: None,
+  &#39;temperature&#39;: None,
+  &#39;magnetic_field&#39;: None,
+  &#39;data_origin&#39;: &#39;unspecified&#39;,
+  &#39;comments&#39;: None}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">=</span><span class="n">api</span><span class="o">.</span><span class="n">material</span><span class="p">(</span><span class="n">ID</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Material([(&#39;Fe&#39;, 1.0)], fu_volume=11.77708968431255)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Neutron SLD is: </span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">rho_n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X-Ray SLD for Cu k-alpha is: </span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">rho_of_E</span><span class="p">(</span><span class="mf">8.0478</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Neutron SLD is: (8.024053695190667e-06-6.044804995824017e-10j)
+X-Ray SLD for Cu k-alpha is: (5.983011590323767e-05-7.533605403282578e-06j)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span><span class="p">,</span> <span class="n">rho</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">rho_vs_E</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">rho</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SLD real part&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="o">-</span><span class="n">rho</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SLD -imaginary&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Energy / keV&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1e-6</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/optical_parameters_for_neutrons_and_xrays_16_0.png" src="../_images/optical_parameters_for_neutrons_and_xrays_16_0.png" />
 </div>
 </div>
 </section>
