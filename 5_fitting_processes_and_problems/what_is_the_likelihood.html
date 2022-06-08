@@ -422,16 +422,7 @@ title="Print to PDF"
 <p>So far we have looked at how we can define, and reparameterise, our model.
 Now, we should consider how we <strong>compare</strong> our model to some experimental data.
 The broad aim of <em>fitting</em> is to get the model data to agree as best as is possible to the experimental data.
-Here, we discuss fitting in terms of the maximisation of likelihood, this is analogous to the <a class="reference external" href="https://en.wikipedia.org/wiki/Minimum_chi-square_estimation">minimisation</a> of a <span class="math notranslate nohighlight">\(\chi^2\)</span> goodness-of-fit metric:</p>
-<div class="math notranslate nohighlight">
-\[
-\chi^2 = \sum_{n=1}^{n_{\mathrm{max}}}\bigg\{\frac{[y_n - \mathrm{M}(x_n)] ^ 2}{\sigma_n ^ 2}\bigg\}
-\]</div>
-<p>summing over each of the datapoints. This <span class="math notranslate nohighlight">\(\chi^2\)</span> is strongly related to the log-likelihood which will be discussed in the next section. Many other alternatives for figures of merit exist, which may be used in other situations, for example if the data points to not have associated error bars. One such figure of merit commonly used in x-ray reflectometry fitting is the log difference
-$<span class="math notranslate nohighlight">\(
-\textrm{Log FOM} = \sum_{n=1}^{n_{\mathrm{max}}}|\log y_n - \log\mathrm{M}(x_n)|
-\)</span>$
-This is often used in order to emphasize higher-Q data points. Figures of merit also exist for linear or square-root difference, which are less frequently used.</p>
+Here, we discuss fitting in terms of the maximisation of likelihood, this is analogous to the <a class="reference external" href="https://en.wikipedia.org/wiki/Minimum_chi-square_estimation">minimisation</a> of a <span class="math notranslate nohighlight">\(\chi^2\)</span> goodness-of-fit metric.</p>
 <p>The likelihood, <span class="math notranslate nohighlight">\(\mathcal{L}(\theta|y)\)</span>, is a measure of the agreement between the model, which depends on parameters <span class="math notranslate nohighlight">\(\theta\)</span>, given some data, <span class="math notranslate nohighlight">\(y\)</span>.
 If we consider some values for <span class="math notranslate nohighlight">\(y\)</span>, which increase linearly with <span class="math notranslate nohighlight">\(x\)</span> and have associated with them some value for <span class="math notranslate nohighlight">\(\sigma\)</span>, the uncertainty in <span class="math notranslate nohighlight">\(y\)</span>.
 Typically, we plot these uncertainties as <strong>error bars</strong> on our data.
@@ -490,13 +481,6 @@ For data where the uncertainty represents a single standard deviation on a norma
 <p>where <span class="math notranslate nohighlight">\(n_{\mathrm{max}}\)</span> is the number of datapoints.
 You may notice that the first part of the summation is the same as a typical <span class="math notranslate nohighlight">\(\chi^2\)</span> goodness-of-fit metric that one may minimise, with the other elements being normalisation factors.
 For data where the uncertainty is not normally distributed, other likelihood functions may be used, however, the majority of reflectometry analysis considers normal uncertainties.</p>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If your counts are low (or for example comparable to the background), the Poisson distribution is not well-described by a normal distribution</p>
-</div>
-</aside>
 <p>The value of a likelihood (and any goodness of fit metric) depends heavily on the data that it is describing.
 Hence, the likelihood is written <span class="math notranslate nohighlight">\(\mathcal{L}(\theta | y)\)</span>, where the <span class="math notranslate nohighlight">\(|y\)</span> indicates that this is given some data <span class="math notranslate nohighlight">\(y\)</span>.
 This means that <strong>one cannot compare likelihood values across datasets</strong>, it is only possible to compare likelihood values across models for a single dataset.</p>
