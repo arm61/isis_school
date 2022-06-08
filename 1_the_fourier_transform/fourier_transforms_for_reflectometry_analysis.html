@@ -503,6 +503,7 @@ The sensitivity to the first derivative indicates the importance of the change o
 R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \frac{\mathrm{d}\beta}{\mathrm{d}z} \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2,
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\beta(z)\)</span> is the scattering length density profile as a function of <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<p>TODO: Disclaimer not to use the Born approx for analysis.</p>
 </section>
 <section id="the-example-of-a-single-interface">
 <h2>The example of a single interface<a class="headerlink" href="#the-example-of-a-single-interface" title="Permalink to this headline">#</a></h2>
@@ -534,7 +535,9 @@ Let’s visualise the scattering length density, <span class="math notranslate n
 <img alt="../_images/fourier_transforms_for_reflectometry_analysis_1_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_1_0.png" />
 </div>
 </div>
-<p>The functional description of this interface is a <a class="reference external" href="https://en.wikipedia.org/wiki/Heaviside_step_function">Heaviside function</a> and the first derivative of this is a scaled-<a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_delta_function">delta function</a>, where the scaling is the change observed in the Heaviside function.
+<p>The functional description of this interface is a <a class="reference external" href="https://en.wikipedia.org/wiki/Heaviside_step_function">Heaviside function</a>,</p>
+<p><span class="math notranslate nohighlight">\(\beta(z) = \begin{cases}2.074\times10^{-6}\;\text{Å}^{-2},&amp;z&gt;0\\0,&amp;z\leq 0\end{cases}, \)</span></p>
+<p>and the first derivative of this is a scaled-<a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_delta_function">delta function</a>, where the scaling is the change observed in the Heaviside function.
 This first derivative is shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -579,6 +582,47 @@ R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \beta_{\mathrm{S
 </div>
 <p>The blue line in the figure above shows the reflectometry profile found using the Born approximation for a single silicon-air interface.
 After another example, we will investigate the meaning of the black horizontal line.</p>
+<p>If the step function was at 10 Å instead of 0 Å, we would have a scattering length density profile (and first derivative) as shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">beta</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">z</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">2.074e-6</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">12.8</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$z$ (Å)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\beta(z)$ (Å$^{-2}$)&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">beta</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$z$ (Å)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{d}</span><span class="s1">\beta(z)/\mathrm</span><span class="si">{d}</span><span class="s1">z$ (Å$^{-3}$)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fourier_transforms_for_reflectometry_analysis_7_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_7_0.png" />
+</div>
+</div>
+<p>This offset Heaviside function can be written as,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\beta(z) = \begin{cases}2.074\times10^{-6}\;\text{Å}^{-2},&amp;z&gt;10\\0,&amp;z\leq 10\end{cases},
+\end{split}\]</div>
+<p>the first derivative of which is,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = \beta_{\mathrm{Si}} \delta(z-10).
+\]</div>
+<p>This leads to the following result from the Born approximation,</p>
+<div class="math notranslate nohighlight">
+\[
+R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \beta_{\mathrm{Si}}\delta(z-10) \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 = \frac{16\pi^2}{q^4} \bigg| \;\beta_{\mathrm{Si}} \mathrm{exp}(i10q) \;\bigg| ^2 = \frac{16\pi^2\beta_{\mathrm{Si}}^2}{q^4}.
+\]</div>
+<p>This is the same result for the reflectometry as shown above.</p>
 </section>
 <section id="an-oxide-layer">
 <h2>An oxide layer<a class="headerlink" href="#an-oxide-layer" title="Permalink to this headline">#</a></h2>
@@ -598,9 +642,21 @@ The scattering length density profile for this system is shown below, where <spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fourier_transforms_for_reflectometry_analysis_7_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_7_0.png" />
+<img alt="../_images/fourier_transforms_for_reflectometry_analysis_10_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_10_0.png" />
 </div>
 </div>
+<p>Again we can right this as a series of Heaviside functions,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\beta(z) = \begin{cases}4.186\times10^{-6}\;\text{Å}^{-2},&amp;z &gt; 200\\
+            2.074\times10^{-6}\;\text{Å}^{-2},&amp;0&lt;z&lt;200\\
+            0,&amp;z\leq 0\end{cases}.
+\end{split}\]</div>
+<p>The first derivative of this is,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = \beta_{SiO_2} - \beta_{Si} \delta(z - 200) - \beta_{SiO_2}\delta(z).
+\]</div>
 <p>Again, we can find the derivative of this scattering length density profile and plot this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -612,10 +668,18 @@ The scattering length density profile for this system is shown below, where <spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fourier_transforms_for_reflectometry_analysis_9_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_9_0.png" />
+<img alt="../_images/fourier_transforms_for_reflectometry_analysis_12_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_12_0.png" />
 </div>
 </div>
 <p>Then, to calculate the Born approximated reflected intensity, we use the square magnitude of the Fourier transform and scale by <span class="math notranslate nohighlight">\(16 \pi^2 / q ^4\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+R(q) &amp; \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \beta_{SiO_2} - \beta_{Si} \delta(z - 200) - \beta_{SiO_2}\delta(z) \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 = \frac{16\pi^2}{q^4} \bigg| \;(\beta_{SiO_2}-\beta_{Si})\mathrm{exp}(\mathit{i}200q) - \beta_{SiO_2} \;\bigg| ^2 \\
+R(q) &amp; \approx \frac{16\pi^2}{q^4}\big[\beta_{SiO_2}^2 + (\beta_{SiO_2} - \beta_{Si})^2 - 2 \beta_{SiO_2} (\beta_{SiO_2} - \beta_{Si}) \cos{(200 q)}\big],
+\end{aligned}
+\end{split}\]</div>
+<p>We calculate this numerically below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reflectivity</span><span class="p">(</span><span class="n">q</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">beta</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
@@ -646,12 +710,44 @@ The scattering length density profile for this system is shown below, where <spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fourier_transforms_for_reflectometry_analysis_13_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_13_0.png" />
+<img alt="../_images/fourier_transforms_for_reflectometry_analysis_16_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_16_0.png" />
 </div>
 </div>
-<p>Again the blue line shows the reflectometry profile.
-The black line (as above) shows where <span class="math notranslate nohighlight">\(R(q) = 1\)</span>, indicating that using this approach, as <span class="math notranslate nohighlight">\(q\)</span> tends towards <span class="math notranslate nohighlight">\(0\)</span> the number of reflected neutrons becomes <strong>greater than</strong> the number of neutrons incident on the sample.
-This <strong>unphysical result</strong> is due, in part, to the utilisation of the Born approximation (this is discussed in detail on pg. 104 of “Elementary Scattering Theory: For X-ray and Neutron Users” <span id="id3">[<a class="reference internal" href="../intro.html#id6" title="D. S. Sivia. Elementary Scattering Theory: For X-Ray and Neutron Users. Oxford University Press, 2011. ISBN 978-0-19-922868-3.">Siv11</a>]</span>.</p>
+<p>The reflectivity data above is the result of the reflection of our radiation from the two interface in our material.
+This leads to the distinctive diffraction-like interference pattern.
+The cosine function in the Born approximation above can be used to rationalise the interference fringes, where they appear at a separation of <span class="math notranslate nohighlight">\(2\pi / 200\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">find_peaks</span>
+
+<span class="n">peaks</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">peaks</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;q (Å$^{-1}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;R(q)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">distances</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">peaks</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Calculated thickness = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> +/-&#39;</span>
+       <span class="s1">&#39; {np.std(distances):.2f} Å&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fourier_transforms_for_reflectometry_analysis_18_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_18_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculated thickness = 200.46 +/- {np.std(distances):.2f} Å
+</pre></div>
+</div>
+</div>
+</div>
+<p>Therefore, for a simple dataset, we can quickly use the Born approximation to gain an understanding of the thickness of the layer in our system.
+This is achieved by investigating the q-dependence of the fringes in our data.</p>
+<p>In the plots abouve the blue line shows the reflectometry profile.
+The horizontal black line shows where <span class="math notranslate nohighlight">\(R(q) = 1\)</span>, indicating that using this approach, as <span class="math notranslate nohighlight">\(q\)</span> tends towards <span class="math notranslate nohighlight">\(0\)</span> the number of reflected neutrons becomes <strong>greater than</strong> the number of neutrons incident on the sample.
+This <strong>unphysical result</strong> is due, in part, to the utilisation of the Born approximation (this is discussed in detail on pg. 104 of “Elementary Scattering Theory: For X-ray and Neutron Users” <span id="id3">[<a class="reference internal" href="../intro.html#id6" title="D. S. Sivia. Elementary Scattering Theory: For X-Ray and Neutron Users. Oxford University Press, 2011. ISBN 978-0-19-922868-3.">Siv11</a>]</span>.)</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition warning">
@@ -714,7 +810,7 @@ The ACF can be thought of as a noisy version of our first derivative of the scat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fourier_transforms_for_reflectometry_analysis_17_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_17_0.png" />
+<img alt="../_images/fourier_transforms_for_reflectometry_analysis_22_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_22_0.png" />
 </div>
 </div>
 <p>Note, that the large peaks are at <span class="math notranslate nohighlight">\(0\)</span> Å and <span class="math notranslate nohighlight">\(200\)</span> Å, indicating that the structure in our data is in the region of <span class="math notranslate nohighlight">\(200\)</span> Å in thickness, which matches the layer that was used to produce this data.</p>
