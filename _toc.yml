@@ -26,5 +26,7 @@ parts:
   - file: 5_fitting_processes_and_problems/what_is_the_likelihood
   - file: 5_fitting_processes_and_problems/how_do_we_maximise_the_likelihood
   - file: 5_fitting_processes_and_problems/how_to_leverage_our_prior_knowledge
-  
-
+- caption: Differences and complimentarity of neutrons and x-rays in reflectometry
+  chapters:
+  - file: xray_neutron_comparison/optical_parameters_for_neutrons_and_xrays
+#  - file: xray_neutron_comparison/sources_for_measurement_background
