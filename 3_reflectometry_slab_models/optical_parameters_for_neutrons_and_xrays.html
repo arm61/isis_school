@@ -56,7 +56,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="How to leverage our prior knowledge?" href="../5_fitting_processes_and_problems/how_to_leverage_our_prior_knowledge.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -152,17 +151,17 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../3_reflectometry_slab_models/the_slab_model.html">
+  <a class="reference internal" href="the_slab_model.html">
    The “slab model”
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../3_reflectometry_slab_models/how_we_calculate_the_reflectivity_of_a_slab_model.html">
+  <a class="reference internal" href="how_we_calculate_the_reflectivity_of_a_slab_model.html">
    How we calculate the reflectivity of a slab model
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../3_reflectometry_slab_models/roughness_and_microslicing.html">
+  <a class="reference internal" href="roughness_and_microslicing.html">
    Roughness and microslicing
   </a>
  </li>
@@ -208,18 +207,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../5_fitting_processes_and_problems/how_to_leverage_our_prior_knowledge.html">
    How to leverage our prior knowledge?
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Differences and complimentarity of neutrons and x-rays in reflectometry
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Optical parameters for neutrons and x-rays
   </a>
  </li>
 </ul>
@@ -281,7 +268,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/reflectivity/learn/main?urlpath=tree/docs/xray_neutron_comparison/optical_parameters_for_neutrons_and_xrays.ipynb"
+        <a href="https://mybinder.org/v2/gh/reflectivity/learn/main?urlpath=tree/docs/3_reflectometry_slab_models/optical_parameters_for_neutrons_and_xrays.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -341,7 +328,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/reflectivity/learn/issues/new?title=Issue%20on%20page%20%2Fxray_neutron_comparison/optical_parameters_for_neutrons_and_xrays.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/reflectivity/learn/issues/new?title=Issue%20on%20page%20%2F3_reflectometry_slab_models/optical_parameters_for_neutrons_and_xrays.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -369,7 +356,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/xray_neutron_comparison/optical_parameters_for_neutrons_and_xrays.ipynb"
+        <a href="../_sources/3_reflectometry_slab_models/optical_parameters_for_neutrons_and_xrays.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -516,7 +503,7 @@ title="Print to PDF"
 <p>Thus the Snell’s Law becomes:</p>
 <p><span class="math notranslate nohighlight">\(\frac{n_1}{n_0} = \frac{\cos{\alpha_0}}{\cos{\alpha_1}}\)</span></p>
 <p>Here the <span class="math notranslate nohighlight">\(n_0\)</span> and <span class="math notranslate nohighlight">\(n_1\)</span> are the refractive indices of the material befor and after the interface, respectively.</p>
-<p>Equivalently to the reciprocal space definition used in chapter <a class="reference internal" href="../3_reflectometry_slab_models/how_we_calculate_the_reflectivity_of_a_slab_model.html"><span class="doc std std-doc">3</span></a> one can calculate the Fresnel reflectivity accoring to these refractive indices:</p>
+<p>Equivalently to the reciprocal space definition used in chapter <a class="reference internal" href="how_we_calculate_the_reflectivity_of_a_slab_model.html"><span class="doc std std-doc">3</span></a> one can calculate the Fresnel reflectivity accoring to these refractive indices:</p>
 <p><span class="math notranslate nohighlight">\(r_{n, n+1}(\alpha) = \left| \frac{ n_0 \sin{\alpha_0} - n_1 \sin{\alpha_1} }{ n_0 \sin{\alpha_0} + n_1 \sin{\alpha_1} } \right|^2\)</span></p>
 </section>
 <section id="refractive-index-and-the-scattering-length-density-sld">
@@ -555,7 +542,7 @@ We will use the simple example of a layer of something on water:</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2120</span><span class="o">/</span><span class="mf">1251681342.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2067</span><span class="o">/</span><span class="mf">1251681342.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">utils</span>
@@ -663,7 +650,7 @@ The x-ray values are: SLDx_water=(9.466991901664356e-06-2.9725010164397537e-08j)
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./xray_neutron_comparison"
+            path: "./3_reflectometry_slab_models"
         },
         predefinedOutput: true
     }
@@ -677,13 +664,6 @@ The x-ray values are: SLDx_water=(9.466991901664356e-06-2.9725010164397537e-08j)
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../5_fitting_processes_and_problems/how_to_leverage_our_prior_knowledge.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">How to leverage our prior knowledge?</p>
-        </div>
-    </a>
 </div>
             </footer>
         </div>
