@@ -14,6 +14,7 @@ parts:
 - caption: Reflectometry slab models
   chapters:
   - file: 3_reflectometry_slab_models/the_slab_model
+  - file: 3_reflectometry_slab_models/optical_parameters_for_neutrons_and_xrays
   - file: 3_reflectometry_slab_models/how_we_calculate_the_reflectivity_of_a_slab_model
   - file: 3_reflectometry_slab_models/roughness_and_microslicing
 - caption: Model reparameterisation
@@ -26,7 +27,3 @@ parts:
   - file: 5_fitting_processes_and_problems/what_is_the_likelihood
   - file: 5_fitting_processes_and_problems/how_do_we_maximise_the_likelihood
   - file: 5_fitting_processes_and_problems/how_to_leverage_our_prior_knowledge
-- caption: Differences and complimentarity of neutrons and x-rays in reflectometry
-  chapters:
-  - file: xray_neutron_comparison/optical_parameters_for_neutrons_and_xrays
-#  - file: xray_neutron_comparison/sources_for_measurement_background
