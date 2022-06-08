@@ -23,7 +23,7 @@ The word **simulation** above is being used broadly above, but in the context of
 We will not cover how to get the experimental data, but we will cover in detail how to simulate our data and how we compare it with the experimental data. 
 Additionally, we will look at how we can **improve** our model and some algorithms that are popular in reflectometry analysis to do this. 
 
-A general workflow for model-dependent analysis is shown in {numref}`flow-diagram`. 
+A general workflow for model-dependent analysis is shown below. 
 First, we propose some **model** that we believe can accurately describe the system that we are studying. 
 Then, we use some **functional construct** to calculate what the *experimental* data from such a system would look like. 
 We compare this calculated, model data with our measured, experimental data and then **change our model** such as to improve the agreement between the two. 
