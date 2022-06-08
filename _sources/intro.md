@@ -1,6 +1,7 @@
 # A Guide to Reflectometry
 
-The aim of this course, and the companion lecture, are to give an introduction to the following subjects: 
+The aim of these webpages are to give an introduction to neutron and X-ray reflectometry, currently the focus is on the anlaysis of reflectometry data but we how to expand this in future. 
+Currently, we focus on the following subjects: 
 - the **Fourier transform** and how a Born approximation approach may be used to analyse neutron and X-ray reflectometry data; 
 - the logic of **model-dependent analysis**; 
 - reflectometry "slab models" and their traditional parameterisation; 
