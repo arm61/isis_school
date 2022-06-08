@@ -20,7 +20,7 @@ You might find both words being used.
 
 This material is gradually being developed and if you are interested in contributing content please feel free to open an [issue](https://github.com/reflectivity/learn/issues/new/choose) on the Github repository. 
 
-This material was originally developed by [Andrew McCluskey](mailto:andrew.mccluskey@ess.eu) from the [European Spallation Source](https://europeanspallationsource.se/) and through the ISIS Neutron Reflectometry School and Open Reflectometry Standards Organisation Workshop 2022 has recieved contributions and feedback from many [reflectometry experts](./contributors.html)
+This material was originally developed by [Andrew McCluskey](mailto:andrew.mccluskey@ess.eu) from the [European Spallation Source](https://europeanspallationsource.se/) and through the ISIS Neutron Reflectometry School and Open Reflectometry Standards Organisation Workshop 2022 has recieved contributions and feedback from many [reflectometry experts](https://github.com/reflectivity/isis_school/blob/main/contributors.md).
 
 ```{note}
 In this course, we make use of the Python programming language heavily to show mathematics and plot figures. 
