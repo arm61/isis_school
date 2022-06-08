@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="What is model-dependent analysis?" href="../2_model_dependent_analysis/what_is_model_dependent_analysis.html" />
@@ -491,10 +493,14 @@ title="Print to PDF"
 <p>In specular neutron reflectometry, we accept that <span class="math notranslate nohighlight">\(q_x = 0\)</span> and <span class="math notranslate nohighlight">\(q_y = 0\)</span>, which is to say that the neutrons are scattered <strong>only</strong> in the surface normal (perpendicular to the plane of the surface), denoted <span class="math notranslate nohighlight">\(z\)</span>.
 A result of this is that by applying the <a class="reference external" href="https://en.wikipedia.org/wiki/Born_approximation">Born approximation</a>, the measured reflectometry can be found from the Fourier transform of the <strong>first derivative</strong> of the scattering length density profile with respect to <span class="math notranslate nohighlight">\(z\)</span> <span id="id1">[<a class="reference internal" href="../intro.html#id6" title="D. S. Sivia. Elementary Scattering Theory: For X-Ray and Neutron Users. Oxford University Press, 2011. ISBN 978-0-19-922868-3.">Siv11</a>]</span>.
 The sensitivity to the first derivative indicates the importance of the change of the scattering length density profile.</p>
-<figure class="align-center" id="fourier-relationship">
-<a class="reference internal image-reference" href="../_images/fourier.png"><img alt="../_images/fourier.png" src="../_images/fourier.png" style="height: 120px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The relationship between the scattering length density and the reflectometry profiles, interacting by a Fourier transform.</span><a class="headerlink" href="#fourier-relationship" title="Permalink to this image">#</a></p>
+<figure class="align-center" id="id5">
+<div class="mermaid">
+                flowchart LR
+        id1{{First derivative of the&lt;br&gt;scattering length density profile}}-- Fourier&lt;br&gt;relationship --&gt;id2((Reflectometry&lt;br&gt;profile))
+        style id1 fill:#0173B288
+        style id2 fill:#029E7388
+        </div><figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The relationship between the scattering length density and the reflectometry profiles, interacting by a Fourier transform.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This means that the reflectometry profile, <span class="math notranslate nohighlight">\(R(q)\)</span>, can be found <strong>under the Born approximation</strong> as follows,</p>

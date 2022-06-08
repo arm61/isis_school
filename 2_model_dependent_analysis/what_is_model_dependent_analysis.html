@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The “slab model”" href="../3_reflectometry_slab_models/the_slab_model.html" />
@@ -413,14 +415,22 @@ If you have “fit” data to some analytical model, like an equation, then you 
 <p>The word <strong>simulation</strong> above is being used broadly above, but in the context of neutron reflectometry, we are interested calculating the reflectivity that some model system would produce.
 We will not cover how to get the experimental data, but we will cover in detail how to simulate our data and how we compare it with the experimental data.
 Additionally, we will look at how we can <strong>improve</strong> our model and some algorithms that are popular in reflectometry analysis to do this.</p>
-<p>A general workflow for model-dependent analysis is shown in <a class="reference internal" href="#flow-diagram"><span class="std std-numref">Fig. 2</span></a>.
+<p>A general workflow for model-dependent analysis is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">flow-diagram</span></code>.
 First, we propose some <strong>model</strong> that we believe can accurately describe the system that we are studying.
 Then, we use some <strong>functional construct</strong> to calculate what the <em>experimental</em> data from such a system would look like.
 We compare this calculated, model data with our measured, experimental data and then <strong>change our model</strong> such as to improve the agreement between the two.</p>
-<figure class="align-center" id="flow-diagram">
-<a class="reference internal image-reference" href="../_images/flow.png"><img alt="../_images/flow.png" src="../_images/flow.png" style="height: 200px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">The logical flow of model-dependent analysis, showing the improvement of the model based on the agreement with the data.</span><a class="headerlink" href="#flow-diagram" title="Permalink to this image">#</a></p>
+<figure class="align-center" id="id3">
+<div class="mermaid">
+                flowchart LR
+        id1{{Propose a model}}
+        id2((Calculate the&lt;br&gt;model reflectometry))
+        id3&gt;Compare with&lt;br&gt;experimental data]
+        id1--&gt;id2--&gt;id3-- Improve&lt;br&gt;the model--&gt;id2
+        style id1 fill:#0173B288
+        style id2 fill:#029E7388
+        style id3 fill:#D55E0088
+        </div><figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">The logical flow of model-dependent analysis, showing the improvement of the model based on the agreement with the data.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
