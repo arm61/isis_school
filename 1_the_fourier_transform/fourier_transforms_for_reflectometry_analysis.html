@@ -510,9 +510,7 @@ The sensitivity to the first derivative indicates the importance of the change o
 </figure>
 <p>This means that the reflectometry profile, <span class="math notranslate nohighlight">\(R(q)\)</span>, can be found <strong>under the Born approximation</strong> as follows,</p>
 <div class="math notranslate nohighlight">
-\[
-R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \frac{\mathrm{d}\beta}{\mathrm{d}z} \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2,
-\]</div>
+\[R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \frac{\mathrm{d}\beta}{\mathrm{d}z} \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\beta(z)\)</span> is the scattering length density profile as a function of <span class="math notranslate nohighlight">\(z\)</span>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -551,7 +549,8 @@ Let’s visualise the scattering length density, <span class="math notranslate n
 </div>
 </div>
 <p>The functional description of this interface is a <a class="reference external" href="https://en.wikipedia.org/wiki/Heaviside_step_function">Heaviside function</a>,</p>
-<p><span class="math notranslate nohighlight">\(\beta(z) = \begin{cases}2.074\times10^{-6}\;\text{Å}^{-2},&amp;z&gt;0\\0,&amp;z\leq 0\end{cases}, \)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\beta(z) = \begin{cases}2.074\times10^{-6}\;\text{Å}^{-2},&amp;z&gt;0\\0,&amp;z\leq 0\end{cases},\end{split}\]</div>
 <p>and the first derivative of this is a scaled-<a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_delta_function">delta function</a>, where the scaling is the change observed in the Heaviside function.
 This first derivative is shown below.</p>
 <div class="cell docutils container">
@@ -569,15 +568,11 @@ This first derivative is shown below.</p>
 </div>
 <p>The scaled-delta function can be written as,</p>
 <div class="math notranslate nohighlight">
-\[
-\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = \beta_{\mathrm{Si}} \delta(z),
-\]</div>
+\[\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = \beta_{\mathrm{Si}} \delta(z),\]</div>
 <p>where, <span class="math notranslate nohighlight">\(\beta_{\mathrm{Si}}\)</span> is the scattering length density of silicon (<span class="math notranslate nohighlight">\(2.871\times 10^{-6}\)</span> Å<sup>-2</sup>).
 We can then rewrite the reflectometry equation above as,</p>
 <div class="math notranslate nohighlight">
-\[
-R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \beta_{\mathrm{Si}}\delta(z) \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 = \frac{16\pi^2}{q^4} \bigg| \;\beta_{\mathrm{Si}} \mathrm{exp}(0) \;\bigg| ^2 = \frac{16\pi^2\beta_{\mathrm{Si}}^2}{q^4}.
-\]</div>
+\[R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \beta_{\mathrm{Si}}\delta(z) \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 = \frac{16\pi^2}{q^4} \bigg| \;\beta_{\mathrm{Si}} \mathrm{exp}(0) \;\bigg| ^2 = \frac{16\pi^2\beta_{\mathrm{Si}}^2}{q^4}.\]</div>
 <p>We can plot this as a function of <span class="math notranslate nohighlight">\(q\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
