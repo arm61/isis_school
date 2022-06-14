@@ -488,8 +488,8 @@ First we will import the necessary Python packages.</p>
 <h2>Model algorithm<a class="headerlink" href="#model-algorithm" title="Permalink to this headline">#</a></h2>
 <p>This approach considers each <span class="math notranslate nohighlight">\(q\)</span>-value individually and constructs a series of matrices to describe each layer, <span class="math notranslate nohighlight">\(n\)</span>.
 The wavevector normal to the surface, <span class="math notranslate nohighlight">\(k(n)\)</span>, in each layer is first found,</p>
-<div class="math notranslate nohighlight">
-\[ k_n(q) = \sqrt{k_0(q)^2 - 4\pi(\beta_n - \beta_0)},\]</div>
+<div class="math notranslate nohighlight" id="equation-kn">
+<span class="eqno">(12)<a class="headerlink" href="#equation-kn" title="Permalink to this equation">#</a></span>\[k_n(q) = \sqrt{k_0(q)^2 - 4\pi(\beta_n - \beta_0)},\]</div>
 <p>where, <span class="math notranslate nohighlight">\(k_0(q) = 0.5q\)</span>, and <span class="math notranslate nohighlight">\(\beta_n\)</span> and <span class="math notranslate nohighlight">\(\beta_0\)</span> are the scattering length densities in layer <span class="math notranslate nohighlight">\(n\)</span> and the superphase, layer <span class="math notranslate nohighlight">\(0\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -507,8 +507,8 @@ The wavevector normal to the surface, <span class="math notranslate nohighlight"
 </div>
 </div>
 <p>The <span class="math notranslate nohighlight">\(k_n(q)\)</span> for each interface between two layers, a Frensel reflectance, <span class="math notranslate nohighlight">\(r_{n, n+1}(q)\)</span>, can be determined as,</p>
-<div class="math notranslate nohighlight">
-\[r_{n, n+1}(q) = \frac{k_n(q) - k_{n+1}(q)}{k_n(q) + k_{n+1}(q)}. \]</div>
+<div class="math notranslate nohighlight" id="equation-rn">
+<span class="eqno">(13)<a class="headerlink" href="#equation-rn" title="Permalink to this equation">#</a></span>\[r_{n, n+1}(q) = \frac{k_n(q) - k_{n+1}(q)}{k_n(q) + k_{n+1}(q)}.\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fresnel_reflectance</span><span class="p">(</span><span class="n">kn</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
@@ -522,10 +522,10 @@ The wavevector normal to the surface, <span class="math notranslate nohighlight"
 </div>
 </div>
 <p>Additionally, the phase factor, <span class="math notranslate nohighlight">\(\phi_n(q)\)</span>, can be found as,</p>
-<div class="math notranslate nohighlight">
-\[ \phi_n(q) = \mathit{i} k_n(q) d_n, \]</div>
-<div class="math notranslate nohighlight">
-\[ \phi_0(q) = 0. \]</div>
+<div class="math notranslate nohighlight" id="equation-phin">
+<span class="eqno">(14)<a class="headerlink" href="#equation-phin" title="Permalink to this equation">#</a></span>\[\phi_n(q) = \mathit{i} k_n(q) d_n,\]</div>
+<div class="math notranslate nohighlight" id="equation-phi0">
+<span class="eqno">(15)<a class="headerlink" href="#equation-phi0" title="Permalink to this equation">#</a></span>\[\phi_0(q) = 0.\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">phase_factor</span><span class="p">(</span><span class="n">kn</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
@@ -542,13 +542,12 @@ The wavevector normal to the surface, <span class="math notranslate nohighlight"
 </div>
 </div>
 <p>The Fresnel reflectance and phase factor can be brought together to give a characteristic matrix for the interface between each layer, <span class="math notranslate nohighlight">\(M_{n, n+1}\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}M_{n, n+1}(q) = 
+<div class="math notranslate nohighlight" id="equation-mmatrix">
+<span class="eqno">(16)<a class="headerlink" href="#equation-mmatrix" title="Permalink to this equation">#</a></span>\[\begin{split}M_{n, n+1}(q) = 
 \begin{bmatrix} 
 \exp \phi_n(q) &amp; r_{n, n+1}\exp -\phi_n(q) \\
 r_{n, n+1}\exp \phi_n(q) &amp; \exp -\phi_n(q) 
-\end{bmatrix}.
-\end{split}\]</div>
+\end{bmatrix}.\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">characteristic_matrices</span><span class="p">(</span><span class="n">r</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">phi</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
@@ -568,8 +567,8 @@ r_{n, n+1}\exp \phi_n(q) &amp; \exp -\phi_n(q)
 </div>
 </div>
 <p>The resultant matrix for each <span class="math notranslate nohighlight">\(q\)</span>-vector, <span class="math notranslate nohighlight">\(B(q)\)</span>, can then be found from the product sum of all the characteristic matrices,</p>
-<div class="math notranslate nohighlight">
-\[ B(q) = \prod^{n_{\mathrm{max}}-1}_{n=0} M_{n, n+1}(q). \]</div>
+<div class="math notranslate nohighlight" id="equation-bmatrix">
+<span class="eqno">(17)<a class="headerlink" href="#equation-bmatrix" title="Permalink to this equation">#</a></span>\[B(q) = \prod^{n_{\mathrm{max}}-1}_{n=0} M_{n, n+1}(q).\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">resultant_matrix</span><span class="p">(</span><span class="n">M</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
@@ -595,10 +594,10 @@ r_{n, n+1}\exp \phi_n(q) &amp; \exp -\phi_n(q)
 </div>
 <p>This product sum describes the reflectance and transmittance propagated through all of the interfaces.
 The overall reflectance and reflectivity is then calculated as,</p>
-<div class="math notranslate nohighlight">
-\[ r(q) = \frac{B_{0, 1}(q)}{B_{0, 0}(q)} \]</div>
-<div class="math notranslate nohighlight">
-\[ R(q) = r(q) \bar{r}(q),\]</div>
+<div class="math notranslate nohighlight" id="equation-smallr">
+<span class="eqno">(18)<a class="headerlink" href="#equation-smallr" title="Permalink to this equation">#</a></span>\[r(q) = \frac{B_{0, 1}(q)}{B_{0, 0}(q)}\]</div>
+<div class="math notranslate nohighlight" id="equation-bigr">
+<span class="eqno">(19)<a class="headerlink" href="#equation-bigr" title="Permalink to this equation">#</a></span>\[$$ R(q) = r(q) \bar{r}(q),$$\]</div>
 <p>where, <span class="math notranslate nohighlight">\(\bar{r}(q)\)</span> is the complex conjugate of <span class="math notranslate nohighlight">\(r(q)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

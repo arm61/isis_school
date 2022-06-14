@@ -488,10 +488,8 @@ The slab model description of this system is shown in <a class="reference intern
 <h2>Chain tilt angle<a class="headerlink" href="#chain-tilt-angle" title="Permalink to this headline">#</a></h2>
 <p>A common reparameterisation for the modelling of a phospholipid monolayer is to make the assumption that <strong>the hydrocarbon tail will be fully extended</strong>.
 Wwe can use the Tanford length <span id="id2">[<a class="reference internal" href="../intro.html#id18" title="C. Tanford. The Hydrophobic Effect: Formation of Micelles and Biological Membranes. John Wiley &amp; Sons, 2 edition, 1980. ISBN 978-0-471-04893-0.">Tan80</a>]</span> to find the length of this fully extended tail, <span class="math notranslate nohighlight">\(t_t\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-t_t = 1.5 + 1.265n_c [\mathrm{Å}], 
-\]</div>
+<div class="math notranslate nohighlight" id="equation-tanford">
+<span class="eqno">(23)<a class="headerlink" href="#equation-tanford" title="Permalink to this equation">#</a></span>\[t_t = 1.5 + 1.265n_c [\mathrm{Å}], \]</div>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
@@ -527,10 +525,8 @@ Below, we plot <span class="math notranslate nohighlight">\(d_h\)</span> as a fu
 <p>In addition to the constraint introduced by considering a fully extended hydrocarbon tail, it is also possible to add the physical constraint that we must have one head group for every two tails groups in our systems.
 This is achieved by having a single area per molecule, <span class="math notranslate nohighlight">\(\mathrm{APM}\)</span>, value for the system and using this to define the scattering length density, <span class="math notranslate nohighlight">\(\beta\)</span> of each of the layers.
 The scattering length density for one of the layers, <span class="math notranslate nohighlight">\(i\)</span>, can be defined as follows, in terms of the <span class="math notranslate nohighlight">\(\mathrm{APM}\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-\beta_i = \frac{\sum_{i=0}^{N}b_i}{d_i \mathrm{APM}} (1 - \phi_i) + \beta_{\mathrm{s}}\phi_i,
-\]</div>
+<div class="math notranslate nohighlight" id="equation-apm">
+<span class="eqno">(24)<a class="headerlink" href="#equation-apm" title="Permalink to this equation">#</a></span>\[\beta_i = \frac{\sum_{i=0}^{N}b_i}{d_i \mathrm{APM}} (1 - \phi_i) + \beta_{\mathrm{s}}\phi_i,\]</div>
 <p>where, <span class="math notranslate nohighlight">\(d_i\)</span> is the layer thickness, <span class="math notranslate nohighlight">\(\phi_i\)</span> is the fractional solvation of the layer, by the solvent <span class="math notranslate nohighlight">\(\mathrm{s}\)</span>, with scattering length density, <span class="math notranslate nohighlight">\(\beta_{\mathrm{s}}\)</span>.</p>
 <p>The use of <span class="math notranslate nohighlight">\(\mathrm{APM}\)</span> reduces the number of parameters in the model, given that now both <span class="math notranslate nohighlight">\(\beta_{\mathrm{heads}}\)</span> and <span class="math notranslate nohighlight">\(\beta_{\mathrm{tails}}\)</span> are constrained by other parameters in the model and <strong>only</strong> <span class="math notranslate nohighlight">\(\mathrm{APM}\)</span> has been added.
 It should be noted that the solvation of a layer is a common approach for monolayer systems, as the hydrophilic head group layer will be very likely to have some composition of the solvent intercalated.

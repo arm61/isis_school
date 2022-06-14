@@ -479,16 +479,12 @@ While these values can be obtained from <a class="reference external" href="http
 <section id="scattering-length-density-mass-density">
 <h2>Scattering length density → Mass density<a class="headerlink" href="#scattering-length-density-mass-density" title="Permalink to this headline">#</a></h2>
 <p>The scattering length density, <span class="math notranslate nohighlight">\(\beta\)</span>, for a material is directly related to its mass density, <span class="math notranslate nohighlight">\(\rho\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-\beta = \frac{\rho N_a \sum_{i=1}^{N}b_i}{M_w}, 
-\]</div>
+<div class="math notranslate nohighlight" id="equation-density">
+<span class="eqno">(21)<a class="headerlink" href="#equation-density" title="Permalink to this equation">#</a></span>\[\beta = \frac{\rho N_a \sum_{i=1}^{N}b_i}{M_w}, \]</div>
 <p>where, <span class="math notranslate nohighlight">\(N_a\)</span> is Avogadro’s constant, <span class="math notranslate nohighlight">\(b_i\)</span> are the neutron scattering lengths for each of the <span class="math notranslate nohighlight">\(N\)</span> elements in the material, and <span class="math notranslate nohighlight">\(M_w\)</span> is the molecular mass of the material.
 Therefore, if we consider nickel, which has a density of <span class="math notranslate nohighlight">\(8.908\)</span> gcm<sup>-3</sup> at room temperature and a <a class="reference external" href="https://www.ncnr.nist.gov/resources/n-lengths/elements/ni.html">scattering length</a> of <span class="math notranslate nohighlight">\(10.3\)</span> fm, the scattering length density is found as follows,</p>
-<div class="math notranslate nohighlight">
-\[
-\beta_{\mathrm{Ni}} = \frac{\rho_{\mathrm{Ni}} N_a b_{\mathrm{Ni}}}{M_{w, \mathrm{Ni}}} = \frac{8.91 [\mathrm{g cm}^{-3}] \cdot 6.022\times 10^{23} [\mathrm{mol}^{-1}] \cdot 10.3 [\mathrm{fm}]}{58.69 [\mathrm{g mol}^{-1}]} = 9.417\times 10^{-6} [\mathrm{Å}^{-2}].
-\]</div>
+<div class="math notranslate nohighlight" id="equation-calc">
+<span class="eqno">(22)<a class="headerlink" href="#equation-calc" title="Permalink to this equation">#</a></span>\[\beta_{\mathrm{Ni}} = \frac{\rho_{\mathrm{Ni}} N_a b_{\mathrm{Ni}}}{M_{w, \mathrm{Ni}}} = \frac{8.91 [\mathrm{g cm}^{-3}] \cdot 6.022\times 10^{23} [\mathrm{mol}^{-1}] \cdot 10.3 [\mathrm{fm}]}{58.69 [\mathrm{g mol}^{-1}]} = 9.417\times 10^{-6} [\mathrm{Å}^{-2}].\]</div>
 <p>We evaluate this in the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

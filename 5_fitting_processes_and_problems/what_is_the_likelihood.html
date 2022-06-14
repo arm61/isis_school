@@ -481,10 +481,8 @@ This is represented by the blue points and error bars and probability distributi
 <p>When we perform model-dependent analysis, we aim to find the parameters for some model that find the overall maximum for these probability distributions.
 This can be seen for the <em>line of best fit</em> to the data above, where the orange dots show where on these probability distributions this maximum likelihood model sits.
 For data where the uncertainty represents a single standard deviation on a normal distribution, it is possible to calculate the likelihood, or as is done more commonly the log-likelihood, for a given model, <span class="math notranslate nohighlight">\(\mathrm{M}\)</span>, with the following,</p>
-<div class="math notranslate nohighlight">
-\[
-\ln[\mathcal{L}(\theta | y)] = -\frac{1}{2}\sum_{n=1}^{n_{\mathrm{max}}}\bigg\{\frac{[y_n - \mathrm{M}(x_n, \theta)] ^ 2}{\sigma_n ^ 2} + \ln(2\pi \sigma_n  ^ 2)\bigg\},
-\]</div>
+<div class="math notranslate nohighlight" id="equation-likelihood">
+<span class="eqno">(25)<a class="headerlink" href="#equation-likelihood" title="Permalink to this equation">#</a></span>\[\ln[\mathcal{L}(\theta | y)] = -\frac{1}{2}\sum_{n=1}^{n_{\mathrm{max}}}\bigg\{\frac{[y_n - \mathrm{M}(x_n, \theta)] ^ 2}{\sigma_n ^ 2} + \ln(2\pi \sigma_n  ^ 2)\bigg\},\]</div>
 <p>where <span class="math notranslate nohighlight">\(n_{\mathrm{max}}\)</span> is the number of datapoints.
 You may notice that the first part of the summation is the same as a typical <span class="math notranslate nohighlight">\(\chi^2\)</span> goodness-of-fit metric that one may minimise, with the other elements being normalisation factors.
 For data where the uncertainty is not normally distributed, other likelihood functions may be used, however, the majority of reflectometry analysis considers normal uncertainties.</p>

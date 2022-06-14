@@ -4,9 +4,10 @@ In the introduction to model-dependent analysis, it was suggested that construct
 We can take this one step further but designing out model-dependent analysis such that we impose prior expectations about the values of parameters we are looking to probe. 
 We achieve this using Bayes theorem {cite}`bayes_essay_1763`, 
 
-$$
+```{math}
+:label: bayes
 p(y|\theta) = \frac{\mathcal{L}(\theta|y) p(\theta)}{p(y)} \propto \mathcal{L}(\theta|y) p(\theta),
-$$
+```
 
 where $p(y|\theta)$ is the posterior, $\mathcal{L}(\theta|y)$ is the likelihood we have already seen, $p(\theta)$ is our prior belief, and $p(y)$ is the probability associated with the measured data, which is constant for all $\theta$. 
 It is Bayes theorem that enables us to integrate our prior knowledge, as a probability, into our analysis. 

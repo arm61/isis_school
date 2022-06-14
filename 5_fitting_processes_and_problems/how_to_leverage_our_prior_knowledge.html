@@ -436,10 +436,8 @@ title="Print to PDF"
 <p>In the introduction to model-dependent analysis, it was suggested that constructing a model and therefore biasing the analysis was acceptable, <strong>if the model is founded in logic</strong>.
 We can take this one step further but designing out model-dependent analysis such that we impose prior expectations about the values of parameters we are looking to probe.
 We achieve this using Bayes theorem <span id="id1">[<a class="reference internal" href="../intro.html#id23" title="T. Bayes and R. Price. An essay towards solving a problem in the doctrine of chances. Phil. Trans. R. Soc. Lond, 53:370–418, 1763. doi:10.1098/rstl.1763.0053.">BP63</a>]</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-p(y|\theta) = \frac{\mathcal{L}(\theta|y) p(\theta)}{p(y)} \propto \mathcal{L}(\theta|y) p(\theta),
-\]</div>
+<div class="math notranslate nohighlight" id="equation-bayes">
+<span class="eqno">(26)<a class="headerlink" href="#equation-bayes" title="Permalink to this equation">#</a></span>\[p(y|\theta) = \frac{\mathcal{L}(\theta|y) p(\theta)}{p(y)} \propto \mathcal{L}(\theta|y) p(\theta),\]</div>
 <p>where <span class="math notranslate nohighlight">\(p(y|\theta)\)</span> is the posterior, <span class="math notranslate nohighlight">\(\mathcal{L}(\theta|y)\)</span> is the likelihood we have already seen, <span class="math notranslate nohighlight">\(p(\theta)\)</span> is our prior belief, and <span class="math notranslate nohighlight">\(p(y)\)</span> is the probability associated with the measured data, which is constant for all <span class="math notranslate nohighlight">\(\theta\)</span>.
 It is Bayes theorem that enables us to integrate our prior knowledge, as a probability, into our analysis.
 If we can describe our prior understanding of our parameters <span class="math notranslate nohighlight">\(\theta\)</span> as probabilities, we can look to maximise the posterior instead of the likelihood.</p>
