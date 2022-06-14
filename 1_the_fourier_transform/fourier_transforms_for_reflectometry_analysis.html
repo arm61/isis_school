@@ -690,7 +690,7 @@ The scattering length density profile for this system is shown below, where <spa
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-R(q) &amp; \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \beta_{SiO_2} - \beta_{Si} \delta(z - 200) - \beta_{SiO_2}\delta(z) \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 \\
+R(q) &amp; \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \big[(\beta_{SiO_2} - \beta_{Si}) \delta(z - 200) - \beta_{SiO_2}\delta(z)\big] \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 \\
 &amp; = \frac{16\pi^2}{q^4} \bigg| \;(\beta_{SiO_2}-\beta_{Si})\mathrm{exp}(\mathit{i}200q) - \beta_{SiO_2} \;\bigg| ^2 \\
 &amp; = \frac{16\pi^2}{q^4}\big[\beta_{SiO_2}^2 + (\beta_{SiO_2} - \beta_{Si})^2 - 2 \beta_{SiO_2} (\beta_{SiO_2} - \beta_{Si}) \cos{(200 q)}\big],
 \end{aligned}
@@ -746,15 +746,18 @@ The cosine function in the Born approximation can be used to rationalise the int
 <span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">distances</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">peaks</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Calculated thickness = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> +/-&#39;</span>
+<span class="n">delta_q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">peaks</span><span class="p">])</span>
+<span class="n">distances</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">delta_q</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Calculated thickness = 2pi / (</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">delta_q</span><span class="p">)</span><span class="si">:</span><span class="s1">.2e</span><span class="si">}</span><span class="s1"> &#39;</span>
+      <span class="sa">f</span><span class="s1">&#39;+/- </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">delta_q</span><span class="p">)</span><span class="si">:</span><span class="s1">.2e</span><span class="si">}</span><span class="s1"> Å^-1) = &#39;</span>
+      <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> +/-&#39;</span>
       <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> Å&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/fourier_transforms_for_reflectometry_analysis_18_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_18_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculated thickness = 200.46 +/- 1.25 Å
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculated thickness = 2pi / (3.13e-02 +/- 1.95e-04 Å^-1) = 200.46 +/- 1.25 Å
 </pre></div>
 </div>
 </div>
