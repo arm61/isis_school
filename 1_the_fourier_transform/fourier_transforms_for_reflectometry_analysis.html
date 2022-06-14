@@ -549,8 +549,8 @@ Let’s visualise the scattering length density, <span class="math notranslate n
 </div>
 </div>
 <p>The functional description of this interface is a <a class="reference external" href="https://en.wikipedia.org/wiki/Heaviside_step_function">Heaviside function</a>,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\beta(z) = \begin{cases}2.074\times10^{-6}\;\text{Å}^{-2},&amp;z&gt;0\\0,&amp;z\leq 0\end{cases},\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-heavy">
+<span class="eqno">(2)<a class="headerlink" href="#equation-heavy" title="Permalink to this equation">#</a></span>\[\begin{split}\beta(z) = \begin{cases}2.074\times10^{-6}\;\text{Å}^{-2},&amp;z&gt;0\\0,&amp;z\leq 0\end{cases},\end{split}\]</div>
 <p>and the first derivative of this is a scaled-<a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_delta_function">delta function</a>, where the scaling is the change observed in the Heaviside function.
 This first derivative is shown below.</p>
 <div class="cell docutils container">
@@ -567,12 +567,12 @@ This first derivative is shown below.</p>
 </div>
 </div>
 <p>The scaled-delta function can be written as,</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = \beta_{\mathrm{Si}} \delta(z),\]</div>
+<div class="math notranslate nohighlight" id="equation-delta">
+<span class="eqno">(3)<a class="headerlink" href="#equation-delta" title="Permalink to this equation">#</a></span>\[\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = \beta_{\mathrm{Si}} \delta(z),\]</div>
 <p>where, <span class="math notranslate nohighlight">\(\beta_{\mathrm{Si}}\)</span> is the scattering length density of silicon (<span class="math notranslate nohighlight">\(2.871\times 10^{-6}\)</span> Å<sup>-2</sup>).
 We can then rewrite the reflectometry equation above as,</p>
-<div class="math notranslate nohighlight">
-\[R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \beta_{\mathrm{Si}}\delta(z) \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 = \frac{16\pi^2}{q^4} \bigg| \;\beta_{\mathrm{Si}} \mathrm{exp}(0) \;\bigg| ^2 = \frac{16\pi^2\beta_{\mathrm{Si}}^2}{q^4}.\]</div>
+<div class="math notranslate nohighlight" id="equation-siref">
+<span class="eqno">(4)<a class="headerlink" href="#equation-siref" title="Permalink to this equation">#</a></span>\[R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \beta_{\mathrm{Si}}\delta(z) \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 = \frac{16\pi^2}{q^4} \bigg| \;\beta_{\mathrm{Si}} \mathrm{exp}(0) \;\bigg| ^2 = \frac{16\pi^2\beta_{\mathrm{Si}}^2}{q^4}.\]</div>
 <p>We can plot this as a function of <span class="math notranslate nohighlight">\(q\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -618,20 +618,14 @@ After another example, we will investigate the meaning of the black horizontal l
 </div>
 </div>
 <p>This offset Heaviside function can be written as,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\beta(z) = \begin{cases}2.074\times10^{-6}\;\text{Å}^{-2},&amp;z&gt;10\\0,&amp;z\leq 10\end{cases},
-\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-offheavy">
+<span class="eqno">(5)<a class="headerlink" href="#equation-offheavy" title="Permalink to this equation">#</a></span>\[\begin{split}\beta(z) = \begin{cases}2.074\times10^{-6}\;\text{Å}^{-2},&amp;z&gt;10\\0,&amp;z\leq 10\end{cases},\end{split}\]</div>
 <p>the first derivative of which is,</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = \beta_{\mathrm{Si}} \delta(z-10).
-\]</div>
+<div class="math notranslate nohighlight" id="equation-firstd">
+<span class="eqno">(6)<a class="headerlink" href="#equation-firstd" title="Permalink to this equation">#</a></span>\[\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = \beta_{\mathrm{Si}} \delta(z-10).\]</div>
 <p>This leads to the following result from the Born approximation,</p>
-<div class="math notranslate nohighlight">
-\[
-R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \beta_{\mathrm{Si}}\delta(z-10) \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 = \frac{16\pi^2}{q^4} \bigg| \;\beta_{\mathrm{Si}} \mathrm{exp}(i10q) \;\bigg| ^2 = \frac{16\pi^2\beta_{\mathrm{Si}}^2}{q^4}.
-\]</div>
+<div class="math notranslate nohighlight" id="equation-offsiref">
+<span class="eqno">(7)<a class="headerlink" href="#equation-offsiref" title="Permalink to this equation">#</a></span>\[R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \beta_{\mathrm{Si}}\delta(z-10) \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 = \frac{16\pi^2}{q^4} \bigg| \;\beta_{\mathrm{Si}} \mathrm{exp}(i10q) \;\bigg| ^2 = \frac{16\pi^2\beta_{\mathrm{Si}}^2}{q^4}.\]</div>
 <p>This is the same result for the reflectometry as shown above.</p>
 </section>
 <section id="an-oxide-layer">
@@ -656,17 +650,13 @@ The scattering length density profile for this system is shown below, where <spa
 </div>
 </div>
 <p>Again we can right this as a series of Heaviside functions,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\beta(z) = \begin{cases}4.186\times10^{-6}\;\text{Å}^{-2},&amp;z &gt; 200\\
+<div class="math notranslate nohighlight" id="equation-layerheavy">
+<span class="eqno">(8)<a class="headerlink" href="#equation-layerheavy" title="Permalink to this equation">#</a></span>\[\begin{split}\beta(z) = \begin{cases}4.186\times10^{-6}\;\text{Å}^{-2},&amp;z &gt; 200\\
             2.074\times10^{-6}\;\text{Å}^{-2},&amp;0&lt;z&lt;200\\
-            0,&amp;z\leq 0\end{cases}.
-\end{split}\]</div>
+            0,&amp;z\leq 0\end{cases}.\end{split}\]</div>
 <p>The first derivative of this is,</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = (\beta_{SiO_2} - \beta_{Si}) \delta(z - 200) - \beta_{SiO_2}\delta(z).
-\]</div>
+<div class="math notranslate nohighlight" id="equation-layerder">
+<span class="eqno">(9)<a class="headerlink" href="#equation-layerder" title="Permalink to this equation">#</a></span>\[\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = (\beta_{SiO_2} - \beta_{Si}) \delta(z - 200) - \beta_{SiO_2}\delta(z).\]</div>
 <p>Again, we can find the derivative of this scattering length density profile and plot this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -682,14 +672,12 @@ The scattering length density profile for this system is shown below, where <spa
 </div>
 </div>
 <p>Then, to calculate the Born approximated reflected intensity, we use the square magnitude of the Fourier transform and scale by <span class="math notranslate nohighlight">\(16 \pi^2 / q ^4\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
+<div class="math notranslate nohighlight" id="equation-long">
+<span class="eqno">(10)<a class="headerlink" href="#equation-long" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{aligned}
 R(q) &amp; \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \big[(\beta_{SiO_2} - \beta_{Si}) \delta(z - 200) - \beta_{SiO_2}\delta(z)\big] \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 \\
 &amp; = \frac{16\pi^2}{q^4} \bigg| \;(\beta_{SiO_2}-\beta_{Si})\mathrm{exp}(\mathit{i}200q) - \beta_{SiO_2} \;\bigg| ^2 \\
 &amp; = \frac{16\pi^2}{q^4}\big[\beta_{SiO_2}^2 + (\beta_{SiO_2} - \beta_{Si})^2 - 2 \beta_{SiO_2} (\beta_{SiO_2} - \beta_{Si}) \cos{(200 q)}\big],
-\end{aligned}
-\end{split}\]</div>
+\end{aligned}\end{split}\]</div>
 <p>We calculate this numerically below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -786,10 +774,8 @@ A full analysis is <strong>not possible</strong> without the use of some phase r
 <p>These issues do not render the Born approximation useless in reflectometry analysis.
 Instead, it can be used as a quick tool to <strong>estimate</strong> the thickness of some layered material from a reflectometry profile.
 We can perform an inverse Fourier transform as follows,</p>
-<div class="math notranslate nohighlight">
-\[
-\mathrm{ACF}(z) = \frac{1}{16\pi^2}\int^{\infty}_{-\infty} q^4 R(q) \exp(\mathit{i}zq) \;\mathrm{d}q, 
-\]</div>
+<div class="math notranslate nohighlight" id="equation-acf">
+<span class="eqno">(11)<a class="headerlink" href="#equation-acf" title="Permalink to this equation">#</a></span>\[\mathrm{ACF}(z) = \frac{1}{16\pi^2}\int^{\infty}_{-\infty} q^4 R(q) \exp(\mathit{i}zq) \;\mathrm{d}q, \]</div>
 <p>to obtain the <strong>autocorrelation function</strong> (ACF) for our data.
 The ACF can be thought of as a noisy version of our first derivative of the scattering length density profile.</p>
 <div class="cell docutils container">
