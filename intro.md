@@ -1,6 +1,6 @@
 # A Guide to Reflectometry
 
-The aim of these webpages are to give an introduction to neutron and X-ray reflectometry, currently the focus is on the anlaysis of reflectometry data but we how to expand this in future. 
+The aim of these webpages are to give an introduction to neutron and X-ray reflectometry, currently the focus is on the analysis of reflectometry data but we how to expand this in future. 
 Currently, we focus on the following subjects: 
 - the **Fourier transform** and how a Born approximation approach may be used to analyse neutron and X-ray reflectometry data; 
 - the logic of **model-dependent analysis**; 
