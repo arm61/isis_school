@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Fourier transforms for reflectometry analysis &#8212; A Guide to Reflectometry</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,63 +63,95 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '1_the_fourier_transform/fourier_transforms_for_reflectometry_analysis';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="What is model-dependent analysis?" href="../2_model_dependent_analysis/what_is_model_dependent_analysis.html" />
     <link rel="prev" title="An introduction to Fourier transforms" href="an_introduction_to_fourier_transforms.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">A Guide to Reflectometry</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -117,384 +160,245 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  The Fourier transform
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Fourier transform</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="an_introduction_to_fourier_transforms.html">
-   An introduction to Fourier transforms
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Fourier transforms for reflectometry analysis
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="an_introduction_to_fourier_transforms.html">An introduction to Fourier transforms</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fourier transforms for reflectometry analysis</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Model-dependent analysis
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-dependent analysis</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../2_model_dependent_analysis/what_is_model_dependent_analysis.html">
-   What is model-dependent analysis?
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../2_model_dependent_analysis/what_is_model_dependent_analysis.html">What is model-dependent analysis?</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Reflectometry slab models
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reflectometry slab models</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../3_reflectometry_slab_models/the_slab_model.html">
-   The “slab model”
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3_reflectometry_slab_models/optical_parameters_for_neutrons_and_xrays.html">
-   Optical parameters for neutrons and x-rays
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3_reflectometry_slab_models/how_we_calculate_the_reflectivity_of_a_slab_model.html">
-   How we calculate the reflectivity of a slab model
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3_reflectometry_slab_models/roughness_and_microslicing.html">
-   Roughness and microslicing
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../3_reflectometry_slab_models/the_slab_model.html">The “slab model”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_reflectometry_slab_models/optical_parameters_for_neutrons_and_xrays.html">Optical parameters for neutrons and x-rays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_reflectometry_slab_models/how_we_calculate_the_reflectivity_of_a_slab_model.html">How we calculate the reflectivity of a slab model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_reflectometry_slab_models/roughness_and_microslicing.html">Roughness and microslicing</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Model reparameterisation
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model reparameterisation</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../4_model_reparameterisation/a_case_for_model_reparameterisation.html">
-   A case for model reparameterisation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4_model_reparameterisation/niti_multilayer_example.html">
-   NiTi multilayer example
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4_model_reparameterisation/phospholipid_monolayer_example.html">
-   Phospholipid monolayer example
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../4_model_reparameterisation/a_case_for_model_reparameterisation.html">A case for model reparameterisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_model_reparameterisation/niti_multilayer_example.html">NiTi multilayer example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_model_reparameterisation/phospholipid_monolayer_example.html">Phospholipid monolayer example</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Fitting processes and problems
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fitting processes and problems</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../5_fitting_processes_and_problems/what_is_the_likelihood.html">
-   What is the likelihood?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../5_fitting_processes_and_problems/how_do_we_maximise_the_likelihood.html">
-   How do we maximise the likelihood?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../5_fitting_processes_and_problems/how_to_leverage_our_prior_knowledge.html">
-   How to leverage our prior knowledge?
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../5_fitting_processes_and_problems/what_is_the_likelihood.html">What is the likelihood?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_fitting_processes_and_problems/how_do_we_maximise_the_likelihood.html">How do we maximise the likelihood?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_fitting_processes_and_problems/how_to_leverage_our_prior_knowledge.html">How to leverage our prior knowledge?</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/reflectivity/learn/main?urlpath=tree/docs/1_the_fourier_transform/fourier_transforms_for_reflectometry_analysis.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/reflectivity/learn" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/reflectivity/learn/issues/new?title=Issue%20on%20page%20%2F1_the_fourier_transform/fourier_transforms_for_reflectometry_analysis.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/1_the_fourier_transform/fourier_transforms_for_reflectometry_analysis.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/reflectivity/learn"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/reflectivity/learn/issues/new?title=Issue%20on%20page%20%2F1_the_fourier_transform/fourier_transforms_for_reflectometry_analysis.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/1_the_fourier_transform/fourier_transforms_for_reflectometry_analysis.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#specular-reflectometry">
-   Specular reflectometry
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-example-of-a-single-interface">
-   The example of a single interface
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-oxide-layer">
-   An oxide layer
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-the-born-approximation">
-   Using the Born approximation
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Fourier transforms for reflectometry analysis</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#specular-reflectometry">
-   Specular reflectometry
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-example-of-a-single-interface">
-   The example of a single interface
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-oxide-layer">
-   An oxide layer
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-the-born-approximation">
-   Using the Born approximation
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fourier transforms for reflectometry analysis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specular-reflectometry">Specular reflectometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-example-of-a-single-interface">The example of a single interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-oxide-layer">An oxide layer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-born-approximation">Using the Born approximation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="fourier-transforms-for-reflectometry-analysis">
-<h1>Fourier transforms for reflectometry analysis<a class="headerlink" href="#fourier-transforms-for-reflectometry-analysis" title="Permalink to this headline">#</a></h1>
+<h1>Fourier transforms for reflectometry analysis<a class="headerlink" href="#fourier-transforms-for-reflectometry-analysis" title="Permalink to this heading">#</a></h1>
 <section id="specular-reflectometry">
-<h2>Specular reflectometry<a class="headerlink" href="#specular-reflectometry" title="Permalink to this headline">#</a></h2>
+<h2>Specular reflectometry<a class="headerlink" href="#specular-reflectometry" title="Permalink to this heading">#</a></h2>
 <p>In specular neutron reflectometry, we accept that <span class="math notranslate nohighlight">\(q_x = 0\)</span> and <span class="math notranslate nohighlight">\(q_y = 0\)</span>, which is to say that the neutrons are scattered <strong>only</strong> in the surface normal (perpendicular to the plane of the surface), denoted <span class="math notranslate nohighlight">\(z\)</span>.
 A result of this is that by applying the <a class="reference external" href="https://en.wikipedia.org/wiki/Born_approximation">Born approximation</a>, the measured reflectometry can be found from the Fourier transform of the <strong>first derivative</strong> of the scattering length density profile with respect to <span class="math notranslate nohighlight">\(z\)</span> <span id="id1">[<a class="reference internal" href="../intro.html#id6" title="D. S. Sivia. Elementary Scattering Theory: For X-Ray and Neutron Users. Oxford University Press, 2011. ISBN 978-0-19-922868-3.">Siv11</a>]</span>.
 The sensitivity to the first derivative indicates the importance of the change of the scattering length density profile.</p>
@@ -519,7 +423,7 @@ It can however be a valuable tool for quick data exploration and is important pe
 </div>
 </section>
 <section id="the-example-of-a-single-interface">
-<h2>The example of a single interface<a class="headerlink" href="#the-example-of-a-single-interface" title="Permalink to this headline">#</a></h2>
+<h2>The example of a single interface<a class="headerlink" href="#the-example-of-a-single-interface" title="Permalink to this heading">#</a></h2>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
@@ -545,7 +449,7 @@ Let’s visualise the scattering length density, <span class="math notranslate n
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fourier_transforms_for_reflectometry_analysis_1_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_1_0.png" />
+<img alt="../_images/301a64b46f85a0ce2f7b87dce6ddd5c65f5e7a6ac8a8a152817d223dbac3e219.png" src="../_images/301a64b46f85a0ce2f7b87dce6ddd5c65f5e7a6ac8a8a152817d223dbac3e219.png" />
 </div>
 </div>
 <p>The functional description of this interface is a <a class="reference external" href="https://en.wikipedia.org/wiki/Heaviside_step_function">Heaviside function</a>,</p>
@@ -563,7 +467,7 @@ This first derivative is shown below.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fourier_transforms_for_reflectometry_analysis_3_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_3_0.png" />
+<img alt="../_images/34b8f5e5063ec4f5818309c6f2e1459d8ed6945b6185e3def06c7ac93d9e1927.png" src="../_images/34b8f5e5063ec4f5818309c6f2e1459d8ed6945b6185e3def06c7ac93d9e1927.png" />
 </div>
 </div>
 <p>The scaled-delta function can be written as,</p>
@@ -587,7 +491,7 @@ We can then rewrite the reflectometry equation above as,</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fourier_transforms_for_reflectometry_analysis_5_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_5_0.png" />
+<img alt="../_images/4ec9b794a8561bd587c907caa0b0b1e44e45c2d9a36b6bdd966683e932093550.png" src="../_images/4ec9b794a8561bd587c907caa0b0b1e44e45c2d9a36b6bdd966683e932093550.png" />
 </div>
 </div>
 <p>The blue line in the figure above shows the reflectometry profile found using the Born approximation for a single silicon-air interface.
@@ -614,7 +518,7 @@ After another example, we will investigate the meaning of the black horizontal l
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fourier_transforms_for_reflectometry_analysis_7_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_7_0.png" />
+<img alt="../_images/6f65e472ab427afa10c3a844d977e43fab576880da914133c3423a691400c519.png" src="../_images/6f65e472ab427afa10c3a844d977e43fab576880da914133c3423a691400c519.png" />
 </div>
 </div>
 <p>This offset Heaviside function can be written as,</p>
@@ -629,7 +533,7 @@ After another example, we will investigate the meaning of the black horizontal l
 <p>This is the same result for the reflectometry as shown above.</p>
 </section>
 <section id="an-oxide-layer">
-<h2>An oxide layer<a class="headerlink" href="#an-oxide-layer" title="Permalink to this headline">#</a></h2>
+<h2>An oxide layer<a class="headerlink" href="#an-oxide-layer" title="Permalink to this heading">#</a></h2>
 <p>Let’s look again at a smooth sample of silicon, however, this time, a 20 Å layer of silicon dioxide has formed on top of it.
 The scattering length density profile for this system is shown below, where <span class="math notranslate nohighlight">\(\beta_{\mathrm{Si}} = 2.074\times 10^{-6}\)</span> Å<sup>-2</sup> and <span class="math notranslate nohighlight">\(\beta_{\mathrm{SiO_2}} = 4.186\times 10^{-6}\)</span> Å<sup>-2</sup>.</p>
 <div class="cell docutils container">
@@ -646,7 +550,7 @@ The scattering length density profile for this system is shown below, where <spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fourier_transforms_for_reflectometry_analysis_10_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_10_0.png" />
+<img alt="../_images/6cb8e4be34147740347157520ba9ae5d57b302c21265b1acd2a479372cc4395b.png" src="../_images/6cb8e4be34147740347157520ba9ae5d57b302c21265b1acd2a479372cc4395b.png" />
 </div>
 </div>
 <p>Again we can right this as a series of Heaviside functions,</p>
@@ -668,7 +572,7 @@ The scattering length density profile for this system is shown below, where <spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fourier_transforms_for_reflectometry_analysis_12_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_12_0.png" />
+<img alt="../_images/870019e16f7c1b1e7deedb23fbed2cc8a9636bfb6545ce02deb4d8157f8ff2d4.png" src="../_images/870019e16f7c1b1e7deedb23fbed2cc8a9636bfb6545ce02deb4d8157f8ff2d4.png" />
 </div>
 </div>
 <p>Then, to calculate the Born approximated reflected intensity, we use the square magnitude of the Fourier transform and scale by <span class="math notranslate nohighlight">\(16 \pi^2 / q ^4\)</span>.</p>
@@ -682,7 +586,7 @@ R(q) &amp; \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \big[(\bet
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reflectivity</span><span class="p">(</span><span class="n">q</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">beta</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    :param q: array of q-wavevectors</span>
 <span class="sd">    :param beta: scattering length density profile</span>
 <span class="sd">    :param z: z-dimension values for beta</span>
@@ -709,7 +613,7 @@ R(q) &amp; \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \big[(\bet
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fourier_transforms_for_reflectometry_analysis_16_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_16_0.png" />
+<img alt="../_images/9b1a15c909e9f3f5c6c5ddad2be62d706b51a2ac23c8c3502d6d7710df2f1c7c.png" src="../_images/9b1a15c909e9f3f5c6c5ddad2be62d706b51a2ac23c8c3502d6d7710df2f1c7c.png" />
 </div>
 </div>
 <p>The reflectivity data above is the result of the reflection of our radiation from the two interface in our material.
@@ -739,7 +643,7 @@ The cosine function in the Born approximation can be used to rationalise the int
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fourier_transforms_for_reflectometry_analysis_18_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_18_0.png" />
+<img alt="../_images/f9e04391c8da0350b742a0965f6a2d25615613991a6cee2649b363c8a3e0c9de.png" src="../_images/f9e04391c8da0350b742a0965f6a2d25615613991a6cee2649b363c8a3e0c9de.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculated thickness = 2pi / (3.13e-02 +/- 1.95e-04 Å^-1) = 200.46 +/- 1.25 Å
 </pre></div>
 </div>
@@ -759,7 +663,7 @@ This <strong>unphysical result</strong> is due, in part, to the utilisation of t
 </aside>
 </section>
 <section id="using-the-born-approximation">
-<h2>Using the Born approximation<a class="headerlink" href="#using-the-born-approximation" title="Permalink to this headline">#</a></h2>
+<h2>Using the Born approximation<a class="headerlink" href="#using-the-born-approximation" title="Permalink to this heading">#</a></h2>
 <p>In addition to the unphysical intensities that can be produced from a Born approximation model, the <strong>phase problem</strong> is present in this methodology.
 The <a class="reference external" href="https://en.wikipedia.org/wiki/Phase_problem">phase problem</a> is the loss of the radiation phase on physical measurement.
 This means that, as we will show below, although the thickness information may be available from an inverse Fourier transform of measured data.
@@ -781,7 +685,7 @@ The ACF can be thought of as a noisy version of our first derivative of the scat
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">autocorrelation</span><span class="p">(</span><span class="n">q</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    :param q: array of q-wavevectors</span>
 <span class="sd">    :param r: measured reflectometry</span>
 <span class="sd">    :param z: range for z-dimension values</span>
@@ -810,7 +714,7 @@ The ACF can be thought of as a noisy version of our first derivative of the scat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fourier_transforms_for_reflectometry_analysis_22_0.png" src="../_images/fourier_transforms_for_reflectometry_analysis_22_0.png" />
+<img alt="../_images/a023f65a53bc36e3d1c6436d5965a33f1f7405f36cf06243cf0a45ece75b603e.png" src="../_images/a023f65a53bc36e3d1c6436d5965a33f1f7405f36cf06243cf0a45ece75b603e.png" />
 </div>
 </div>
 <p>Note, that the large peaks are at <span class="math notranslate nohighlight">\(0\)</span> Å and <span class="math notranslate nohighlight">\(200\)</span> Å, indicating that the structure in our data is in the region of <span class="math notranslate nohighlight">\(200\)</span> Å in thickness, which matches the layer that was used to produce this data.</p>
@@ -829,7 +733,7 @@ The ACF can be thought of as a noisy version of our first derivative of the scat
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./1_the_fourier_transform"
         },
         predefinedOutput: true
@@ -837,50 +741,108 @@ The ACF can be thought of as a noisy version of our first derivative of the scat
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="an_introduction_to_fourier_transforms.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">An introduction to Fourier transforms</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="an_introduction_to_fourier_transforms.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">An introduction to Fourier transforms</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../2_model_dependent_analysis/what_is_model_dependent_analysis.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../2_model_dependent_analysis/what_is_model_dependent_analysis.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">What is model-dependent analysis?</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Andrew R. McCluskey<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specular-reflectometry">Specular reflectometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-example-of-a-single-interface">The example of a single interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-oxide-layer">An oxide layer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-born-approximation">Using the Born approximation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Andrew R. McCluskey
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
