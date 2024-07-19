@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Roughness and microslicing &#8212; A Guide to Reflectometry</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '3_reflectometry_slab_models/roughness_and_microslicing';</script>
@@ -77,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -143,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="A Guide to Reflectometry - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="A Guide to Reflectometry - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -200,7 +223,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -209,14 +232,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -338,26 +361,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -390,12 +415,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="roughness-and-microslicing">
-<h1>Roughness and microslicing<a class="headerlink" href="#roughness-and-microslicing" title="Permalink to this heading">#</a></h1>
+<h1>Roughness and microslicing<a class="headerlink" href="#roughness-and-microslicing" title="Link to this heading">#</a></h1>
 <section id="interfacial-roughness">
-<h2>Interfacial roughness<a class="headerlink" href="#interfacial-roughness" title="Permalink to this heading">#</a></h2>
+<h2>Interfacial roughness<a class="headerlink" href="#interfacial-roughness" title="Link to this heading">#</a></h2>
 <p>The slab model that has been discussed has a clear problem, it that it implies <strong>perfectly flat</strong> interfaces between different materials.
 These cannot exist in real materials, therefore it is necessary to enable some <strong>roughness</strong> between the interfaces in our model.
 There are a range of functions that can be used to implement interfacial roughness in slab modelling.
@@ -434,14 +459,14 @@ However, the most common is the use of an error function <span id="id1">[<a clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b3545529fc448fa4d6c0c3ea0827d9fee210c17045c708c0a7c86e4a7fe2474a.png" src="../_images/b3545529fc448fa4d6c0c3ea0827d9fee210c17045c708c0a7c86e4a7fe2474a.png" />
+<img alt="../_images/09ad3bce7bd897698df74377f4a2a796d083214e3fb81fe76066ce0247383cfb.png" src="../_images/09ad3bce7bd897698df74377f4a2a796d083214e3fb81fe76066ce0247383cfb.png" />
 </div>
 </div>
 <p>We can see that this roughness creates some smoothing of the interface between the layers.
 We must modify the Abelès matrix formalism discussed previously to account for this smoothing.
 This is achieved by adapting the calculation of the Fresnel reflectance,</p>
 <div class="math notranslate nohighlight" id="equation-rough">
-<span class="eqno">(20)<a class="headerlink" href="#equation-rough" title="Permalink to this equation">#</a></span>\[r_{n, n+1}(q) = \frac{k_n(q) - k_{n+1}(q)}{k_n(q) + k_{n+1}(q)} \exp{(-2k_nk_{n+1}\sigma_{n,n+1}^2)},\]</div>
+<span class="eqno">(20)<a class="headerlink" href="#equation-rough" title="Link to this equation">#</a></span>\[r_{n, n+1}(q) = \frac{k_n(q) - k_{n+1}(q)}{k_n(q) + k_{n+1}(q)} \exp{(-2k_nk_{n+1}\sigma_{n,n+1}^2)},\]</div>
 <p>where, <span class="math notranslate nohighlight">\(\sigma_{n, n+1}^2\)</span> is the roughness width between the interfaces.
 We can observe the effect that this interfacial roughness has on the resulting reflectometry profile, shown below.</p>
 <aside class="margin sidebar">
@@ -471,12 +496,12 @@ We can observe the effect that this interfacial roughness has on the resulting r
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/87606940da0b93cd5c1085969c1a5f6164fea48071efda873330adbaa386a554.png" src="../_images/87606940da0b93cd5c1085969c1a5f6164fea48071efda873330adbaa386a554.png" />
+<img alt="../_images/7138f88e08ac5845b843232ff5f1b72763cef992de34f70339e18ada33949732.png" src="../_images/7138f88e08ac5845b843232ff5f1b72763cef992de34f70339e18ada33949732.png" />
 </div>
 </div>
 </section>
 <section id="problems-with-interfacial-roughness">
-<h2>Problems with interfacial roughness<a class="headerlink" href="#problems-with-interfacial-roughness" title="Permalink to this heading">#</a></h2>
+<h2>Problems with interfacial roughness<a class="headerlink" href="#problems-with-interfacial-roughness" title="Link to this heading">#</a></h2>
 <p>This method for considering interfacial roughness between two layers is not perfect, and if used incorrectly can introduce unphysical artefacts to our reflectometry calculation.
 Consider the example shown below, where there is a <span class="math notranslate nohighlight">\(10\)</span> Å layer of nickel on a piece of silicon that is at the interface with air.
 The roughness between the nickel and air is increased from <span class="math notranslate nohighlight">\(3\)</span> Å to <span class="math notranslate nohighlight">\(7\)</span> Å with no roughness between the nickel and silicon.</p>
@@ -512,7 +537,7 @@ The roughness between the nickel and air is increased from <span class="math not
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/85e0fcff81744ba99b1c345ce0ff6479fab1c8031a2f41ba04437bc48a90238b.png" src="../_images/85e0fcff81744ba99b1c345ce0ff6479fab1c8031a2f41ba04437bc48a90238b.png" />
+<img alt="../_images/8716c460891da3dc51b1ac30de1246cee08f72d1077ef0820de6218b845ff58a.png" src="../_images/8716c460891da3dc51b1ac30de1246cee08f72d1077ef0820de6218b845ff58a.png" />
 </div>
 </div>
 <aside class="margin sidebar">
@@ -528,7 +553,7 @@ This can lead to an unphysical interpretation of our system if we interrogate th
 Additionally, given that the roughness parameter only influences the Fresnel reflectance between two interfaces, this “leaking” through it <strong>not</strong> reflected in the resulting calculated data.</p>
 </section>
 <section id="microslicing">
-<h2>Microslicing<a class="headerlink" href="#microslicing" title="Permalink to this heading">#</a></h2>
+<h2>Microslicing<a class="headerlink" href="#microslicing" title="Link to this heading">#</a></h2>
 <p>It is still possible that we would like to be able to simulate such a scattering length density profile as is shown above, accurately.
 Therefore, there must be a methodology to work around this problem with the Nevot-Croce approach.
 This method is <strong>microslicing</strong>, where the scattering length density profile is described as a series of very thin layers with no roughness between them.
@@ -569,7 +594,7 @@ Consider the plot shown below, which presents the same interface as before, howe
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/892e7ec6573034645d7c56c64e0aebcfc29f2289b483293efe193515aff9e3ee.png" src="../_images/892e7ec6573034645d7c56c64e0aebcfc29f2289b483293efe193515aff9e3ee.png" />
+<img alt="../_images/04cc2d4b4f69444653a750c7bf3b1cd4e25a7d93b77c713688eabdee78f864ef.png" src="../_images/04cc2d4b4f69444653a750c7bf3b1cd4e25a7d93b77c713688eabdee78f864ef.png" />
 </div>
 </div>
 <p>Notice that now the system is a series of layers with a thickness of <span class="math notranslate nohighlight">\(0.5\)</span> Å each.
@@ -597,7 +622,7 @@ To show clearly the impact of the Nevot-Croce approach being inaccurate, we show
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c83f27672ce01c3c67c1080cb96e8044d2a89457a8f0d190da28af4507f20ded.png" src="../_images/c83f27672ce01c3c67c1080cb96e8044d2a89457a8f0d190da28af4507f20ded.png" />
+<img alt="../_images/f648b3558c9c79c0609fa2e2b5373a70ad61d199a9748d743374387dcf6a68ac.png" src="../_images/f648b3558c9c79c0609fa2e2b5373a70ad61d199a9748d743374387dcf6a68ac.png" />
 </div>
 </div>
 </section>
@@ -628,11 +653,10 @@ To show clearly the impact of the Nevot-Croce approach being inaccurate, we show
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="how_we_calculate_the_reflectivity_of_a_slab_model.html"
@@ -652,10 +676,7 @@ To show clearly the impact of the Nevot-Croce approach being inaccurate, we show
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -663,6 +684,7 @@ To show clearly the impact of the Nevot-Croce approach being inaccurate, we show
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -694,9 +716,10 @@ By Andrew R. McCluskey
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -720,8 +743,8 @@ By Andrew R. McCluskey
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Fourier transforms for reflectometry analysis &#8212; A Guide to Reflectometry</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
@@ -79,19 +75,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -113,12 +113,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -133,9 +141,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -145,12 +157,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="A Guide to Reflectometry - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="A Guide to Reflectometry - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -202,7 +225,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -211,14 +234,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -340,26 +363,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -393,12 +418,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="fourier-transforms-for-reflectometry-analysis">
-<h1>Fourier transforms for reflectometry analysis<a class="headerlink" href="#fourier-transforms-for-reflectometry-analysis" title="Permalink to this heading">#</a></h1>
+<h1>Fourier transforms for reflectometry analysis<a class="headerlink" href="#fourier-transforms-for-reflectometry-analysis" title="Link to this heading">#</a></h1>
 <section id="specular-reflectometry">
-<h2>Specular reflectometry<a class="headerlink" href="#specular-reflectometry" title="Permalink to this heading">#</a></h2>
+<h2>Specular reflectometry<a class="headerlink" href="#specular-reflectometry" title="Link to this heading">#</a></h2>
 <p>In specular neutron reflectometry, we accept that <span class="math notranslate nohighlight">\(q_x = 0\)</span> and <span class="math notranslate nohighlight">\(q_y = 0\)</span>, which is to say that the neutrons are scattered <strong>only</strong> in the surface normal (perpendicular to the plane of the surface), denoted <span class="math notranslate nohighlight">\(z\)</span>.
 A result of this is that by applying the <a class="reference external" href="https://en.wikipedia.org/wiki/Born_approximation">Born approximation</a>, the measured reflectometry can be found from the Fourier transform of the <strong>first derivative</strong> of the scattering length density profile with respect to <span class="math notranslate nohighlight">\(z\)</span> <span id="id1">[<a class="reference internal" href="../intro.html#id6" title="D. S. Sivia. Elementary Scattering Theory: For X-Ray and Neutron Users. Oxford University Press, 2011. ISBN 978-0-19-922868-3.">Siv11</a>]</span>.
 The sensitivity to the first derivative indicates the importance of the change of the scattering length density profile.</p>
@@ -409,12 +434,12 @@ The sensitivity to the first derivative indicates the importance of the change o
         style id1 fill:#0173B288
         style id2 fill:#029E7388
         </div><figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The relationship between the scattering length density and the reflectometry profiles, interacting by a Fourier transform.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The relationship between the scattering length density and the reflectometry profiles, interacting by a Fourier transform.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This means that the reflectometry profile, <span class="math notranslate nohighlight">\(R(q)\)</span>, can be found <strong>under the Born approximation</strong> as follows,</p>
 <div class="math notranslate nohighlight" id="equation-born">
-<span class="eqno">(1)<a class="headerlink" href="#equation-born" title="Permalink to this equation">#</a></span>\[R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \frac{\mathrm{d}\beta}{\mathrm{d}z} \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2,\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-born" title="Link to this equation">#</a></span>\[R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \frac{\mathrm{d}\beta}{\mathrm{d}z} \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\beta(z)\)</span> is the scattering length density profile as a function of <span class="math notranslate nohighlight">\(z\)</span>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -423,7 +448,7 @@ It can however be a valuable tool for quick data exploration and is important pe
 </div>
 </section>
 <section id="the-example-of-a-single-interface">
-<h2>The example of a single interface<a class="headerlink" href="#the-example-of-a-single-interface" title="Permalink to this heading">#</a></h2>
+<h2>The example of a single interface<a class="headerlink" href="#the-example-of-a-single-interface" title="Link to this heading">#</a></h2>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
@@ -449,12 +474,12 @@ Let’s visualise the scattering length density, <span class="math notranslate n
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/301a64b46f85a0ce2f7b87dce6ddd5c65f5e7a6ac8a8a152817d223dbac3e219.png" src="../_images/301a64b46f85a0ce2f7b87dce6ddd5c65f5e7a6ac8a8a152817d223dbac3e219.png" />
+<img alt="../_images/afb94ea72beb4de246aa2c28ce0c96bdc0361ed8daeff17c7d49c178888d65cf.png" src="../_images/afb94ea72beb4de246aa2c28ce0c96bdc0361ed8daeff17c7d49c178888d65cf.png" />
 </div>
 </div>
 <p>The functional description of this interface is a <a class="reference external" href="https://en.wikipedia.org/wiki/Heaviside_step_function">Heaviside function</a>,</p>
 <div class="math notranslate nohighlight" id="equation-heavy">
-<span class="eqno">(2)<a class="headerlink" href="#equation-heavy" title="Permalink to this equation">#</a></span>\[\begin{split}\beta(z) = \begin{cases}2.074\times10^{-6}\;\text{Å}^{-2},&amp;z&gt;0\\0,&amp;z\leq 0\end{cases},\end{split}\]</div>
+<span class="eqno">(2)<a class="headerlink" href="#equation-heavy" title="Link to this equation">#</a></span>\[\begin{split}\beta(z) = \begin{cases}2.074\times10^{-6}\;\text{Å}^{-2},&amp;z&gt;0\\0,&amp;z\leq 0\end{cases},\end{split}\]</div>
 <p>and the first derivative of this is a scaled-<a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_delta_function">delta function</a>, where the scaling is the change observed in the Heaviside function.
 This first derivative is shown below.</p>
 <div class="cell docutils container">
@@ -467,16 +492,16 @@ This first derivative is shown below.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/34b8f5e5063ec4f5818309c6f2e1459d8ed6945b6185e3def06c7ac93d9e1927.png" src="../_images/34b8f5e5063ec4f5818309c6f2e1459d8ed6945b6185e3def06c7ac93d9e1927.png" />
+<img alt="../_images/bce380925c88fe0f3fb2df85a6724ab5d6136af812ba7c09e124dcc6f1572f2b.png" src="../_images/bce380925c88fe0f3fb2df85a6724ab5d6136af812ba7c09e124dcc6f1572f2b.png" />
 </div>
 </div>
 <p>The scaled-delta function can be written as,</p>
 <div class="math notranslate nohighlight" id="equation-delta">
-<span class="eqno">(3)<a class="headerlink" href="#equation-delta" title="Permalink to this equation">#</a></span>\[\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = \beta_{\mathrm{Si}} \delta(z),\]</div>
+<span class="eqno">(3)<a class="headerlink" href="#equation-delta" title="Link to this equation">#</a></span>\[\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = \beta_{\mathrm{Si}} \delta(z),\]</div>
 <p>where, <span class="math notranslate nohighlight">\(\beta_{\mathrm{Si}}\)</span> is the scattering length density of silicon (<span class="math notranslate nohighlight">\(2.871\times 10^{-6}\)</span> Å<sup>-2</sup>).
 We can then rewrite the reflectometry equation above as,</p>
 <div class="math notranslate nohighlight" id="equation-siref">
-<span class="eqno">(4)<a class="headerlink" href="#equation-siref" title="Permalink to this equation">#</a></span>\[R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \beta_{\mathrm{Si}}\delta(z) \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 = \frac{16\pi^2}{q^4} \bigg| \;\beta_{\mathrm{Si}} \mathrm{exp}(0) \;\bigg| ^2 = \frac{16\pi^2\beta_{\mathrm{Si}}^2}{q^4}.\]</div>
+<span class="eqno">(4)<a class="headerlink" href="#equation-siref" title="Link to this equation">#</a></span>\[R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \beta_{\mathrm{Si}}\delta(z) \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 = \frac{16\pi^2}{q^4} \bigg| \;\beta_{\mathrm{Si}} \mathrm{exp}(0) \;\bigg| ^2 = \frac{16\pi^2\beta_{\mathrm{Si}}^2}{q^4}.\]</div>
 <p>We can plot this as a function of <span class="math notranslate nohighlight">\(q\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -491,7 +516,7 @@ We can then rewrite the reflectometry equation above as,</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4ec9b794a8561bd587c907caa0b0b1e44e45c2d9a36b6bdd966683e932093550.png" src="../_images/4ec9b794a8561bd587c907caa0b0b1e44e45c2d9a36b6bdd966683e932093550.png" />
+<img alt="../_images/c104c211753e4d9eef58dd4c8ddbe82219987b9b19386579e69c740a2f676cbd.png" src="../_images/c104c211753e4d9eef58dd4c8ddbe82219987b9b19386579e69c740a2f676cbd.png" />
 </div>
 </div>
 <p>The blue line in the figure above shows the reflectometry profile found using the Born approximation for a single silicon-air interface.
@@ -518,22 +543,22 @@ After another example, we will investigate the meaning of the black horizontal l
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6f65e472ab427afa10c3a844d977e43fab576880da914133c3423a691400c519.png" src="../_images/6f65e472ab427afa10c3a844d977e43fab576880da914133c3423a691400c519.png" />
+<img alt="../_images/f4884b132481b5236dbf0eaf57b3230e5eb242169c7c4bb5f2fdf82d8cef0141.png" src="../_images/f4884b132481b5236dbf0eaf57b3230e5eb242169c7c4bb5f2fdf82d8cef0141.png" />
 </div>
 </div>
 <p>This offset Heaviside function can be written as,</p>
 <div class="math notranslate nohighlight" id="equation-offheavy">
-<span class="eqno">(5)<a class="headerlink" href="#equation-offheavy" title="Permalink to this equation">#</a></span>\[\begin{split}\beta(z) = \begin{cases}2.074\times10^{-6}\;\text{Å}^{-2},&amp;z&gt;10\\0,&amp;z\leq 10\end{cases},\end{split}\]</div>
+<span class="eqno">(5)<a class="headerlink" href="#equation-offheavy" title="Link to this equation">#</a></span>\[\begin{split}\beta(z) = \begin{cases}2.074\times10^{-6}\;\text{Å}^{-2},&amp;z&gt;10\\0,&amp;z\leq 10\end{cases},\end{split}\]</div>
 <p>the first derivative of which is,</p>
 <div class="math notranslate nohighlight" id="equation-firstd">
-<span class="eqno">(6)<a class="headerlink" href="#equation-firstd" title="Permalink to this equation">#</a></span>\[\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = \beta_{\mathrm{Si}} \delta(z-10).\]</div>
+<span class="eqno">(6)<a class="headerlink" href="#equation-firstd" title="Link to this equation">#</a></span>\[\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = \beta_{\mathrm{Si}} \delta(z-10).\]</div>
 <p>This leads to the following result from the Born approximation,</p>
 <div class="math notranslate nohighlight" id="equation-offsiref">
-<span class="eqno">(7)<a class="headerlink" href="#equation-offsiref" title="Permalink to this equation">#</a></span>\[R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \beta_{\mathrm{Si}}\delta(z-10) \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 = \frac{16\pi^2}{q^4} \bigg| \;\beta_{\mathrm{Si}} \mathrm{exp}(i10q) \;\bigg| ^2 = \frac{16\pi^2\beta_{\mathrm{Si}}^2}{q^4}.\]</div>
+<span class="eqno">(7)<a class="headerlink" href="#equation-offsiref" title="Link to this equation">#</a></span>\[R(q) \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \beta_{\mathrm{Si}}\delta(z-10) \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 = \frac{16\pi^2}{q^4} \bigg| \;\beta_{\mathrm{Si}} \mathrm{exp}(i10q) \;\bigg| ^2 = \frac{16\pi^2\beta_{\mathrm{Si}}^2}{q^4}.\]</div>
 <p>This is the same result for the reflectometry as shown above.</p>
 </section>
 <section id="an-oxide-layer">
-<h2>An oxide layer<a class="headerlink" href="#an-oxide-layer" title="Permalink to this heading">#</a></h2>
+<h2>An oxide layer<a class="headerlink" href="#an-oxide-layer" title="Link to this heading">#</a></h2>
 <p>Let’s look again at a smooth sample of silicon, however, this time, a 20 Å layer of silicon dioxide has formed on top of it.
 The scattering length density profile for this system is shown below, where <span class="math notranslate nohighlight">\(\beta_{\mathrm{Si}} = 2.074\times 10^{-6}\)</span> Å<sup>-2</sup> and <span class="math notranslate nohighlight">\(\beta_{\mathrm{SiO_2}} = 4.186\times 10^{-6}\)</span> Å<sup>-2</sup>.</p>
 <div class="cell docutils container">
@@ -550,17 +575,17 @@ The scattering length density profile for this system is shown below, where <spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6cb8e4be34147740347157520ba9ae5d57b302c21265b1acd2a479372cc4395b.png" src="../_images/6cb8e4be34147740347157520ba9ae5d57b302c21265b1acd2a479372cc4395b.png" />
+<img alt="../_images/5b3104f1e1fb352fe3b5ad9349bbfabb5b13c6b11ffb291c7668e8a19fd7da09.png" src="../_images/5b3104f1e1fb352fe3b5ad9349bbfabb5b13c6b11ffb291c7668e8a19fd7da09.png" />
 </div>
 </div>
 <p>Again we can right this as a series of Heaviside functions,</p>
 <div class="math notranslate nohighlight" id="equation-layerheavy">
-<span class="eqno">(8)<a class="headerlink" href="#equation-layerheavy" title="Permalink to this equation">#</a></span>\[\begin{split}\beta(z) = \begin{cases}4.186\times10^{-6}\;\text{Å}^{-2},&amp;z &gt; 200\\
+<span class="eqno">(8)<a class="headerlink" href="#equation-layerheavy" title="Link to this equation">#</a></span>\[\begin{split}\beta(z) = \begin{cases}4.186\times10^{-6}\;\text{Å}^{-2},&amp;z &gt; 200\\
             2.074\times10^{-6}\;\text{Å}^{-2},&amp;0&lt;z&lt;200\\
             0,&amp;z\leq 0\end{cases}.\end{split}\]</div>
 <p>The first derivative of this is,</p>
 <div class="math notranslate nohighlight" id="equation-layerder">
-<span class="eqno">(9)<a class="headerlink" href="#equation-layerder" title="Permalink to this equation">#</a></span>\[\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = (\beta_{SiO_2} - \beta_{Si}) \delta(z - 200) - \beta_{SiO_2}\delta(z).\]</div>
+<span class="eqno">(9)<a class="headerlink" href="#equation-layerder" title="Link to this equation">#</a></span>\[\frac{\mathrm{d}\beta(z)}{\mathrm{d}z} = (\beta_{SiO_2} - \beta_{Si}) \delta(z - 200) - \beta_{SiO_2}\delta(z).\]</div>
 <p>Again, we can find the derivative of this scattering length density profile and plot this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -572,12 +597,12 @@ The scattering length density profile for this system is shown below, where <spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/870019e16f7c1b1e7deedb23fbed2cc8a9636bfb6545ce02deb4d8157f8ff2d4.png" src="../_images/870019e16f7c1b1e7deedb23fbed2cc8a9636bfb6545ce02deb4d8157f8ff2d4.png" />
+<img alt="../_images/b64372b6710727b45ca12110136c24fdece533a98d422971a7ec405d389254fd.png" src="../_images/b64372b6710727b45ca12110136c24fdece533a98d422971a7ec405d389254fd.png" />
 </div>
 </div>
 <p>Then, to calculate the Born approximated reflected intensity, we use the square magnitude of the Fourier transform and scale by <span class="math notranslate nohighlight">\(16 \pi^2 / q ^4\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-long">
-<span class="eqno">(10)<a class="headerlink" href="#equation-long" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{aligned}
+<span class="eqno">(10)<a class="headerlink" href="#equation-long" title="Link to this equation">#</a></span>\[\begin{split}\begin{aligned}
 R(q) &amp; \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \big[(\beta_{SiO_2} - \beta_{Si}) \delta(z - 200) - \beta_{SiO_2}\delta(z)\big] \mathrm{exp}(\mathit{i}zq) \;\mathrm{d}z \;\bigg| ^2 \\
 &amp; = \frac{16\pi^2}{q^4} \bigg| \;(\beta_{SiO_2}-\beta_{Si})\mathrm{exp}(\mathit{i}200q) - \beta_{SiO_2} \;\bigg| ^2 \\
 &amp; = \frac{16\pi^2}{q^4}\big[\beta_{SiO_2}^2 + (\beta_{SiO_2} - \beta_{Si})^2 - 2 \beta_{SiO_2} (\beta_{SiO_2} - \beta_{Si}) \cos{(200 q)}\big],
@@ -613,7 +638,7 @@ R(q) &amp; \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \big[(\bet
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9b1a15c909e9f3f5c6c5ddad2be62d706b51a2ac23c8c3502d6d7710df2f1c7c.png" src="../_images/9b1a15c909e9f3f5c6c5ddad2be62d706b51a2ac23c8c3502d6d7710df2f1c7c.png" />
+<img alt="../_images/8a5fd660f566983fda065dd828c4c0eeedc4fd98129730651522f13dd060f7f2.png" src="../_images/8a5fd660f566983fda065dd828c4c0eeedc4fd98129730651522f13dd060f7f2.png" />
 </div>
 </div>
 <p>The reflectivity data above is the result of the reflection of our radiation from the two interface in our material.
@@ -643,7 +668,7 @@ The cosine function in the Born approximation can be used to rationalise the int
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f9e04391c8da0350b742a0965f6a2d25615613991a6cee2649b363c8a3e0c9de.png" src="../_images/f9e04391c8da0350b742a0965f6a2d25615613991a6cee2649b363c8a3e0c9de.png" />
+<img alt="../_images/b91c272bfb4c9ad4f5dd322e4bec771ff9ece5aff9fd44e694394547040dde07.png" src="../_images/b91c272bfb4c9ad4f5dd322e4bec771ff9ece5aff9fd44e694394547040dde07.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculated thickness = 2pi / (3.13e-02 +/- 1.95e-04 Å^-1) = 200.46 +/- 1.25 Å
 </pre></div>
 </div>
@@ -663,7 +688,7 @@ This <strong>unphysical result</strong> is due, in part, to the utilisation of t
 </aside>
 </section>
 <section id="using-the-born-approximation">
-<h2>Using the Born approximation<a class="headerlink" href="#using-the-born-approximation" title="Permalink to this heading">#</a></h2>
+<h2>Using the Born approximation<a class="headerlink" href="#using-the-born-approximation" title="Link to this heading">#</a></h2>
 <p>In addition to the unphysical intensities that can be produced from a Born approximation model, the <strong>phase problem</strong> is present in this methodology.
 The <a class="reference external" href="https://en.wikipedia.org/wiki/Phase_problem">phase problem</a> is the loss of the radiation phase on physical measurement.
 This means that, as we will show below, although the thickness information may be available from an inverse Fourier transform of measured data.
@@ -679,7 +704,7 @@ A full analysis is <strong>not possible</strong> without the use of some phase r
 Instead, it can be used as a quick tool to <strong>estimate</strong> the thickness of some layered material from a reflectometry profile.
 We can perform an inverse Fourier transform as follows,</p>
 <div class="math notranslate nohighlight" id="equation-acf">
-<span class="eqno">(11)<a class="headerlink" href="#equation-acf" title="Permalink to this equation">#</a></span>\[\mathrm{ACF}(z) = \frac{1}{16\pi^2}\int^{\infty}_{-\infty} q^4 R(q) \exp(\mathit{i}zq) \;\mathrm{d}q, \]</div>
+<span class="eqno">(11)<a class="headerlink" href="#equation-acf" title="Link to this equation">#</a></span>\[\mathrm{ACF}(z) = \frac{1}{16\pi^2}\int^{\infty}_{-\infty} q^4 R(q) \exp(\mathit{i}zq) \;\mathrm{d}q, \]</div>
 <p>to obtain the <strong>autocorrelation function</strong> (ACF) for our data.
 The ACF can be thought of as a noisy version of our first derivative of the scattering length density profile.</p>
 <div class="cell docutils container">
@@ -714,7 +739,7 @@ The ACF can be thought of as a noisy version of our first derivative of the scat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a023f65a53bc36e3d1c6436d5965a33f1f7405f36cf06243cf0a45ece75b603e.png" src="../_images/a023f65a53bc36e3d1c6436d5965a33f1f7405f36cf06243cf0a45ece75b603e.png" />
+<img alt="../_images/ad1c8fb969ad4d942234593206a19c8596bb568f95f8d3445e11324af02391a7.png" src="../_images/ad1c8fb969ad4d942234593206a19c8596bb568f95f8d3445e11324af02391a7.png" />
 </div>
 </div>
 <p>Note, that the large peaks are at <span class="math notranslate nohighlight">\(0\)</span> Å and <span class="math notranslate nohighlight">\(200\)</span> Å, indicating that the structure in our data is in the region of <span class="math notranslate nohighlight">\(200\)</span> Å in thickness, which matches the layer that was used to produce this data.</p>
@@ -746,11 +771,10 @@ The ACF can be thought of as a noisy version of our first derivative of the scat
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="an_introduction_to_fourier_transforms.html"
@@ -770,10 +794,7 @@ The ACF can be thought of as a noisy version of our first derivative of the scat
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -781,6 +802,7 @@ The ACF can be thought of as a noisy version of our first derivative of the scat
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -813,9 +835,10 @@ By Andrew R. McCluskey
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -839,8 +862,8 @@ By Andrew R. McCluskey
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
