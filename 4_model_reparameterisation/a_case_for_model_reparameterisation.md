@@ -18,4 +18,4 @@ This process is **system-specific**, and requires that assumptions made about th
 Additionally, if measurements from complementary techniques are used to define the reparameterised system, it is important that the previous measurements **accurately describe the parameter** as it is in the neutron reflectometry measurement. 
 
 To give a flavour of the system-specific nature of this process, in this section we will look at **two examples**. 
-The first investigates a simple conversation of mass density to scattering length density, while the latter uses information about the chemical structure to reduce the number of free parameters in the fitting process. 
+The first investigates a simple conversion of mass density to scattering length density, while the latter uses information about the chemical structure to reduce the number of free parameters in the fitting process. 
