@@ -1,7 +1,7 @@
 # How to leverage our prior knowledge?
 
 In the introduction to model-dependent analysis, it was suggested that constructing a model and therefore biasing the analysis was acceptable, **if the model is founded in logic**. 
-We can take this one step further but designing out model-dependent analysis such that we impose prior expectations about the values of parameters we are looking to probe. 
+We can take this one step further by designing out model-dependent analysis such that we impose prior expectations about the values of parameters we are looking to probe. 
 We achieve this using Bayes theorem {cite}`bayes_essay_1763`, 
 
 ```{math}
