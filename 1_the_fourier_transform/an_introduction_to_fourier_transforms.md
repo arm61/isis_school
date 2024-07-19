@@ -3,7 +3,7 @@
 ## What is a Fourier transform?
 
 The [Fourier transform](https://en.wikipedia.org/wiki/Fourier_transform) is fundamental to the scattering of all radiation, including **neutrons**. 
-The scattering interaction between radiation and some sample essentially performs a Fourier transform on the radiation, leading to the scattering pattern that we measure. 
+The scattering interaction between radiation and some sample essentially performs a Fourier transform on the radiation, leading to the scattering pattern that we measure..
 
 Before we look in more detail at Fourier transforms and scattering, watch the video below from [3Blue1Brown](https://www.3blue1brown.com) which gives a great overview of the Fourier transform. 
 ````{margin}
