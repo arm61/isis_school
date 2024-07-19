@@ -417,7 +417,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="niti-multilayer-example">
 <h1>NiTi multilayer example<a class="headerlink" href="#niti-multilayer-example" title="Link to this heading">#</a></h1>
-<p>For our first example, we will consider a simple hard matter system, where there is a <strong>repeating multilayer</strong> of nickel and titanium that has been deposited on the surface of a piece of silicon.
+<p>For our first example, we will consider a simple hard matter system, where there is a <strong>repeating multilayer</strong> of nickel and titanium that has been deposited on a piece of silicon.
 The process by which these systems are prepared typically involves the disposition of a layer of titanium, followed by a layer of nickel, followed by titanium, this process is repeated until the desired number of layers is reached.
 Below we show, graphically, a model that we may use for the simulation of reflectometry data from such a system.</p>
 <figure class="align-center" id="multilayer">
@@ -429,16 +429,16 @@ Below we show, graphically, a model that we may use for the simulation of reflec
 <p>A common assumption that is made in the analysis of reflectometry data from such a sample include that the structure of each repeat is the same.
 Therefore the model can be defined such that there are only a <strong>limited number of variables</strong>.
 However, this can still be unclear, as three of these parameters will be the scattering length densities of nickel, titanium, and silicon.
-While these values can be obtained from <a class="reference external" href="https://slddb.esss.dk/slddb/">online databases</a>, we can also reparameterised these in terms of the mass density of the material.</p>
+While these values can be obtained from <a class="reference external" href="https://slddb.esss.dk/slddb/">online databases</a>, we can also reparameterise these in terms of the mass density of the material.</p>
 <section id="scattering-length-density-mass-density">
 <h2>Scattering length density → Mass density<a class="headerlink" href="#scattering-length-density-mass-density" title="Link to this heading">#</a></h2>
-<p>The scattering length density, <span class="math notranslate nohighlight">\(\beta\)</span>, for a material is directly related to its mass density, <span class="math notranslate nohighlight">\(\rho\)</span>,</p>
+<p>The scattering length density, <span class="math notranslate nohighlight">\(\textrm{SLD}\)</span>, for a material is directly related to its mass density, <span class="math notranslate nohighlight">\(\rho\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-density">
-<span class="eqno">(21)<a class="headerlink" href="#equation-density" title="Link to this equation">#</a></span>\[\beta = \frac{\rho N_a \sum_{i=1}^{N}b_i}{M_w}, \]</div>
+<span class="eqno">(21)<a class="headerlink" href="#equation-density" title="Link to this equation">#</a></span>\[\	extrm{SLD} = \frac{\rho N_a \sum_{i=1}^{N}b_i}{M_w}, \]</div>
 <p>where, <span class="math notranslate nohighlight">\(N_a\)</span> is Avogadro’s constant, <span class="math notranslate nohighlight">\(b_i\)</span> are the neutron scattering lengths for each of the <span class="math notranslate nohighlight">\(N\)</span> elements in the material, and <span class="math notranslate nohighlight">\(M_w\)</span> is the molecular mass of the material.
 Therefore, if we consider nickel, which has a density of <span class="math notranslate nohighlight">\(8.908\)</span> gcm<sup>-3</sup> at room temperature and a <a class="reference external" href="https://www.ncnr.nist.gov/resources/n-lengths/elements/ni.html">scattering length</a> of <span class="math notranslate nohighlight">\(10.3\)</span> fm, the scattering length density is found as follows,</p>
 <div class="math notranslate nohighlight" id="equation-calc">
-<span class="eqno">(22)<a class="headerlink" href="#equation-calc" title="Link to this equation">#</a></span>\[\beta_{\mathrm{Ni}} = \frac{\rho_{\mathrm{Ni}} N_a b_{\mathrm{Ni}}}{M_{w, \mathrm{Ni}}} = \frac{8.91 [\mathrm{g cm}^{-3}] \cdot 6.022\times 10^{23} [\mathrm{mol}^{-1}] \cdot 10.3 [\mathrm{fm}]}{58.69 [\mathrm{g mol}^{-1}]} = 9.417\times 10^{-6} [\mathrm{Å}^{-2}].\]</div>
+<span class="eqno">(22)<a class="headerlink" href="#equation-calc" title="Link to this equation">#</a></span>\[\	extrm{SLD}_{\mathrm{Ni}} = \frac{\rho_{\mathrm{Ni}} N_a b_{\mathrm{Ni}}}{M_{w, \mathrm{Ni}}} = \frac{8.91 [\mathrm{g cm}^{-3}] \cdot 6.022\times 10^{23} [\mathrm{mol}^{-1}] \cdot 10.3 [\mathrm{fm}]}{58.69 [\mathrm{g mol}^{-1}]} = 9.417\times 10^{-6} [\mathrm{Å}^{-2}].\]</div>
 <p>We evaluate this in the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -449,7 +449,7 @@ Therefore, if we consider nickel, which has a density of <span class="math notra
 
 <span class="n">N_A</span> <span class="o">/=</span> <span class="n">u</span><span class="o">.</span><span class="n">mol</span>
 
-<span class="k">def</span> <span class="nf">rho_to_beta</span><span class="p">(</span><span class="n">rho</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">m_w</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">rho_to_SLD</span><span class="p">(</span><span class="n">rho</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">m_w</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    :param rho: mass density</span>
 <span class="sd">    :param b: neutron scattering length for individual atoms</span>
@@ -465,13 +465,13 @@ Therefore, if we consider nickel, which has a density of <span class="math notra
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho_Ni</span> <span class="o">=</span> <span class="mf">8.91</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">g</span> <span class="o">/</span> <span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">b_Ni</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">10.3</span><span class="p">])</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">fm</span>
 <span class="n">m_w_Ni</span> <span class="o">=</span> <span class="mf">58.69</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">g</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">mol</span>
-<span class="n">beta_Ni</span> <span class="o">=</span> <span class="n">rho_to_beta</span><span class="p">(</span><span class="n">rho_Ni</span><span class="p">,</span> <span class="n">b_Ni</span><span class="p">,</span> <span class="n">m_w_Ni</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;beta_Ni = </span><span class="si">{</span><span class="n">beta_Ni</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">angstrom</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="si">:</span><span class="s1">.3e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">SLD_Ni</span> <span class="o">=</span> <span class="n">rho_to_SLD</span><span class="p">(</span><span class="n">rho_Ni</span><span class="p">,</span> <span class="n">b_Ni</span><span class="p">,</span> <span class="n">m_w_Ni</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;SLD_Ni = </span><span class="si">{</span><span class="n">SLD_Ni</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">angstrom</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="si">:</span><span class="s1">.3e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>beta_Ni = 9.417e-06 / angstrom ** 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SLD_Ni = 9.417e-06 / angstrom ** 2
 </pre></div>
 </div>
 </div>
@@ -485,13 +485,13 @@ The majority of fitting packages can allow the reflectometry analysis model to b
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho_Ti</span> <span class="o">=</span> <span class="mf">4.51</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">g</span> <span class="o">/</span> <span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">b_Ti</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">3.438</span><span class="p">])</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">fm</span>
 <span class="n">m_w_Ti</span> <span class="o">=</span> <span class="mf">47.867</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">g</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">mol</span>
-<span class="n">beta_Ti</span> <span class="o">=</span> <span class="n">rho_to_beta</span><span class="p">(</span><span class="n">rho_Ti</span><span class="p">,</span> <span class="n">b_Ti</span><span class="p">,</span> <span class="n">m_w_Ti</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;beta_Ti = </span><span class="si">{</span><span class="n">beta_Ti</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">angstrom</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="si">:</span><span class="s1">.3e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">SLD_Ti</span> <span class="o">=</span> <span class="n">rho_to_SLD</span><span class="p">(</span><span class="n">rho_Ti</span><span class="p">,</span> <span class="n">b_Ti</span><span class="p">,</span> <span class="n">m_w_Ti</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;SLD_Ti = </span><span class="si">{</span><span class="n">SLD_Ti</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">angstrom</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="si">:</span><span class="s1">.3e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>beta_Ti = -1.951e-06 / angstrom ** 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SLD_Ti = -1.951e-06 / angstrom ** 2
 </pre></div>
 </div>
 </div>
