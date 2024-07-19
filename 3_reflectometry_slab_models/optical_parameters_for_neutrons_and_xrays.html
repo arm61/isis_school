@@ -425,12 +425,7 @@ document.write(`
 <section id="fresnel-reflectivity-and-refraction-in-terms-of-refractive-index">
 <h2>Fresnel reflectivity and refraction in terms of refractive index<a class="headerlink" href="#fresnel-reflectivity-and-refraction-in-terms-of-refractive-index" title="Link to this heading">#</a></h2>
 <p>While the refractive index in reflectometry experiments is define the same way as in classical optics (see <a class="reference external" href="https://en.wikipedia.org/wiki/Snell's_law">Wikipedia</a>) the typical choice for the angle <span class="math notranslate nohighlight">\(\alpha\)</span> is with respect to the surface of the sample, not the surface normal.</p>
-<figure class="align-center" id="snell-refl">
-<a class="reference internal image-reference" href="../_images/snell_refl.png"><img alt="../_images/snell_refl.png" src="../_images/snell_refl.png" style="height: 150px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">A sketch showing how the refractive index affects the path of radiation following Snell’s law.</span><a class="headerlink" href="#snell-refl" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
+<img src="../figures/snell_refl.png" alt="angle sketch" width="20%"/>
 <p>Thus the Snell’s Law becomes:</p>
 <div class="math notranslate nohighlight">
 \[\frac{n_1}{n_0} = \frac{\cos{\alpha_0}}{\cos{\alpha_1}}\]</div>
@@ -441,17 +436,17 @@ document.write(`
 </section>
 <section id="refractive-index-and-the-scattering-length-density-sld">
 <h2>Refractive index and the scattering length density (SLD)<a class="headerlink" href="#refractive-index-and-the-scattering-length-density-sld" title="Link to this heading">#</a></h2>
-<p>For neutrons and x-rays the refractive index is always close to 1. It is convenitently described by the radiation and material dependent scattering length density, <span class="math notranslate nohighlight">\(\mathrm{SLD}\)</span>, according to:</p>
+<p>For neutrons and x-rays the refractive index is always close to 1. It is convenitently described by the radiation and material dependent scattering length density (SLD) according to:</p>
 <div class="math notranslate nohighlight">
-\[n^2 = 1 - \lambda^2 \frac{\mathrm{SLD}_{n/x}}{\pi}$$\]</div>
-<p>In the case of neutrons <span class="math notranslate nohighlight">\(\lambda^2 \frac{\mathrm{SLD}}{\pi}\)</span> is in the order of <span class="math notranslate nohighlight">\(10^{-6}\)</span> while for x-rays it is around <span class="math notranslate nohighlight">\(10^{-5}\)</span>.
+\[ n^2 = 1 - \lambda^2 \frac{SLD_{n/x}}{\pi}\]</div>
+<p>In the case of neutrons <span class="math notranslate nohighlight">\(\lambda^2 \frac{SLD}{\pi}\)</span> is in the order of <span class="math notranslate nohighlight">\(10^{-6}\)</span> while for x-rays it is around <span class="math notranslate nohighlight">\(10^{-5}\)</span>.
 The SLD is a complex quantity where the imaginary part descirbes effects of absorption. For most elements the absorption for neutrons is negligible.</p>
 </section>
 <section id="sld-for-neutrons">
 <h2>SLD for neutrons<a class="headerlink" href="#sld-for-neutrons" title="Link to this heading">#</a></h2>
 <p>In thermal and cold neutrons for most elements the SLD does not depend on the beam energy/wavelength and can be directly calculated from the material density and the elemental coherent scattering length <span class="math notranslate nohighlight">\(b_n\)</span> that are tabulated in (see <a class="reference external" href="https://www.ncnr.nist.gov/resources/n-lengths/">NIST table</a>):</p>
 <div class="math notranslate nohighlight">
-\[\textrm{SLD}_n = \rho_{FU} \sum_{FU}{ b_{n_i} }\]</div>
+\[ SLD_n = \rho_{FU} \sum_{FU}{ b_{n_i} } \]</div>
 <p>Where <span class="math notranslate nohighlight">\(\rho_{FU}\)</span> is the number density of the formula unit and the scattering length, <span class="math notranslate nohighlight">\(b_{n_i}\)</span>, of all elements in the FU are summed.</p>
 <p>Magnetic moments on individual atoms also contribute to the SLD with a sign that depends on the relative orientation to the neutron spin. This is outside of the scope of this chapter.</p>
 </section>
@@ -459,8 +454,7 @@ The SLD is a complex quantity where the imaginary part descirbes effects of abso
 <h2>Refractive index for x-rays<a class="headerlink" href="#refractive-index-for-x-rays" title="Link to this heading">#</a></h2>
 <p>For x-rays the energy dependance of the SLD can not be ignored, especially close to absorption edges of the elements in the sample material.
 The scattering Thopson potential leads to a SLD defined as:</p>
-<div class="math notranslate nohighlight">
-\[\textrm{SLD}_x(E) = \rho_{FU} \sum_{FU}{ \frac{r_e}{2} (f'(E) - i f''(E)) }\]</div>
+<p>$<span class="math notranslate nohighlight">\( SLD_x(E) = \rho_{FU} \sum_{FU}{ \frac{r_e}{2} (f'(E) - i f''(E)) }\)</span>$ # please check this!!!</p>
 <p>Here <span class="math notranslate nohighlight">\(r_e = \frac{1}{4\pi}\frac{e^2}{m_e c^2}\)</span> is the classical electron radius (see <a class="reference external" href="https://en.wikipedia.org/wiki/Classical_electron_radius">Wikipedia</a>) and f’ and f’’ are the energy dependent x-ray scattering factors.</p>
 </section>
 <section id="implications-of-different-contrasts-for-neutrons-and-x-rays">
@@ -548,6 +542,13 @@ The x-ray values are: SLDx_water=9.4670e-06-2.9725e-08j, SLDx_layer=6.5136e-06-6
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/dd76802688e2b1e23303085257150035d31e427e504d2895cd0dad588684715f.png" src="../_images/dd76802688e2b1e23303085257150035d31e427e504d2895cd0dad588684715f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we should add a second example with more absorption and heavier elements</span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
