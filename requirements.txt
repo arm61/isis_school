@@ -1,4 +1,4 @@
-git+https://github.com/executablebooks/jupyter-book.git@master
+jupyter-book
 matplotlib
 numpy
 scipy
