@@ -16,17 +16,19 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -34,12 +36,13 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -59,8 +62,14 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '1_the_fourier_transform/fourier_transforms_for_reflectometry_analysis';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -68,6 +77,7 @@
     <link rel="prev" title="An introduction to Fourier transforms" href="an_introduction_to_fourier_transforms.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -83,19 +93,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -103,7 +102,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -111,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -128,7 +126,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -158,21 +157,17 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="A Guide to Reflectometry - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="A Guide to Reflectometry - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="A Guide to Reflectometry - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -364,24 +359,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -428,12 +415,12 @@ document.write(`
 A result of this is that by applying the <a class="reference external" href="https://en.wikipedia.org/wiki/Born_approximation">Born approximation</a>, the measured reflectometry can be found from the Fourier transform of the <strong>first derivative</strong> of the scattering length density profile with respect to <span class="math notranslate nohighlight">\(z\)</span> <span id="id1">[<a class="reference internal" href="../intro.html#id6" title="D. S. Sivia. Elementary Scattering Theory: For X-Ray and Neutron Users. Oxford University Press, 2011. ISBN 978-0-19-922868-3.">Siv11</a>]</span>.
 The sensitivity to the first derivative indicates the importance of the change of the scattering length density profile.</p>
 <figure class="align-center" id="id5">
-<div class="mermaid">
-                flowchart LR
+<pre  class="mermaid">
+            flowchart LR
         id1{{First derivative of the&lt;br&gt;scattering length density profile}}-- Fourier&lt;br&gt;relationship --&gt;id2((Reflectometry&lt;br&gt;profile))
         style id1 fill:#0173B288
         style id2 fill:#029E7388
-        </div><figcaption>
+    </pre><figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">The relationship between the scattering length density and the reflectometry profiles, interacting by a Fourier transform.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
@@ -474,7 +461,7 @@ Let’s visualise the scattering length density, <span class="math notranslate n
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/afb94ea72beb4de246aa2c28ce0c96bdc0361ed8daeff17c7d49c178888d65cf.png" src="../_images/afb94ea72beb4de246aa2c28ce0c96bdc0361ed8daeff17c7d49c178888d65cf.png" />
+<img alt="../_images/0716a9787107e7a94584e5c8458abf6340abc45616e9fa831641fe38f306a03d.png" src="../_images/0716a9787107e7a94584e5c8458abf6340abc45616e9fa831641fe38f306a03d.png" />
 </div>
 </div>
 <p>The functional description of this interface is a <a class="reference external" href="https://en.wikipedia.org/wiki/Heaviside_step_function">Heaviside function</a>,</p>
@@ -492,7 +479,7 @@ This first derivative is shown below.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bce380925c88fe0f3fb2df85a6724ab5d6136af812ba7c09e124dcc6f1572f2b.png" src="../_images/bce380925c88fe0f3fb2df85a6724ab5d6136af812ba7c09e124dcc6f1572f2b.png" />
+<img alt="../_images/b872deb493ea4685cd78ef5bb7950cc8182a273458d42f2d13edcc418e64eb62.png" src="../_images/b872deb493ea4685cd78ef5bb7950cc8182a273458d42f2d13edcc418e64eb62.png" />
 </div>
 </div>
 <p>The scaled-delta function can be written as,</p>
@@ -516,7 +503,7 @@ We can then rewrite the reflectometry equation above as,</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c104c211753e4d9eef58dd4c8ddbe82219987b9b19386579e69c740a2f676cbd.png" src="../_images/c104c211753e4d9eef58dd4c8ddbe82219987b9b19386579e69c740a2f676cbd.png" />
+<img alt="../_images/8c4aa03d11104a8893bae32bb5e2d8ee638477020591f6e7cd347059e0ddd73b.png" src="../_images/8c4aa03d11104a8893bae32bb5e2d8ee638477020591f6e7cd347059e0ddd73b.png" />
 </div>
 </div>
 <p>The blue line in the figure above shows the reflectometry profile found using the Born approximation for a single silicon-air interface.
@@ -543,7 +530,7 @@ After another example, we will investigate the meaning of the black horizontal l
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f4884b132481b5236dbf0eaf57b3230e5eb242169c7c4bb5f2fdf82d8cef0141.png" src="../_images/f4884b132481b5236dbf0eaf57b3230e5eb242169c7c4bb5f2fdf82d8cef0141.png" />
+<img alt="../_images/86189a27b5aacd97692b3c08455725ff4eae1fe3fc29695f38862e5a33a1599f.png" src="../_images/86189a27b5aacd97692b3c08455725ff4eae1fe3fc29695f38862e5a33a1599f.png" />
 </div>
 </div>
 <p>This offset Heaviside function can be written as,</p>
@@ -575,7 +562,7 @@ The scattering length density profile for this system is shown below, where <spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5b3104f1e1fb352fe3b5ad9349bbfabb5b13c6b11ffb291c7668e8a19fd7da09.png" src="../_images/5b3104f1e1fb352fe3b5ad9349bbfabb5b13c6b11ffb291c7668e8a19fd7da09.png" />
+<img alt="../_images/5f828874ac246dcb239d09f2e683397a313ff0f0cf04a1d5a234d74ae2c635bf.png" src="../_images/5f828874ac246dcb239d09f2e683397a313ff0f0cf04a1d5a234d74ae2c635bf.png" />
 </div>
 </div>
 <p>Again we can right this as a series of Heaviside functions,</p>
@@ -597,7 +584,7 @@ The scattering length density profile for this system is shown below, where <spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b64372b6710727b45ca12110136c24fdece533a98d422971a7ec405d389254fd.png" src="../_images/b64372b6710727b45ca12110136c24fdece533a98d422971a7ec405d389254fd.png" />
+<img alt="../_images/3a18e4b96f8c8bc56cec2800c8de0a9ce48df21c3466e3e08c04f5f5c67c023d.png" src="../_images/3a18e4b96f8c8bc56cec2800c8de0a9ce48df21c3466e3e08c04f5f5c67c023d.png" />
 </div>
 </div>
 <p>Then, to calculate the Born approximated reflected intensity, we use the square magnitude of the Fourier transform and scale by <span class="math notranslate nohighlight">\(16 \pi^2 / q ^4\)</span>.</p>
@@ -638,7 +625,7 @@ R(q) &amp; \approx \frac{16\pi^2}{q^4} \bigg| \int^{\infty}_{-\infty} \big[(\bet
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8a5fd660f566983fda065dd828c4c0eeedc4fd98129730651522f13dd060f7f2.png" src="../_images/8a5fd660f566983fda065dd828c4c0eeedc4fd98129730651522f13dd060f7f2.png" />
+<img alt="../_images/c0a4cb84302ce28574de9de0d7a25e6a49c31a32885fc5732934b7c8963e94e0.png" src="../_images/c0a4cb84302ce28574de9de0d7a25e6a49c31a32885fc5732934b7c8963e94e0.png" />
 </div>
 </div>
 <p>The reflectivity data above is the result of the reflection of our radiation from the two interface in our material.
@@ -668,7 +655,7 @@ The cosine function in the Born approximation can be used to rationalise the int
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b91c272bfb4c9ad4f5dd322e4bec771ff9ece5aff9fd44e694394547040dde07.png" src="../_images/b91c272bfb4c9ad4f5dd322e4bec771ff9ece5aff9fd44e694394547040dde07.png" />
+<img alt="../_images/8c56055cd487c26578a5c72ac4d2cc278dc5e3d8cd3c20e8ce3e23796b341991.png" src="../_images/8c56055cd487c26578a5c72ac4d2cc278dc5e3d8cd3c20e8ce3e23796b341991.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculated thickness = 2pi / (3.13e-02 +/- 1.95e-04 Å^-1) = 200.46 +/- 1.25 Å
 </pre></div>
 </div>
@@ -739,7 +726,7 @@ The ACF can be thought of as a noisy version of our first derivative of the scat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ad1c8fb969ad4d942234593206a19c8596bb568f95f8d3445e11324af02391a7.png" src="../_images/ad1c8fb969ad4d942234593206a19c8596bb568f95f8d3445e11324af02391a7.png" />
+<img alt="../_images/a8ef5d9cc5d65f56430ca2322380113570cb82b30075bf4e4cb7cecdb44e6d4a.png" src="../_images/a8ef5d9cc5d65f56430ca2322380113570cb82b30075bf4e4cb7cecdb44e6d4a.png" />
 </div>
 </div>
 <p>Note, that the large peaks are at <span class="math notranslate nohighlight">\(0\)</span> Å and <span class="math notranslate nohighlight">\(200\)</span> Å, indicating that the structure in our data is in the region of <span class="math notranslate nohighlight">\(200\)</span> Å in thickness, which matches the layer that was used to produce this data.</p>
@@ -801,7 +788,8 @@ The ACF can be thought of as a noisy version of our first derivative of the scat
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -862,8 +850,8 @@ By Andrew R. McCluskey
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
